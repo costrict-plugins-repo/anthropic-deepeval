@@ -1,0 +1,209 @@
+{
+  "uuid": "4e16d5bc109dff4e1774ad91613b5962",
+  "baseSpans": [
+    {
+      "uuid": "3ebad6c0e12bd321",
+      "name": "invocation",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T16:42:43.441Z",
+      "endTime": "2026-10-21T16:42:45.938Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "16a4847283cd6725",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "f6bb8b7893bf6602",
+      "startTime": "2026-10-21T16:42:44.880Z",
+      "endTime": "2026-10-21T16:42:45.934Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "7476430dedcb72c5",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "28f8cbc66b28c119",
+      "startTime": "2026-10-21T16:42:43.447Z",
+      "endTime": "2026-10-21T16:42:44.877Z",
+      "integration": "Google ADK"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "77c0fbd79e90124e",
+      "name": "calculator_assistant",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "3ebad6c0e12bd321",
+      "startTime": "2026-10-21T16:42:43.443Z",
+      "endTime": "2026-10-21T16:42:45.937Z",
+      "input": "What is 15 plus 25?",
+      "output": "40",
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result.",
+          "output": 40,
+          "inputParameters": {
+            "b": 25,
+            "operation": "add",
+            "a": 15
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "f6bb8b7893bf6602",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "77c0fbd79e90124e",
+      "startTime": "2026-10-21T16:42:44.880Z",
+      "endTime": "2026-10-21T16:42:45.936Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise.\n\nYou are an agent. Your internal name is \"calculator_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "What is 15 plus 25?"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "b": 25,
+              "operation": "add",
+              "a": 15
+            }
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "response": {
+              "result": 40
+            }
+          }
+        }
+      ],
+      "output": "40",
+      "integration": "Google ADK",
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 200.0,
+      "outputTokenCount": 2.0
+    },
+    {
+      "uuid": "28f8cbc66b28c119",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "77c0fbd79e90124e",
+      "startTime": "2026-10-21T16:42:43.444Z",
+      "endTime": "2026-10-21T16:42:44.879Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise.\n\nYou are an agent. Your internal name is \"calculator_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "What is 15 plus 25?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "b": 25,
+              "operation": "add",
+              "a": 15
+            }
+          }
+        }
+      ],
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "b": 25,
+            "operation": "add",
+            "a": 15
+          }
+        }
+      ],
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 161.0,
+      "outputTokenCount": 72.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "aed010704200c98a",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "77c0fbd79e90124e",
+      "startTime": "2026-10-21T16:42:44.878Z",
+      "endTime": "2026-10-21T16:42:44.878Z",
+      "input": {
+        "b": 25,
+        "operation": "add",
+        "a": 15
+      },
+      "output": 40,
+      "integration": "Google ADK",
+      "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result."
+    }
+  ],
+  "startTime": "2026-10-21T16:42:43.441Z",
+  "endTime": "2026-10-21T16:42:45.938Z",
+  "name": "googleadk-tool-metric-test",
+  "metadata": {
+    "test_type": "tool_metric_collection"
+  },
+  "tags": [
+    "googleadk",
+    "tool",
+    "metric-collection"
+  ],
+  "environment": "development",
+  "threadId": "tool-metric-123",
+  "input": "What is 15 plus 25?",
+  "output": "40",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result.",
+      "output": 40,
+      "inputParameters": {
+        "b": 25,
+        "operation": "add",
+        "a": 15
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "name": "Agent workflow",
+  "uuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+  "baseSpans": [
+    {
+      "uuid": "19997c13da6e9281",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "startTime": "2026-10-21T20:44:46.478Z",
+      "endTime": "2026-10-21T20:44:48.930Z"
+    },
+    {
+      "uuid": "9af19d2ca519a473",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "19997c13da6e9281",
+      "startTime": "2026-10-21T20:44:46.478Z",
+      "endTime": "2026-10-21T20:44:48.930Z"
+    },
+    {
+      "uuid": "3ddf937e2b78b1c2",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "75394c95f7bce84f",
+      "startTime": "2026-10-21T20:44:46.478Z",
+      "endTime": "2026-10-21T20:44:47.663Z",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": "Rainy, 55°F",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "04f5b956766d274f",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "75394c95f7bce84f",
+      "startTime": "2026-10-21T20:44:47.663Z",
+      "endTime": "2026-10-21T20:44:48.929Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "75394c95f7bce84f",
+      "name": "ToolAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "9af19d2ca519a473",
+      "startTime": "2026-10-21T20:44:46.478Z",
+      "endTime": "2026-10-21T20:44:48.930Z",
+      "input": "What is the weather in London? Use your tools.",
+      "output": "The weather in London is currently rainy, with a temperature of 55°F.",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": "Rainy, 55°F",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "ca751fb949d21751",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "3ddf937e2b78b1c2",
+      "startTime": "2026-10-21T20:44:46.479Z",
+      "endTime": "2026-10-21T20:44:47.655Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helper. Use tools for weather or math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "What is the weather in London? Use your tools."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_3c75dCAna7WwriqBeKUwtT5y",
+            "arguments": "{\"city\":\"London\"}"
+          }
+        }
+      ],
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "model": "gpt-4o-2024-08-06",
+      "inputTokenCount": 106,
+      "outputTokenCount": 15
+    },
+    {
+      "uuid": "09b6b6f65af01e4a",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "04f5b956766d274f",
+      "startTime": "2026-10-21T20:44:47.664Z",
+      "endTime": "2026-10-21T20:44:48.927Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helper. Use tools for weather or math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "What is the weather in London? Use your tools."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_3c75dCAna7WwriqBeKUwtT5y",
+            "arguments": "{\"city\":\"London\"}"
+          }
+        },
+        {
+          "role": "user"
+        }
+      ],
+      "output": "The weather in London is currently rainy, with a temperature of 55°F.",
+      "model": "gpt-4o-2024-08-06",
+      "inputTokenCount": 135,
+      "outputTokenCount": 18
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "7ad17f12d527142b",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "d2476757-e209-4d97-bd74-40062afc9d53",
+      "parentUuid": "3ddf937e2b78b1c2",
+      "startTime": "2026-10-21T20:44:47.659Z",
+      "endTime": "2026-10-21T20:44:47.662Z",
+      "input": {
+        "city": "London"
+      },
+      "output": "Rainy, 55°F"
+    }
+  ],
+  "startTime": "2026-10-21T20:44:46.477Z",
+  "endTime": "2026-10-21T20:44:48.931Z",
+  "environment": "testing",
+  "metadata": {},
+  "input": "What is the weather in London? Use your tools.",
+  "output": "The weather in London is currently rainy, with a temperature of 55°F.",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "output": "Rainy, 55°F",
+      "inputParameters": {
+        "city": "London"
+      }
+    }
+  ],
+  "status": "SUCCESS"
+}

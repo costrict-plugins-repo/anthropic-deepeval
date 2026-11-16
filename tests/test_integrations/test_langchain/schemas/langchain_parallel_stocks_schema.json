@@ -1,0 +1,276 @@
+{
+  "uuid": "e84297e08caf053d9de4c9827fd97fdd",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "5aa1deef57e395a0",
+      "name": "parallel_stocks_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:55.355Z",
+      "endTime": "2026-10-23T08:40:58.132Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AAPL"
+                },
+                "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$178.50",
+                "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "AAPL is **$178.50**."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$178.50",
+          "inputParameters": {
+            "symbol": "AAPL"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "6d518e4946e4a3ab",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "5aa1deef57e395a0",
+      "startTime": "2026-10-23T08:40:57.171Z",
+      "endTime": "2026-10-23T08:40:58.132Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AAPL"
+            },
+            "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "$178.50",
+            "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+          }
+        }
+      ],
+      "output": "AAPL is **$178.50**.",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 182.0,
+      "outputTokenCount": 13.0
+    },
+    {
+      "uuid": "72bf4860864cc69f",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "5aa1deef57e395a0",
+      "startTime": "2026-10-23T08:40:55.356Z",
+      "endTime": "2026-10-23T08:40:57.169Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AAPL"
+            },
+            "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "AAPL"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 147.0,
+      "outputTokenCount": 19.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "93a57acb57958bd9",
+      "name": "get_stock_price",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "5aa1deef57e395a0",
+      "startTime": "2026-10-23T08:40:57.170Z",
+      "endTime": "2026-10-23T08:40:57.171Z",
+      "input": {
+        "symbol": "AAPL"
+      },
+      "output": "$178.50",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:40:55.355Z",
+  "endTime": "2026-10-23T08:40:58.132Z",
+  "name": "langchain-parallel-stocks",
+  "tags": [
+    "langchain",
+    "parallel",
+    "stocks"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_stock_price tool to get the price for AAPL. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AAPL"
+            },
+            "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "$178.50",
+            "id": "call_yuWsXmWDOj9dY6t6pfp8jQu4"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "AAPL is **$178.50**."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_stock_price",
+      "type": "FUNCTION",
+      "output": "$178.50",
+      "inputParameters": {
+        "symbol": "AAPL"
+      }
+    }
+  ]
+}

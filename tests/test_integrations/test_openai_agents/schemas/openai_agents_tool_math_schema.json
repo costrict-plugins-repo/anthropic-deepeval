@@ -1,0 +1,220 @@
+{
+  "uuid": "14ae36676942855c8a54c5c23ceb58b2",
+  "baseSpans": [
+    {
+      "uuid": "d89f685da4630105",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2c5f3d20cd59e73d",
+      "startTime": "2026-10-21T16:55:52.389Z",
+      "endTime": "2026-10-21T16:55:54.941Z",
+      "integration": "OpenAI Agents"
+    },
+    {
+      "uuid": "d4fa4ee1ca6c8bb0",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "a801b6602289c872",
+      "startTime": "2026-10-21T16:55:53.737Z",
+      "endTime": "2026-10-21T16:55:54.940Z",
+      "integration": "OpenAI Agents"
+    },
+    {
+      "uuid": "61ddd2f43fc8e8c2",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "a801b6602289c872",
+      "startTime": "2026-10-21T16:55:52.390Z",
+      "endTime": "2026-10-21T16:55:53.737Z",
+      "integration": "OpenAI Agents",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Evaluates a mathematical expression.",
+          "output": "10 + 5 = 15",
+          "inputParameters": {
+            "expression": "10 + 5"
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "2c5f3d20cd59e73d",
+      "name": "openai_agents_tool_math",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T16:55:52.389Z",
+      "endTime": "2026-10-21T16:55:54.942Z",
+      "input": "Calculate 10 + 5",
+      "output": "The result of \\(10 + 5\\) is 15.",
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "a801b6602289c872",
+      "name": "ToolAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "d89f685da4630105",
+      "startTime": "2026-10-21T16:55:52.390Z",
+      "endTime": "2026-10-21T16:55:54.941Z",
+      "input": "Calculate 10 + 5",
+      "output": "The result of \\(10 + 5\\) is 15.",
+      "integration": "OpenAI Agents",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Evaluates a mathematical expression.",
+          "output": "10 + 5 = 15",
+          "inputParameters": {
+            "expression": "10 + 5"
+          }
+        }
+      ],
+      "availableTools": [
+        "get_weather",
+        "calculate"
+      ],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "428bf9f97a785ff1",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d4fa4ee1ca6c8bb0",
+      "startTime": "2026-10-21T16:55:53.738Z",
+      "endTime": "2026-10-21T16:55:54.937Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helper. Use tools for weather or math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "Calculate 10 + 5"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_z8xFg8sHj0mdiXyH9vU9n2rO",
+            "name": "calculate",
+            "arguments": "{\"expression\":\"10 + 5\"}"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "10 + 5 = 15",
+            "id": "call_z8xFg8sHj0mdiXyH9vU9n2rO"
+          }
+        }
+      ],
+      "output": "The result of \\(10 + 5\\) is 15.",
+      "integration": "OpenAI Agents",
+      "model": "gpt-4o-2024-08-06",
+      "provider": "OpenAI",
+      "inputTokenCount": 132.0,
+      "outputTokenCount": 16.0
+    },
+    {
+      "uuid": "459d8a95659142ab",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "61ddd2f43fc8e8c2",
+      "startTime": "2026-10-21T16:55:52.391Z",
+      "endTime": "2026-10-21T16:55:53.731Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helper. Use tools for weather or math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "Calculate 10 + 5"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_z8xFg8sHj0mdiXyH9vU9n2rO",
+            "name": "calculate",
+            "arguments": "{\"expression\":\"10 + 5\"}"
+          }
+        }
+      ],
+      "integration": "OpenAI Agents",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "expression": "10 + 5"
+          }
+        }
+      ],
+      "model": "gpt-4o-2024-08-06",
+      "provider": "OpenAI",
+      "inputTokenCount": 101.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "4ce25b3ca36dc915",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "61ddd2f43fc8e8c2",
+      "startTime": "2026-10-21T16:55:53.734Z",
+      "endTime": "2026-10-21T16:55:53.736Z",
+      "input": {
+        "expression": "10 + 5"
+      },
+      "output": "10 + 5 = 15",
+      "integration": "OpenAI Agents",
+      "description": "Evaluates a mathematical expression."
+    }
+  ],
+  "startTime": "2026-10-21T16:55:52.389Z",
+  "endTime": "2026-10-21T16:55:54.942Z",
+  "name": "openai_agents_tool_math",
+  "metadata": {
+    "tags": [
+      "openai_agents",
+      "tool",
+      "math"
+    ]
+  },
+  "environment": "development",
+  "input": "Calculate 10 + 5",
+  "output": "The result of \\(10 + 5\\) is 15.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "description": "Evaluates a mathematical expression.",
+      "output": "10 + 5 = 15",
+      "inputParameters": {
+        "expression": "10 + 5"
+      }
+    }
+  ]
+}

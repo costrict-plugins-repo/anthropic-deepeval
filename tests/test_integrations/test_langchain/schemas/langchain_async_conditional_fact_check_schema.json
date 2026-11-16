@@ -1,0 +1,277 @@
+{
+  "uuid": "c7f012f24c7fa14c0304bc950b75a8bd",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "f8da9c19b0e449f8",
+      "name": "fact_check_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:38:41.432Z",
+      "endTime": "2026-10-23T08:38:43.554Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "fact_check",
+                "arguments": {
+                  "claim": "The earth is round."
+                },
+                "id": "call_aETD7TKWogR7NgATBARMz8SR"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Fact check: VERIFIED - This claim appears to be accurate.",
+                "id": "call_aETD7TKWogR7NgATBARMz8SR"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Fact check result: **VERIFIED** \u2014 The claim appears to be accurate."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "fact_check",
+          "type": "FUNCTION",
+          "output": "Fact check: VERIFIED - This claim appears to be accurate.",
+          "inputParameters": {
+            "claim": "The earth is round."
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "6804c8bf3b8e16d6",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "f8da9c19b0e449f8",
+      "startTime": "2026-10-23T08:38:42.546Z",
+      "endTime": "2026-10-23T08:38:43.553Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "fact_check",
+            "arguments": {
+              "claim": "The earth is round."
+            },
+            "id": "call_aETD7TKWogR7NgATBARMz8SR"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Fact check: VERIFIED - This claim appears to be accurate.",
+            "id": "call_aETD7TKWogR7NgATBARMz8SR"
+          }
+        }
+      ],
+      "output": "Fact check result: **VERIFIED** \u2014 The claim appears to be accurate.",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 190.0,
+      "outputTokenCount": 19.0
+    },
+    {
+      "uuid": "a4ffb0f1668abcc8",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "f8da9c19b0e449f8",
+      "startTime": "2026-10-23T08:38:41.434Z",
+      "endTime": "2026-10-23T08:38:42.542Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "fact_check",
+            "arguments": {
+              "claim": "The earth is round."
+            },
+            "id": "call_aETD7TKWogR7NgATBARMz8SR"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "fact_check",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "claim": "The earth is round."
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 146.0,
+      "outputTokenCount": 21.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d5ca55cb32a81f50",
+      "name": "fact_check",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "f8da9c19b0e449f8",
+      "startTime": "2026-10-23T08:38:42.544Z",
+      "endTime": "2026-10-23T08:38:42.545Z",
+      "input": {
+        "claim": "The earth is round."
+      },
+      "output": "Fact check: VERIFIED - This claim appears to be accurate.",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:38:41.432Z",
+  "endTime": "2026-10-23T08:38:43.554Z",
+  "name": "langchain-async-conditional-factcheck",
+  "tags": [
+    "langchain",
+    "async",
+    "conditional",
+    "fact-check"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the fact_check tool to fact check this claim: The earth is round. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "fact_check",
+            "arguments": {
+              "claim": "The earth is round."
+            },
+            "id": "call_aETD7TKWogR7NgATBARMz8SR"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Fact check: VERIFIED - This claim appears to be accurate.",
+            "id": "call_aETD7TKWogR7NgATBARMz8SR"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Fact check result: **VERIFIED** \u2014 The claim appears to be accurate."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "fact_check",
+      "type": "FUNCTION",
+      "output": "Fact check: VERIFIED - This claim appears to be accurate.",
+      "inputParameters": {
+        "claim": "The earth is round."
+      }
+    }
+  ]
+}

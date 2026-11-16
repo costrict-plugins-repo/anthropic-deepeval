@@ -1,0 +1,161 @@
+{
+  "uuid": "31544552e79d304f30020b87043a9a93",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "b3850930902455ae",
+      "name": "multiple_tools_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:32.041Z",
+      "endTime": "2026-10-21T17:17:34.734Z",
+      "input": "Use the get_time tool exactly once to get the current time in London.",
+      "output": "The current time in London is 7:00 AM GMT.",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "output": "7:00 AM GMT",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "18a8bc0226b452b6",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b3850930902455ae",
+      "startTime": "2026-10-21T17:17:33.444Z",
+      "endTime": "2026-10-21T17:17:34.733Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_time tool exactly once to get the current time in London."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_FcF2YdeQY6WS82YkT598pbWp",
+            "name": "get_time",
+            "arguments": "{\"city\":\"London\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_FcF2YdeQY6WS82YkT598pbWp",
+            "name": "get_time",
+            "result": "7:00 AM GMT"
+          }
+        }
+      ],
+      "output": "The current time in London is 7:00 AM GMT.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 202.0,
+      "outputTokenCount": 15.0
+    },
+    {
+      "uuid": "d3a3c70a331abcc7",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b3850930902455ae",
+      "startTime": "2026-10-21T17:17:32.042Z",
+      "endTime": "2026-10-21T17:17:33.442Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_time tool exactly once to get the current time in London."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_FcF2YdeQY6WS82YkT598pbWp",
+            "name": "get_time",
+            "arguments": "{\"city\":\"London\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 177.0,
+      "outputTokenCount": 15.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "b3deb74bdee9bcb2",
+      "name": "get_time",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b3850930902455ae",
+      "startTime": "2026-10-21T17:17:33.443Z",
+      "endTime": "2026-10-21T17:17:33.443Z",
+      "input": {
+        "city": "London"
+      },
+      "output": "7:00 AM GMT",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:32.041Z",
+  "endTime": "2026-10-21T17:17:34.734Z",
+  "name": "pydanticai-multiple-tools-time",
+  "metadata": {
+    "test_type": "multiple_tools_time"
+  },
+  "tags": [
+    "pydanticai",
+    "multiple-tools",
+    "time"
+  ],
+  "environment": "development",
+  "threadId": "multiple-tools-time-123",
+  "input": "Use the get_time tool exactly once to get the current time in London.",
+  "output": "The current time in London is 7:00 AM GMT.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_time",
+      "type": "FUNCTION",
+      "output": "7:00 AM GMT",
+      "inputParameters": {
+        "city": "London"
+      }
+    }
+  ]
+}

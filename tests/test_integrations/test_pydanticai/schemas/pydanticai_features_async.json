@@ -1,0 +1,162 @@
+{
+  "uuid": "0f293617816cb1ee509bf3535c046b47",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "2cd19372e625ab28",
+      "name": "evals_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:28.116Z",
+      "endTime": "2026-10-21T17:17:31.573Z",
+      "input": "Use the special_tool to process 'Async Data'",
+      "output": "The data has been processed: \"Async Data\".",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "output": "Processed: Async Data",
+          "inputParameters": {
+            "query": "Async Data"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "baa751cb59136795",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "2cd19372e625ab28",
+      "startTime": "2026-10-21T17:17:30.280Z",
+      "endTime": "2026-10-21T17:17:31.571Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Be concise."
+        },
+        {
+          "role": "user",
+          "content": "Use the special_tool to process 'Async Data'"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_X1GtzFnBZTBLFKtIRC5jhutZ",
+            "name": "special_tool",
+            "arguments": "{\"query\":\"Async Data\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_X1GtzFnBZTBLFKtIRC5jhutZ",
+            "name": "special_tool",
+            "result": "Processed: Async Data"
+          }
+        }
+      ],
+      "output": "The data has been processed: \"Async Data\".",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 86.0,
+      "outputTokenCount": 12.0
+    },
+    {
+      "uuid": "2fec9e7da4ba35b4",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "2cd19372e625ab28",
+      "startTime": "2026-10-21T17:17:28.118Z",
+      "endTime": "2026-10-21T17:17:30.278Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Be concise."
+        },
+        {
+          "role": "user",
+          "content": "Use the special_tool to process 'Async Data'"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_X1GtzFnBZTBLFKtIRC5jhutZ",
+            "name": "special_tool",
+            "arguments": "{\"query\":\"Async Data\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "Async Data"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 61.0,
+      "outputTokenCount": 16.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "a728ee2109e2bc78",
+      "name": "special_tool",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "2cd19372e625ab28",
+      "startTime": "2026-10-21T17:17:30.279Z",
+      "endTime": "2026-10-21T17:17:30.279Z",
+      "input": {
+        "query": "Async Data"
+      },
+      "output": "Processed: Async Data",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:28.116Z",
+  "endTime": "2026-10-21T17:17:31.573Z",
+  "name": "pydanticai-full-features-async",
+  "metadata": {
+    "env": "testing_async",
+    "mode": "async"
+  },
+  "tags": [
+    "pydanticai",
+    "features",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "thread-async-features-002",
+  "input": "Use the special_tool to process 'Async Data'",
+  "output": "The data has been processed: \"Async Data\".",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "special_tool",
+      "type": "FUNCTION",
+      "output": "Processed: Async Data",
+      "inputParameters": {
+        "query": "Async Data"
+      }
+    }
+  ]
+}

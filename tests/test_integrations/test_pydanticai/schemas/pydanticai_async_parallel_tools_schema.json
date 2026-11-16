@@ -1,0 +1,225 @@
+{
+  "uuid": "e57f5f30e2dc6d464c5b3319c787acac",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "606b33cf61a17df0",
+      "name": "multiple_tools_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:30.304Z",
+      "endTime": "2026-10-21T17:17:33.383Z",
+      "input": "Use both the get_weather tool AND the get_time tool for Tokyo. Call both tools exactly once each.",
+      "output": "The current weather in Tokyo is sunny, with a temperature of 72\u00b0F. The time is 3:00 PM JST.",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Sunny, 72F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "output": "3:00 PM JST",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "fddf58a845c3f01a",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "606b33cf61a17df0",
+      "startTime": "2026-10-21T17:17:32.004Z",
+      "endTime": "2026-10-21T17:17:33.382Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use both the get_weather tool AND the get_time tool for Tokyo. Call both tools exactly once each."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_u7EreYNzQsj3HHbMvjEftavH",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_oyDzeFm79Ul5xRVmR4kpUagA",
+            "name": "get_time",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_u7EreYNzQsj3HHbMvjEftavH",
+            "name": "get_weather",
+            "result": "Sunny, 72F"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_oyDzeFm79Ul5xRVmR4kpUagA",
+            "name": "get_time",
+            "result": "3:00 PM JST"
+          }
+        }
+      ],
+      "output": "The current weather in Tokyo is sunny, with a temperature of 72\u00b0F. The time is 3:00 PM JST.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 233.0,
+      "outputTokenCount": 28.0
+    },
+    {
+      "uuid": "be77fa95915e3170",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "606b33cf61a17df0",
+      "startTime": "2026-10-21T17:17:30.305Z",
+      "endTime": "2026-10-21T17:17:32.002Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use both the get_weather tool AND the get_time tool for Tokyo. Call both tools exactly once each."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_u7EreYNzQsj3HHbMvjEftavH",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_oyDzeFm79Ul5xRVmR4kpUagA",
+            "name": "get_time",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 183.0,
+      "outputTokenCount": 45.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "8178abfa58ae5126",
+      "name": "get_time",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "606b33cf61a17df0",
+      "startTime": "2026-10-21T17:17:32.003Z",
+      "endTime": "2026-10-21T17:17:32.004Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "3:00 PM JST",
+      "integration": "PydanticAI"
+    },
+    {
+      "uuid": "cf12959350c4047b",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "606b33cf61a17df0",
+      "startTime": "2026-10-21T17:17:32.003Z",
+      "endTime": "2026-10-21T17:17:32.003Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "Sunny, 72F",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:30.304Z",
+  "endTime": "2026-10-21T17:17:33.383Z",
+  "name": "pydanticai-async-parallel-tools",
+  "metadata": {
+    "test_type": "async_parallel_tools"
+  },
+  "tags": [
+    "pydanticai",
+    "parallel-tools",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "async-parallel-tools-123",
+  "input": "Use both the get_weather tool AND the get_time tool for Tokyo. Call both tools exactly once each.",
+  "output": "The current weather in Tokyo is sunny, with a temperature of 72\u00b0F. The time is 3:00 PM JST.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_time",
+      "type": "FUNCTION",
+      "output": "3:00 PM JST",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    },
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Sunny, 72F",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    }
+  ]
+}

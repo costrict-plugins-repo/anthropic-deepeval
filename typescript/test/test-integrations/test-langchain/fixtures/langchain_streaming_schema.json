@@ -1,0 +1,217 @@
+{
+  "name": "langchain-streaming-test",
+  "uuid": "c4a8030af6379769474978ebdaae66d7",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "c7b255b3860af51c",
+      "name": "streaming_single_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "c4a8030af6379769474978ebdaae66d7",
+      "startTime": "2026-10-23T08:54:59.119Z",
+      "endTime": "2026-10-23T08:55:04.369Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is the stock price for Apple?"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is the stock price for Apple?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "text",
+                "content": "{\"lc\":1,\"type\":\"constructor\",\"id\":[\"langchain_core\",\"messages\",\"ToolMessage\"],\"kwargs\":{\"status\":\"success\",\"content\":\"$178.50 (+1.2%)\",\"tool_call_id\":\"call_1TUwdJzNeCEhc5xA42xCNL9u\",\"name\":\"get_stock_price\",\"metadata\":{\"versions\":{\"@langchain/core\":\"1.2.20\"}},\"additional_kwargs\":{},\"response_metadata\":{}}}"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "The current stock price for Apple (AAPL) is $178.50, with an increase of 1.2%."
+              }
+            ]
+          }
+        ]
+      },
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "output": "$178.50 (+1.2%)",
+          "inputParameters": {
+            "symbol": "AAPL"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "ad4e0661a76dc7a1",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "c4a8030af6379769474978ebdaae66d7",
+      "parentUuid": "c7b255b3860af51c",
+      "startTime": "2026-10-23T08:54:59.121Z",
+      "endTime": "2026-10-23T08:55:01.047Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "What is the stock price for Apple?"
+        }
+      ],
+      "output": "",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 56,
+      "outputTokenCount": 16
+    },
+    {
+      "uuid": "366c0a917fa49b49",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "c4a8030af6379769474978ebdaae66d7",
+      "parentUuid": "c7b255b3860af51c",
+      "startTime": "2026-10-23T08:55:01.048Z",
+      "endTime": "2026-10-23T08:55:04.368Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "What is the stock price for Apple?"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "tool",
+          "content": "{\"lc\":1,\"type\":\"constructor\",\"id\":[\"langchain_core\",\"messages\",\"ToolMessage\"],\"kwargs\":{\"status\":\"success\",\"content\":\"$178.50 (+1.2%)\",\"tool_call_id\":\"call_1TUwdJzNeCEhc5xA42xCNL9u\",\"name\":\"get_stock_price\",\"metadata\":{\"versions\":{\"@langchain/core\":\"1.2.20\"}},\"additional_kwargs\":{},\"response_metadata\":{}}}"
+        }
+      ],
+      "output": "The current stock price for Apple (AAPL) is $178.50, with an increase of 1.2%.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 177,
+      "outputTokenCount": 26
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "93a1c66fed31a322",
+      "name": "get_stock_price",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "c4a8030af6379769474978ebdaae66d7",
+      "parentUuid": "c7b255b3860af51c",
+      "startTime": "2026-10-23T08:55:01.048Z",
+      "endTime": "2026-10-23T08:55:01.048Z",
+      "input": {
+        "symbol": "AAPL"
+      },
+      "output": "$178.50 (+1.2%)"
+    }
+  ],
+  "startTime": "2026-10-23T08:54:59.119Z",
+  "endTime": "2026-10-23T08:55:04.370Z",
+  "environment": "testing",
+  "tags": [
+    "langchain",
+    "streaming"
+  ],
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is the stock price for Apple?"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is the stock price for Apple?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "text",
+            "content": "{\"lc\":1,\"type\":\"constructor\",\"id\":[\"langchain_core\",\"messages\",\"ToolMessage\"],\"kwargs\":{\"status\":\"success\",\"content\":\"$178.50 (+1.2%)\",\"tool_call_id\":\"call_1TUwdJzNeCEhc5xA42xCNL9u\",\"name\":\"get_stock_price\",\"metadata\":{\"versions\":{\"@langchain/core\":\"1.2.20\"}},\"additional_kwargs\":{},\"response_metadata\":{}}}"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "The current stock price for Apple (AAPL) is $178.50, with an increase of 1.2%."
+          }
+        ]
+      }
+    ]
+  },
+  "toolsCalled": [
+    {
+      "name": "get_stock_price",
+      "output": "$178.50 (+1.2%)",
+      "inputParameters": {
+        "symbol": "AAPL"
+      }
+    }
+  ],
+  "status": "SUCCESS"
+}

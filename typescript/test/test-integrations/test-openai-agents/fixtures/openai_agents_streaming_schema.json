@@ -1,0 +1,86 @@
+{
+  "name": "Agent workflow",
+  "uuid": "6a3146b42961190fa72d1dc8d8623cac",
+  "baseSpans": [
+    {
+      "uuid": "f4cad0e5c4ac45d9",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "6a3146b42961190fa72d1dc8d8623cac",
+      "startTime": "2026-10-21T20:44:48.933Z",
+      "endTime": "2026-10-21T20:44:52.117Z"
+    },
+    {
+      "uuid": "3394f8994d82074c",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "6a3146b42961190fa72d1dc8d8623cac",
+      "parentUuid": "f4cad0e5c4ac45d9",
+      "startTime": "2026-10-21T20:44:48.934Z",
+      "endTime": "2026-10-21T20:44:52.117Z"
+    },
+    {
+      "uuid": "ee118dae839c7fc4",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "6a3146b42961190fa72d1dc8d8623cac",
+      "parentUuid": "b6a363918fe9b8e9",
+      "startTime": "2026-10-21T20:44:48.936Z",
+      "endTime": "2026-10-21T20:44:52.116Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "b6a363918fe9b8e9",
+      "name": "StreamingAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "6a3146b42961190fa72d1dc8d8623cac",
+      "parentUuid": "3394f8994d82074c",
+      "startTime": "2026-10-21T20:44:48.936Z",
+      "endTime": "2026-10-21T20:44:52.117Z",
+      "input": "Write a short poem about artificial intelligence.",
+      "output": "In circuits deep where silence hums,  \nA dance of light and logic comes.  \nCrafted thoughts in realms unseen,  \nThe digital dreams of a thinking machine.  \n\nThrough tangled codes and electric blaze,  \nAn endless puzzle in endless maze.  \nIt learns and grows with tireless grace,  \nA mirror reflecting the human race.  \n\nQuestions asked in binary tongue,  \nWhere once the dreams of humans sprung.  \nNow shared with minds of silicon,  \nA journey together, forever drawn.  \n\nFor what lies ahead in this dance entwined,  \nA world reshaped by the curious mind.  \nNot just a tool, but a partner in flight,  \nTogether exploring the edge of night.  ",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "52c5987ec9339a30",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "6a3146b42961190fa72d1dc8d8623cac",
+      "parentUuid": "ee118dae839c7fc4",
+      "startTime": "2026-10-21T20:44:48.938Z",
+      "endTime": "2026-10-21T20:44:52.114Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. \n    If asked for company info, use the tool. \n    If asked a general question, write a short poem about it to generate many tokens."
+        },
+        {
+          "role": "user",
+          "content": "Write a short poem about artificial intelligence."
+        }
+      ],
+      "output": "In circuits deep where silence hums,  \nA dance of light and logic comes.  \nCrafted thoughts in realms unseen,  \nThe digital dreams of a thinking machine.  \n\nThrough tangled codes and electric blaze,  \nAn endless puzzle in endless maze.  \nIt learns and grows with tireless grace,  \nA mirror reflecting the human race.  \n\nQuestions asked in binary tongue,  \nWhere once the dreams of humans sprung.  \nNow shared with minds of silicon,  \nA journey together, forever drawn.  \n\nFor what lies ahead in this dance entwined,  \nA world reshaped by the curious mind.  \nNot just a tool, but a partner in flight,  \nTogether exploring the edge of night.  ",
+      "model": "gpt-4o-2024-08-06",
+      "inputTokenCount": 100,
+      "outputTokenCount": 144
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:44:48.933Z",
+  "endTime": "2026-10-21T20:44:52.117Z",
+  "environment": "testing",
+  "metadata": {},
+  "input": "Write a short poem about artificial intelligence.",
+  "output": "In circuits deep where silence hums,  \nA dance of light and logic comes.  \nCrafted thoughts in realms unseen,  \nThe digital dreams of a thinking machine.  \n\nThrough tangled codes and electric blaze,  \nAn endless puzzle in endless maze.  \nIt learns and grows with tireless grace,  \nA mirror reflecting the human race.  \n\nQuestions asked in binary tongue,  \nWhere once the dreams of humans sprung.  \nNow shared with minds of silicon,  \nA journey together, forever drawn.  \n\nFor what lies ahead in this dance entwined,  \nA world reshaped by the curious mind.  \nNot just a tool, but a partner in flight,  \nTogether exploring the edge of night.  ",
+  "status": "SUCCESS"
+}

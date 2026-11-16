@@ -1,0 +1,473 @@
+{
+  "name": "Mastra Full Attributes Trace",
+  "uuid": "df9ac536d875379c83a39ac678ff1ffb",
+  "baseSpans": [
+    {
+      "uuid": "d6346179aa7c0174",
+      "name": "llm: 'gpt-4o-mini'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "d2af60387c3afb21",
+      "startTime": "2026-10-21T20:45:29.782Z",
+      "endTime": "2026-10-21T20:45:32.280Z"
+    },
+    {
+      "uuid": "5298e30541d4dde3",
+      "name": "step: 0",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "d6346179aa7c0174",
+      "startTime": "2026-10-21T20:45:29.785Z",
+      "endTime": "2026-10-21T20:45:31.074Z",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": {
+            "weather": "Rainy, 55F"
+          },
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "d46ec42be6576b17",
+      "name": "llm request processor: provider-history-compat",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "5298e30541d4dde3",
+      "startTime": "2026-10-21T20:45:29.785Z",
+      "endTime": "2026-10-21T20:45:29.785Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use the get_weather tool to get the weather in London.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615529781
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "68c19f7316901b48",
+      "name": "llm request processor: unsupported-file-handler",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "5298e30541d4dde3",
+      "startTime": "2026-10-21T20:45:29.785Z",
+      "endTime": "2026-10-21T20:45:29.786Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use the get_weather tool to get the weather in London.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615529781
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "8d021571f585d019",
+      "name": "chunk: 'tool-call'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "e69e7f5afe55316f",
+      "startTime": "2026-10-21T20:45:31.069Z",
+      "endTime": "2026-10-21T20:45:31.070Z",
+      "output": {
+        "toolName": "get_weather",
+        "toolCallId": "call_Q32UpYTaazlTC5TyeamBhdpU",
+        "toolInput": {
+          "city": "London"
+        }
+      }
+    },
+    {
+      "uuid": "b268b0bdecec145b",
+      "name": "chunk: 'tool-result'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "e69e7f5afe55316f",
+      "startTime": "2026-10-21T20:45:31.073Z",
+      "endTime": "2026-10-21T20:45:31.073Z"
+    },
+    {
+      "uuid": "38607663b3d17577",
+      "name": "step: 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "d6346179aa7c0174",
+      "startTime": "2026-10-21T20:45:31.076Z",
+      "endTime": "2026-10-21T20:45:32.279Z"
+    },
+    {
+      "uuid": "4e2854e904872806",
+      "name": "llm request processor: provider-history-compat",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "38607663b3d17577",
+      "startTime": "2026-10-21T20:45:31.076Z",
+      "endTime": "2026-10-21T20:45:31.076Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use the get_weather tool to get the weather in London.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615529781
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "tool-call",
+                "toolCallId": "call_Q32UpYTaazlTC5TyeamBhdpU",
+                "toolName": "get_weather",
+                "input": {
+                  "city": "London"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0893b3ccec8118c0006ad9246ab4cc87d1b238b36ac1b64ca4"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "content": [
+              {
+                "type": "tool-result",
+                "toolCallId": "call_Q32UpYTaazlTC5TyeamBhdpU",
+                "toolName": "get_weather",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "weather": "Rainy, 55F"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0893b3ccec8118c0006ad9246ab4cc87d1b238b36ac1b64ca4"
+                  }
+                },
+                "input": {
+                  "city": "London"
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 1,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "992555b3247f6dd3",
+      "name": "llm request processor: unsupported-file-handler",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "38607663b3d17577",
+      "startTime": "2026-10-21T20:45:31.077Z",
+      "endTime": "2026-10-21T20:45:31.077Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Use the get_weather tool to get the weather in London.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615529781
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "tool-call",
+                "toolCallId": "call_Q32UpYTaazlTC5TyeamBhdpU",
+                "toolName": "get_weather",
+                "input": {
+                  "city": "London"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0893b3ccec8118c0006ad9246ab4cc87d1b238b36ac1b64ca4"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "content": [
+              {
+                "type": "tool-result",
+                "toolCallId": "call_Q32UpYTaazlTC5TyeamBhdpU",
+                "toolName": "get_weather",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "weather": "Rainy, 55F"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0893b3ccec8118c0006ad9246ab4cc87d1b238b36ac1b64ca4"
+                  }
+                },
+                "input": {
+                  "city": "London"
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 1,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "ca1d87579d9b4de9",
+      "name": "chunk: 'text'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "35f43cf3fff98ecd",
+      "startTime": "2026-10-21T20:45:32.272Z",
+      "endTime": "2026-10-21T20:45:32.273Z",
+      "output": {
+        "text": "The current weather in London is rainy, with a temperature of 55°F."
+      }
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "d2af60387c3afb21",
+      "name": "agent run: 'weather-agent'",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "startTime": "2026-10-21T20:45:29.778Z",
+      "endTime": "2026-10-21T20:45:32.281Z",
+      "input": "Use the get_weather tool to get the weather in London.",
+      "output": "The current weather in London is rainy, with a temperature of 55°F.",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": {
+            "weather": "Rainy, 55F"
+          },
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e69e7f5afe55316f",
+      "name": "inference: 0",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "5298e30541d4dde3",
+      "startTime": "2026-10-21T20:45:29.786Z",
+      "endTime": "2026-10-21T20:45:31.074Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get the weather in London."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_Q32UpYTaazlTC5TyeamBhdpU",
+            "arguments": {
+              "city": "London"
+            }
+          }
+        }
+      ],
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 71,
+      "outputTokenCount": 15
+    },
+    {
+      "uuid": "35f43cf3fff98ecd",
+      "name": "inference: 1",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "38607663b3d17577",
+      "startTime": "2026-10-21T20:45:31.077Z",
+      "endTime": "2026-10-21T20:45:32.279Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Use the get_weather tool to answer weather questions. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get the weather in London."
+        },
+        {
+          "role": "assistant",
+          "content": "[tool: get_weather]"
+        },
+        {
+          "role": "tool",
+          "content": "[tool-result: get_weather]"
+        }
+      ],
+      "output": "The current weather in London is rainy, with a temperature of 55°F.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 101,
+      "outputTokenCount": 18
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "4512c095d2dbc084",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "df9ac536d875379c83a39ac678ff1ffb",
+      "parentUuid": "5298e30541d4dde3",
+      "startTime": "2026-10-21T20:45:31.072Z",
+      "endTime": "2026-10-21T20:45:31.072Z",
+      "input": {
+        "city": "London"
+      },
+      "output": {
+        "weather": "Rainy, 55F"
+      }
+    }
+  ],
+  "startTime": "2026-10-21T20:45:29.778Z",
+  "endTime": "2026-10-21T20:45:34.794Z",
+  "environment": "testing",
+  "metadata": {
+    "deployment": "test-env",
+    "runner": "jest",
+    "runId": "24b6eab0-6077-40bb-b8f7-facf7491ba8f",
+    "environment": "test"
+  },
+  "tags": [
+    "mastra",
+    "integration-test",
+    "full-attributes"
+  ],
+  "threadId": "thread-xyz-789",
+  "input": "Use the get_weather tool to get the weather in London.",
+  "output": "The current weather in London is rainy, with a temperature of 55°F.",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "output": {
+        "weather": "Rainy, 55F"
+      },
+      "inputParameters": {
+        "city": "London"
+      }
+    }
+  ],
+  "status": "SUCCESS"
+}

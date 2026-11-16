@@ -1,0 +1,678 @@
+{
+  "uuid": "7b32108854eb381eb925d8b761bdaa0d",
+  "baseSpans": [
+    {
+      "uuid": "41bde4ba0e4d4cb0",
+      "name": "research",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6d00e94cdef8f85d",
+      "startTime": "2026-10-23T08:41:13.545Z",
+      "endTime": "2026-10-23T08:41:14.892Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Space research reveals new exoplanets in habitable zones.",
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "- Space exploration has led to discoveries of new exoplanets, including some in habitable zones.\n- These findings help scientists search for worlds that may support life.\n- Ongoing research continues to expand our understanding of the universe."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "c4b20f9be2ec8a6b",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "41bde4ba0e4d4cb0",
+      "startTime": "2026-10-23T08:41:14.892Z",
+      "endTime": "2026-10-23T08:41:14.892Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Space research reveals new exoplanets in habitable zones.",
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "- Space exploration has led to discoveries of new exoplanets, including some in habitable zones.\n- These findings help scientists search for worlds that may support life.\n- Ongoing research continues to expand our understanding of the universe."
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "b160eef209a25c93",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6d00e94cdef8f85d",
+      "startTime": "2026-10-23T08:41:13.542Z",
+      "endTime": "2026-10-23T08:41:13.545Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Space research reveals new exoplanets in habitable zones.",
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "research_topic",
+          "type": "FUNCTION",
+          "output": "Space research reveals new exoplanets in habitable zones.",
+          "inputParameters": {
+            "topic": "space exploration"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "80d64e95672acd89",
+      "name": "route_after_tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "b160eef209a25c93",
+      "startTime": "2026-10-23T08:41:13.544Z",
+      "endTime": "2026-10-23T08:41:13.544Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Space research reveals new exoplanets in habitable zones.",
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": "research",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "cb139e195cdd7111",
+      "name": "research",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6d00e94cdef8f85d",
+      "startTime": "2026-10-23T08:41:12.486Z",
+      "endTime": "2026-10-23T08:41:13.542Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "336e5a03051ac1a3",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "cb139e195cdd7111",
+      "startTime": "2026-10-23T08:41:13.541Z",
+      "endTime": "2026-10-23T08:41:13.542Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "22a643914fe8d7e8",
+      "name": "classifier",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6d00e94cdef8f85d",
+      "startTime": "2026-10-23T08:41:12.485Z",
+      "endTime": "2026-10-23T08:41:12.486Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "8e842ba205abc847",
+      "name": "route_by_intent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "22a643914fe8d7e8",
+      "startTime": "2026-10-23T08:41:12.485Z",
+      "endTime": "2026-10-23T08:41:12.486Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "output": "research",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "6d00e94cdef8f85d",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:12.484Z",
+      "endTime": "2026-10-23T08:41:14.893Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "research_topic",
+                "arguments": {
+                  "topic": "space exploration"
+                },
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Space research reveals new exoplanets in habitable zones.",
+                "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "- Space exploration has led to discoveries of new exoplanets, including some in habitable zones.\n- These findings help scientists search for worlds that may support life.\n- Ongoing research continues to expand our understanding of the universe."
+              }
+            ]
+          }
+        ],
+        "intent": "research"
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "research_topic",
+          "type": "FUNCTION",
+          "output": "Space research reveals new exoplanets in habitable zones.",
+          "inputParameters": {
+            "topic": "space exploration"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "85a7dde78351fe06",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "41bde4ba0e4d4cb0",
+      "startTime": "2026-10-23T08:41:13.546Z",
+      "endTime": "2026-10-23T08:41:14.891Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a research assistant. Use the research_topic tool to find information."
+        },
+        {
+          "role": "user",
+          "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "research_topic",
+            "arguments": {
+              "topic": "space exploration"
+            },
+            "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Space research reveals new exoplanets in habitable zones.",
+            "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+          }
+        }
+      ],
+      "output": "- Space exploration has led to discoveries of new exoplanets, including some in habitable zones.\n- These findings help scientists search for worlds that may support life.\n- Ongoing research continues to expand our understanding of the universe.",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 261.0,
+      "outputTokenCount": 49.0
+    },
+    {
+      "uuid": "e24a7a94f17ff207",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "cb139e195cdd7111",
+      "startTime": "2026-10-23T08:41:12.487Z",
+      "endTime": "2026-10-23T08:41:13.540Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a research assistant. Use the research_topic tool to find information."
+        },
+        {
+          "role": "user",
+          "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "research_topic",
+            "arguments": {
+              "topic": "space exploration"
+            },
+            "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "research_topic",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "topic": "space exploration"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 219.0,
+      "outputTokenCount": 19.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "7d77a96ab2f005ce",
+      "name": "research_topic",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b160eef209a25c93",
+      "startTime": "2026-10-23T08:41:13.543Z",
+      "endTime": "2026-10-23T08:41:13.543Z",
+      "input": {
+        "topic": "space exploration"
+      },
+      "output": "Space research reveals new exoplanets in habitable zones.",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:12.484Z",
+  "endTime": "2026-10-23T08:41:14.893Z",
+  "name": "langgraph-conditional-async",
+  "tags": [
+    "langgraph",
+    "conditional",
+    "async"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the research tool exactly once to research: space exploration. Do not ask clarification questions. After the tool returns, respond with a short 3-bullet summary and stop."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "research_topic",
+            "arguments": {
+              "topic": "space exploration"
+            },
+            "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Space research reveals new exoplanets in habitable zones.",
+            "id": "call_itoxSVPe4I2UsayPjZ1LAsQ0"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "- Space exploration has led to discoveries of new exoplanets, including some in habitable zones.\n- These findings help scientists search for worlds that may support life.\n- Ongoing research continues to expand our understanding of the universe."
+          }
+        ]
+      }
+    ],
+    "intent": "research"
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "research_topic",
+      "type": "FUNCTION",
+      "output": "Space research reveals new exoplanets in habitable zones.",
+      "inputParameters": {
+        "topic": "space exploration"
+      }
+    }
+  ]
+}

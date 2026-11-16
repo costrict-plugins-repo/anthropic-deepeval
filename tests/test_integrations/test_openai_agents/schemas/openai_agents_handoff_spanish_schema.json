@@ -1,0 +1,203 @@
+{
+  "uuid": "ebc4b26f06a6fe455995d8a6b3942698",
+  "baseSpans": [
+    {
+      "uuid": "d25f9102b60198c4",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "ac9557a4cd74d80d",
+      "startTime": "2026-10-21T16:55:56.185Z",
+      "endTime": "2026-10-21T16:55:59.039Z",
+      "integration": "OpenAI Agents"
+    },
+    {
+      "uuid": "1b86e48bc9abf27f",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "cd0a44ab01563778",
+      "startTime": "2026-10-21T16:55:57.399Z",
+      "endTime": "2026-10-21T16:55:59.038Z",
+      "integration": "OpenAI Agents"
+    },
+    {
+      "uuid": "c6cb94344eb7b638",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "5655de53d7149bf3",
+      "startTime": "2026-10-21T16:55:56.185Z",
+      "endTime": "2026-10-21T16:55:57.399Z",
+      "integration": "OpenAI Agents"
+    },
+    {
+      "uuid": "e380c3f49a8af9a7",
+      "name": "handoff to SpanishAgent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "c6cb94344eb7b638",
+      "startTime": "2026-10-21T16:55:57.397Z",
+      "endTime": "2026-10-21T16:55:57.398Z",
+      "input": "TriageAgent",
+      "output": "SpanishAgent",
+      "integration": "OpenAI Agents"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "ac9557a4cd74d80d",
+      "name": "openai_agents_handoff",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T16:55:56.184Z",
+      "endTime": "2026-10-21T16:55:59.040Z",
+      "input": "Hola",
+      "output": "Hola",
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "cd0a44ab01563778",
+      "name": "SpanishAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "d25f9102b60198c4",
+      "startTime": "2026-10-21T16:55:57.399Z",
+      "endTime": "2026-10-21T16:55:59.039Z",
+      "input": "Hola",
+      "output": "Hola",
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "5655de53d7149bf3",
+      "name": "TriageAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "d25f9102b60198c4",
+      "startTime": "2026-10-21T16:55:56.185Z",
+      "endTime": "2026-10-21T16:55:57.399Z",
+      "input": "Hola",
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_k9wRCLeGMmBCz9Pm3ad3tlbD",
+            "name": "transfer_to_spanishagent",
+            "arguments": null
+          }
+        }
+      ],
+      "integration": "OpenAI Agents",
+      "availableTools": [],
+      "agentHandoffs": [
+        "SpanishAgent",
+        "EnglishAgent"
+      ]
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "dea4659841c7e436",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "1b86e48bc9abf27f",
+      "startTime": "2026-10-21T16:55:57.400Z",
+      "endTime": "2026-10-21T16:55:59.035Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You speak Spanish. Answer 'Hola' to everything."
+        },
+        {
+          "role": "user",
+          "content": "Hola"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_k9wRCLeGMmBCz9Pm3ad3tlbD",
+            "name": "transfer_to_spanishagent",
+            "arguments": null
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "{\"assistant\": \"SpanishAgent\"}",
+            "id": "call_k9wRCLeGMmBCz9Pm3ad3tlbD"
+          }
+        }
+      ],
+      "output": "Hola",
+      "integration": "OpenAI Agents",
+      "model": "gpt-4o-2024-08-06",
+      "provider": "OpenAI",
+      "inputTokenCount": 55.0,
+      "outputTokenCount": 2.0
+    },
+    {
+      "uuid": "59528d64e86d7d63",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "c6cb94344eb7b638",
+      "startTime": "2026-10-21T16:55:56.186Z",
+      "endTime": "2026-10-21T16:55:57.395Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "If input is Spanish, handoff to SpanishAgent. Else EnglishAgent."
+        },
+        {
+          "role": "user",
+          "content": "Hola"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_k9wRCLeGMmBCz9Pm3ad3tlbD",
+            "name": "transfer_to_spanishagent",
+            "arguments": null
+          }
+        }
+      ],
+      "integration": "OpenAI Agents",
+      "toolsCalled": [
+        {
+          "name": "transfer_to_spanishagent",
+          "type": "FUNCTION"
+        }
+      ],
+      "model": "gpt-4o-2024-08-06",
+      "provider": "OpenAI",
+      "inputTokenCount": 83.0,
+      "outputTokenCount": 14.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T16:55:56.184Z",
+  "endTime": "2026-10-21T16:55:59.040Z",
+  "name": "openai_agents_handoff",
+  "metadata": {
+    "tags": [
+      "openai_agents",
+      "handoff"
+    ]
+  },
+  "environment": "development",
+  "input": "Hola",
+  "output": "Hola",
+  "status": "SUCCESS"
+}

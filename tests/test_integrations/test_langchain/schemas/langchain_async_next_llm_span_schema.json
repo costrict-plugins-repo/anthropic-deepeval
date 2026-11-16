@@ -1,0 +1,454 @@
+{
+  "uuid": "0607ec30f1e33354acf2f08ca56cf31a",
+  "baseSpans": [
+    {
+      "uuid": "125ba8f984f88d4e",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6fd37075426bf880",
+      "startTime": "2026-11-04T06:52:42.042Z",
+      "endTime": "2026-11-04T06:52:42.849Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 9 squared? Call the tool and reply with just the number."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "square",
+                "arguments": {
+                  "n": 9
+                },
+                "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "81",
+                "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": "81"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "5e76fb169df2963c",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6fd37075426bf880",
+      "startTime": "2026-11-04T06:52:42.038Z",
+      "endTime": "2026-11-04T06:52:42.041Z",
+      "input": [
+        {
+          "name": "square",
+          "args": {
+            "n": 9
+          },
+          "id": "call_AbGaFzXeHQG8Mw778BSioRPp",
+          "type": "tool_call"
+        }
+      ],
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "81",
+                "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "output": "81",
+          "inputParameters": {
+            "n": 9
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "6eb7f60a77d2840a",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6fd37075426bf880",
+      "startTime": "2026-11-04T06:52:40.428Z",
+      "endTime": "2026-11-04T06:52:42.036Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 9 squared? Call the tool and reply with just the number."
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": ""
+                  },
+                  {
+                    "type": "tool_call",
+                    "name": "square",
+                    "arguments": {
+                      "n": 9
+                    },
+                    "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "6fd37075426bf880",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:52:40.427Z",
+      "endTime": "2026-11-04T06:52:42.850Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 9 squared? Call the tool and reply with just the number."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 9 squared? Call the tool and reply with just the number."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "square",
+                "arguments": {
+                  "n": 9
+                },
+                "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "81",
+                "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "81"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "output": "81",
+          "inputParameters": {
+            "n": 9
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "06c555f155dec9e6",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "125ba8f984f88d4e",
+      "startTime": "2026-11-04T06:52:42.043Z",
+      "endTime": "2026-11-04T06:52:42.849Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a math assistant. Always call the `square` tool to compute squares; do not compute them yourself. After the tool result, reply with the integer result and nothing else."
+        },
+        {
+          "role": "user",
+          "content": "What is 9 squared? Call the tool and reply with just the number."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 9
+            },
+            "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "81",
+            "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+          }
+        }
+      ],
+      "output": "81",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 208.0,
+      "outputTokenCount": 4.0
+    },
+    {
+      "uuid": "d02c25fd4b4c45ef",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "6eb7f60a77d2840a",
+      "startTime": "2026-11-04T06:52:40.429Z",
+      "endTime": "2026-11-04T06:52:42.034Z",
+      "metadata": {
+        "prompt_variant": "B",
+        "purpose": "async_next_llm_only"
+      },
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a math assistant. Always call the `square` tool to compute squares; do not compute them yourself. After the tool result, reply with the integer result and nothing else."
+        },
+        {
+          "role": "user",
+          "content": "What is 9 squared? Call the tool and reply with just the number."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 9
+            },
+            "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "n": 9
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 181.0,
+      "outputTokenCount": 16.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "bfacbf46e6bea6ce",
+      "name": "square",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "5e76fb169df2963c",
+      "startTime": "2026-11-04T06:52:42.039Z",
+      "endTime": "2026-11-04T06:52:42.040Z",
+      "input": {
+        "n": 9
+      },
+      "output": "81",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-11-04T06:52:40.427Z",
+  "endTime": "2026-11-04T06:52:42.850Z",
+  "name": "langchain-async-next-llm-span",
+  "metadata": {
+    "test_type": "async_next_llm_span"
+  },
+  "tags": [
+    "langchain",
+    "async",
+    "next-llm"
+  ],
+  "environment": "development",
+  "threadId": "async-next-llm-span-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 9 squared? Call the tool and reply with just the number."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 9 squared? Call the tool and reply with just the number."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 9
+            },
+            "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "81",
+            "id": "call_AbGaFzXeHQG8Mw778BSioRPp"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "81"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "square",
+      "type": "FUNCTION",
+      "output": "81",
+      "inputParameters": {
+        "n": 9
+      }
+    }
+  ]
+}

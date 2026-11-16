@@ -1,0 +1,448 @@
+{
+  "uuid": "eca429070f2e7fde7e9f81a8f135ba42",
+  "baseSpans": [
+    {
+      "uuid": "14740463e6791e2e",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "3f586a855d9f7bec",
+      "startTime": "2026-11-04T06:52:41.557Z",
+      "endTime": "2026-11-04T06:52:42.555Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "calculate",
+                "arguments": {
+                  "expression": "15 * 3"
+                },
+                "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "45",
+                "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": "45"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "0af084e9ad3d2b9b",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "3f586a855d9f7bec",
+      "startTime": "2026-11-04T06:52:41.553Z",
+      "endTime": "2026-11-04T06:52:41.556Z",
+      "input": [
+        {
+          "name": "calculate",
+          "args": {
+            "expression": "15 * 3"
+          },
+          "id": "call_9m1POBtFpLBso5oiWtgh5O5K",
+          "type": "tool_call"
+        }
+      ],
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "45",
+                "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "output": "45",
+          "inputParameters": {
+            "expression": "15 * 3"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "f4b5661a02685bbb",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "3f586a855d9f7bec",
+      "startTime": "2026-11-04T06:52:40.430Z",
+      "endTime": "2026-11-04T06:52:41.551Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": ""
+                  },
+                  {
+                    "type": "tool_call",
+                    "name": "calculate",
+                    "arguments": {
+                      "expression": "15 * 3"
+                    },
+                    "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "3f586a855d9f7bec",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:52:40.429Z",
+      "endTime": "2026-11-04T06:52:42.555Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "calculate",
+                "arguments": {
+                  "expression": "15 * 3"
+                },
+                "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "45",
+                "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "45"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "output": "45",
+          "inputParameters": {
+            "expression": "15 * 3"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "019c5742194952b1",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "14740463e6791e2e",
+      "startTime": "2026-11-04T06:52:41.558Z",
+      "endTime": "2026-11-04T06:52:42.554Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool to evaluate math expressions."
+        },
+        {
+          "role": "user",
+          "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "expression": "15 * 3"
+            },
+            "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "45",
+            "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+          }
+        }
+      ],
+      "output": "45",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 195.0,
+      "outputTokenCount": 4.0
+    },
+    {
+      "uuid": "e11cf83967c41171",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "f4b5661a02685bbb",
+      "startTime": "2026-11-04T06:52:40.431Z",
+      "endTime": "2026-11-04T06:52:41.549Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool to evaluate math expressions."
+        },
+        {
+          "role": "user",
+          "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "expression": "15 * 3"
+            },
+            "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "expression": "15 * 3"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 165.0,
+      "outputTokenCount": 19.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "21131b47275e3905",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "0af084e9ad3d2b9b",
+      "startTime": "2026-11-04T06:52:41.554Z",
+      "endTime": "2026-11-04T06:52:41.555Z",
+      "input": {
+        "expression": "15 * 3"
+      },
+      "output": "45",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-11-04T06:52:40.429Z",
+  "endTime": "2026-11-04T06:52:42.555Z",
+  "name": "langchain-metric-collection",
+  "metadata": {
+    "test_type": "metric_collection"
+  },
+  "tags": [
+    "langchain",
+    "metric-collection"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the calculate tool to compute 15 * 3. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "expression": "15 * 3"
+            },
+            "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "45",
+            "id": "call_9m1POBtFpLBso5oiWtgh5O5K"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "45"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "output": "45",
+      "inputParameters": {
+        "expression": "15 * 3"
+      }
+    }
+  ]
+}

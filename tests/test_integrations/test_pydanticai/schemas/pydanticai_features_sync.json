@@ -1,0 +1,162 @@
+{
+  "uuid": "cb24dd9f38808ef18a5fe8ad65be7cc3",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "ee5ba666808e27c6",
+      "name": "evals_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:34.745Z",
+      "endTime": "2026-10-21T17:17:37.242Z",
+      "input": "Use the special_tool to process 'Sync Data'",
+      "output": "The query \"Sync Data\" has been processed.",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "output": "Processed: Sync Data",
+          "inputParameters": {
+            "query": "Sync Data"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "45650084d0f4a6ba",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "ee5ba666808e27c6",
+      "startTime": "2026-10-21T17:17:36.016Z",
+      "endTime": "2026-10-21T17:17:37.241Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Be concise."
+        },
+        {
+          "role": "user",
+          "content": "Use the special_tool to process 'Sync Data'"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_QvEomd7F1haCAmzutgsngEbF",
+            "name": "special_tool",
+            "arguments": "{\"query\":\"Sync Data\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_QvEomd7F1haCAmzutgsngEbF",
+            "name": "special_tool",
+            "result": "Processed: Sync Data"
+          }
+        }
+      ],
+      "output": "The query \"Sync Data\" has been processed.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 86.0,
+      "outputTokenCount": 12.0
+    },
+    {
+      "uuid": "6bfc09cecf20e713",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "ee5ba666808e27c6",
+      "startTime": "2026-10-21T17:17:34.746Z",
+      "endTime": "2026-10-21T17:17:36.013Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Be concise."
+        },
+        {
+          "role": "user",
+          "content": "Use the special_tool to process 'Sync Data'"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_QvEomd7F1haCAmzutgsngEbF",
+            "name": "special_tool",
+            "arguments": "{\"query\":\"Sync Data\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "Sync Data"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 61.0,
+      "outputTokenCount": 16.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "fea471025abcddca",
+      "name": "special_tool",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "ee5ba666808e27c6",
+      "startTime": "2026-10-21T17:17:36.015Z",
+      "endTime": "2026-10-21T17:17:36.015Z",
+      "input": {
+        "query": "Sync Data"
+      },
+      "output": "Processed: Sync Data",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:34.745Z",
+  "endTime": "2026-10-21T17:17:37.242Z",
+  "name": "pydanticai-full-features-sync",
+  "metadata": {
+    "env": "testing",
+    "priority": "high"
+  },
+  "tags": [
+    "pydanticai",
+    "features",
+    "sync"
+  ],
+  "environment": "development",
+  "threadId": "thread-sync-features-001",
+  "input": "Use the special_tool to process 'Sync Data'",
+  "output": "The query \"Sync Data\" has been processed.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "special_tool",
+      "type": "FUNCTION",
+      "output": "Processed: Sync Data",
+      "inputParameters": {
+        "query": "Sync Data"
+      }
+    }
+  ]
+}

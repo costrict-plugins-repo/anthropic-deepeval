@@ -1,0 +1,485 @@
+{
+  "uuid": "ee0c71211454cd9b165b6750540ae4d5",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "9944ffc7c2d44395",
+      "name": "parallel_weather_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:53.827Z",
+      "endTime": "2026-10-23T08:40:57.996Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo"
+                },
+                "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "New York"
+                },
+                "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "London"
+                },
+                "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Sunny, 72F",
+                "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cloudy, 58F",
+                "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Rainy, 52F",
+                "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Here are the weather results:\n\n- Tokyo: Sunny, 72F\n- New York: Cloudy, 58F\n- London: Rainy, 52F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Sunny, 72F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Cloudy, 58F",
+          "inputParameters": {
+            "city": "New York"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Rainy, 52F",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "600463d7210d15ae",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9944ffc7c2d44395",
+      "startTime": "2026-10-23T08:40:56.994Z",
+      "endTime": "2026-10-23T08:40:57.996Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "New York"
+            },
+            "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "London"
+            },
+            "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Sunny, 72F",
+            "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Cloudy, 58F",
+            "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Rainy, 52F",
+            "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+          }
+        }
+      ],
+      "output": "Here are the weather results:\n\n- Tokyo: Sunny, 72F\n- New York: Cloudy, 58F\n- London: Rainy, 52F",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 250.0,
+      "outputTokenCount": 38.0
+    },
+    {
+      "uuid": "ca4950137b61b6f1",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9944ffc7c2d44395",
+      "startTime": "2026-10-23T08:40:53.828Z",
+      "endTime": "2026-10-23T08:40:56.989Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "New York"
+            },
+            "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "London"
+            },
+            "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "New York"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 152.0,
+      "outputTokenCount": 62.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "16ceb28449312398",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9944ffc7c2d44395",
+      "startTime": "2026-10-23T08:40:56.994Z",
+      "endTime": "2026-10-23T08:40:56.994Z",
+      "input": {
+        "city": "London"
+      },
+      "output": "Rainy, 52F",
+      "integration": "LangChain"
+    },
+    {
+      "uuid": "9dbe829d516986b9",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9944ffc7c2d44395",
+      "startTime": "2026-10-23T08:40:56.993Z",
+      "endTime": "2026-10-23T08:40:56.993Z",
+      "input": {
+        "city": "New York"
+      },
+      "output": "Cloudy, 58F",
+      "integration": "LangChain"
+    },
+    {
+      "uuid": "8efb919436bf8c4d",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9944ffc7c2d44395",
+      "startTime": "2026-10-23T08:40:56.992Z",
+      "endTime": "2026-10-23T08:40:56.993Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "Sunny, 72F",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:40:53.827Z",
+  "endTime": "2026-10-23T08:40:57.996Z",
+  "name": "langchain-parallel-weather",
+  "metadata": {
+    "test_type": "parallel_weather"
+  },
+  "tags": [
+    "langchain",
+    "parallel",
+    "weather"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather for Tokyo, New York, and London. Make all calls. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "New York"
+            },
+            "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "London"
+            },
+            "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Sunny, 72F",
+            "id": "call_xuEbQvcH1QRXC2O2ZWwoIR92"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Cloudy, 58F",
+            "id": "call_24fj0nZF2XW53t69NJtjg4JK"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Rainy, 52F",
+            "id": "call_x5Fy2oUYvx3o15iy59ewdVRv"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Here are the weather results:\n\n- Tokyo: Sunny, 72F\n- New York: Cloudy, 58F\n- London: Rainy, 52F"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Rainy, 52F",
+      "inputParameters": {
+        "city": "London"
+      }
+    },
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Sunny, 72F",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    },
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Cloudy, 58F",
+      "inputParameters": {
+        "city": "New York"
+      }
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "uuid": "0d96bab4ff61cfd20d801bd4e8374c81",
+  "baseSpans": [
+    {
+      "uuid": "c7efea3d04da97d1",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "36d7597e605a0696",
+      "startTime": "2026-10-21T17:50:09.934Z",
+      "endTime": "2026-10-21T17:50:10.953Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "name": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "Sunny, 72F"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands"
+    },
+    {
+      "uuid": "baa3ee92fd2474a8",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "36d7597e605a0696",
+      "startTime": "2026-10-21T17:50:08.940Z",
+      "endTime": "2026-10-21T17:50:09.933Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "name": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "description": "Get the current weather for a city.",
+          "output": "Sunny, 72F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "36d7597e605a0696",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:50:08.940Z",
+      "endTime": "2026-10-21T17:50:10.954Z",
+      "input": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo.",
+      "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "description": "Get the current weather for a city.",
+          "output": "Sunny, 72F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "availableTools": [
+        "get_weather",
+        "get_time"
+      ],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "ea4bc8d37d71a2d9",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "c7efea3d04da97d1",
+      "startTime": "2026-10-21T17:50:09.934Z",
+      "endTime": "2026-10-21T17:50:10.953Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "name": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "Sunny, 72F"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.",
+      "integration": "Strands",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 146.0,
+      "outputTokenCount": 15.0
+    },
+    {
+      "uuid": "d13fd0a22710875c",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "baa3ee92fd2474a8",
+      "startTime": "2026-10-21T17:50:08.941Z",
+      "endTime": "2026-10-21T17:50:09.929Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_yHNrkDZGdz2FfU5sGvbZuJIk",
+                "name": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 119.0,
+      "outputTokenCount": 14.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "687fcc066423faa0",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "baa3ee92fd2474a8",
+      "startTime": "2026-10-21T17:50:09.931Z",
+      "endTime": "2026-10-21T17:50:09.933Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "Sunny, 72F",
+      "integration": "Strands",
+      "description": "Get the current weather for a city."
+    }
+  ],
+  "startTime": "2026-10-21T17:50:08.940Z",
+  "endTime": "2026-10-21T17:50:10.954Z",
+  "name": "strands-multiple-tools-weather",
+  "metadata": {
+    "test_type": "multiple_tools_weather"
+  },
+  "tags": [
+    "strands",
+    "multiple-tools",
+    "weather"
+  ],
+  "environment": "development",
+  "threadId": "multiple-tools-weather-123",
+  "input": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise. Use the get_weather tool exactly once to get the weather in Tokyo.",
+  "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.\n",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "description": "Get the current weather for a city.",
+      "output": "Sunny, 72F",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "uuid": "0f53bd4ca76769b37285b91b73c71ed1",
+  "baseSpans": [
+    {
+      "uuid": "d6f1e1e2258a6f6a",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "824498efd8e2c427",
+      "startTime": "2026-10-23T08:41:07.559Z",
+      "endTime": "2026-10-23T08:41:08.411Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Rust is a systems programming language focused on safety.",
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Rust is a systems programming language focused on safety."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "38e61bb5c454bda6",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "d6f1e1e2258a6f6a",
+      "startTime": "2026-10-23T08:41:08.410Z",
+      "endTime": "2026-10-23T08:41:08.410Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Rust is a systems programming language focused on safety.",
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Rust is a systems programming language focused on safety."
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "9ffdf48f1ae48149",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "824498efd8e2c427",
+      "startTime": "2026-10-23T08:41:07.558Z",
+      "endTime": "2026-10-23T08:41:07.559Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Rust is a systems programming language focused on safety.",
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "search_database",
+          "type": "FUNCTION",
+          "output": "Rust is a systems programming language focused on safety.",
+          "inputParameters": {
+            "query": "Rust (programming language)"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "e17204a1cf92d14a",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "824498efd8e2c427",
+      "startTime": "2026-10-23T08:41:06.510Z",
+      "endTime": "2026-10-23T08:41:07.557Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "39e0b62e1d761902",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e17204a1cf92d14a",
+      "startTime": "2026-10-23T08:41:07.557Z",
+      "endTime": "2026-10-23T08:41:07.557Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "824498efd8e2c427",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:06.509Z",
+      "endTime": "2026-10-23T08:41:08.411Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_database",
+                "arguments": {
+                  "query": "Rust (programming language)"
+                },
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Rust is a systems programming language focused on safety.",
+                "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Rust is a systems programming language focused on safety."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "search_database",
+          "type": "FUNCTION",
+          "output": "Rust is a systems programming language focused on safety.",
+          "inputParameters": {
+            "query": "Rust (programming language)"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "3c2f13815c36a4bf",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d6f1e1e2258a6f6a",
+      "startTime": "2026-10-23T08:41:07.560Z",
+      "endTime": "2026-10-23T08:41:08.410Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_database",
+            "arguments": {
+              "query": "Rust (programming language)"
+            },
+            "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Rust is a systems programming language focused on safety.",
+            "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+          }
+        }
+      ],
+      "output": "Rust is a systems programming language focused on safety.",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 220.0,
+      "outputTokenCount": 13.0
+    },
+    {
+      "uuid": "dc96532059fc2785",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "e17204a1cf92d14a",
+      "startTime": "2026-10-23T08:41:06.511Z",
+      "endTime": "2026-10-23T08:41:07.556Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_database",
+            "arguments": {
+              "query": "Rust (programming language)"
+            },
+            "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "search_database",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "Rust (programming language)"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 177.0,
+      "outputTokenCount": 22.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "39284282202360be",
+      "name": "search_database",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9ffdf48f1ae48149",
+      "startTime": "2026-10-23T08:41:07.558Z",
+      "endTime": "2026-10-23T08:41:07.559Z",
+      "input": {
+        "query": "Rust (programming language)"
+      },
+      "output": "Rust is a systems programming language focused on safety.",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:06.509Z",
+  "endTime": "2026-10-23T08:41:08.411Z",
+  "name": "langgraph-async-single",
+  "metadata": {
+    "test_type": "async_single"
+  },
+  "tags": [
+    "langgraph",
+    "async",
+    "single-tool"
+  ],
+  "environment": "development",
+  "threadId": "async-single-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_database tool to look up 'Rust (programming language)'. Do not ask clarification questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "search_database",
+            "arguments": {
+              "query": "Rust (programming language)"
+            },
+            "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Rust is a systems programming language focused on safety.",
+            "id": "call_aW2fQ1inJhl6ZZQ9WzBfqO9v"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Rust is a systems programming language focused on safety."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "search_database",
+      "type": "FUNCTION",
+      "output": "Rust is a systems programming language focused on safety.",
+      "inputParameters": {
+        "query": "Rust (programming language)"
+      }
+    }
+  ]
+}

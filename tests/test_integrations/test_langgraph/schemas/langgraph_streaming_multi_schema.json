@@ -1,0 +1,730 @@
+{
+  "uuid": "2e3a111622d0934088d3f1a7a1e9ca83",
+  "baseSpans": [
+    {
+      "uuid": "1fb3e2c61b2aaf29",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "853c7b4b42434ac5",
+      "startTime": "2026-10-23T08:41:34.109Z",
+      "endTime": "2026-10-23T08:41:37.574Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$245.60 (+2.1%)",
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "TSLA information:\n\n- Stock price: $245.60 (+2.1%)\n- Company info: Tesla Inc. \u2014 Electric vehicles, Market Cap: $780B"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "c762942b2f62e24a",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1fb3e2c61b2aaf29",
+      "startTime": "2026-10-23T08:41:37.574Z",
+      "endTime": "2026-10-23T08:41:37.574Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$245.60 (+2.1%)",
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "TSLA information:\n\n- Stock price: $245.60 (+2.1%)\n- Company info: Tesla Inc. \u2014 Electric vehicles, Market Cap: $780B"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "fdaee839d9813d26",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "853c7b4b42434ac5",
+      "startTime": "2026-10-23T08:41:34.107Z",
+      "endTime": "2026-10-23T08:41:34.109Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$245.60 (+2.1%)",
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$245.60 (+2.1%)",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "output": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "9a19f190fab15566",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "853c7b4b42434ac5",
+      "startTime": "2026-10-23T08:41:32.222Z",
+      "endTime": "2026-10-23T08:41:34.106Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "0cca03ea2f5bb6c0",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "9a19f190fab15566",
+      "startTime": "2026-10-23T08:41:34.106Z",
+      "endTime": "2026-10-23T08:41:34.106Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "853c7b4b42434ac5",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:32.221Z",
+      "endTime": "2026-10-23T08:41:37.575Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for TSLA"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "TSLA"
+                },
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$245.60 (+2.1%)",
+                "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+                "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "TSLA information:\n\n- Stock price: $245.60 (+2.1%)\n- Company info: Tesla Inc. \u2014 Electric vehicles, Market Cap: $780B"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$245.60 (+2.1%)",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "output": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "a7b4cb7bf9efe24b",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "1fb3e2c61b2aaf29",
+      "startTime": "2026-10-23T08:41:34.109Z",
+      "endTime": "2026-10-23T08:41:37.573Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Get the stock price and company info for TSLA"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "$245.60 (+2.1%)",
+            "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+            "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+          }
+        }
+      ],
+      "output": "TSLA information:\n\n- Stock price: $245.60 (+2.1%)\n- Company info: Tesla Inc. \u2014 Electric vehicles, Market Cap: $780B",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 252.0,
+      "outputTokenCount": 37.0
+    },
+    {
+      "uuid": "bc615699ff05f231",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9a19f190fab15566",
+      "startTime": "2026-10-23T08:41:32.222Z",
+      "endTime": "2026-10-23T08:41:34.105Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Get the stock price and company info for TSLA"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "TSLA"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 162.0,
+      "outputTokenCount": 51.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "8a58b2ea0630e966",
+      "name": "get_company_info",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "fdaee839d9813d26",
+      "startTime": "2026-10-23T08:41:34.108Z",
+      "endTime": "2026-10-23T08:41:34.108Z",
+      "input": {
+        "symbol": "TSLA"
+      },
+      "output": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "205df05fcfe2fb3c",
+      "name": "get_stock_price",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "fdaee839d9813d26",
+      "startTime": "2026-10-23T08:41:34.108Z",
+      "endTime": "2026-10-23T08:41:34.108Z",
+      "input": {
+        "symbol": "TSLA"
+      },
+      "output": "$245.60 (+2.1%)",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:32.221Z",
+  "endTime": "2026-10-23T08:41:37.575Z",
+  "name": "langgraph-streaming-multi",
+  "tags": [
+    "langgraph",
+    "streaming",
+    "multi-tool"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Get the stock price and company info for TSLA"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Get the stock price and company info for TSLA"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+          },
+          {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "TSLA"
+            },
+            "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "$245.60 (+2.1%)",
+            "id": "call_XKXvWkv5oTuuntVLtRzUuR9S"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+            "id": "call_2YkYnDjaBlNx35nh00l4FLVe"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "TSLA information:\n\n- Stock price: $245.60 (+2.1%)\n- Company info: Tesla Inc. \u2014 Electric vehicles, Market Cap: $780B"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_stock_price",
+      "type": "FUNCTION",
+      "output": "$245.60 (+2.1%)",
+      "inputParameters": {
+        "symbol": "TSLA"
+      }
+    },
+    {
+      "name": "get_company_info",
+      "type": "FUNCTION",
+      "output": "Tesla Inc. - Electric vehicles, Market Cap: $780B",
+      "inputParameters": {
+        "symbol": "TSLA"
+      }
+    }
+  ]
+}

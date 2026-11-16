@@ -1,0 +1,161 @@
+{
+  "uuid": "f80089f5005068da65949b471638149c",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "53e9baf8a6d28013",
+      "name": "multiple_tools_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:33.392Z",
+      "endTime": "2026-10-21T17:17:35.819Z",
+      "input": "Use the get_weather tool exactly once to get the weather in Tokyo.",
+      "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Sunny, 72F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "f0159899be87aad7",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "53e9baf8a6d28013",
+      "startTime": "2026-10-21T17:17:34.667Z",
+      "endTime": "2026-10-21T17:17:35.817Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool exactly once to get the weather in Tokyo."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_VwfTEM9STD1FmXHUcALQ9I5z",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_VwfTEM9STD1FmXHUcALQ9I5z",
+            "name": "get_weather",
+            "result": "Sunny, 72F"
+          }
+        }
+      ],
+      "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 201.0,
+      "outputTokenCount": 16.0
+    },
+    {
+      "uuid": "ae7eceafcfa941c7",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "53e9baf8a6d28013",
+      "startTime": "2026-10-21T17:17:33.393Z",
+      "endTime": "2026-10-21T17:17:34.662Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool exactly once to get the weather in Tokyo."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_VwfTEM9STD1FmXHUcALQ9I5z",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 176.0,
+      "outputTokenCount": 15.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "4769a51df9e498cb",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "53e9baf8a6d28013",
+      "startTime": "2026-10-21T17:17:34.665Z",
+      "endTime": "2026-10-21T17:17:34.665Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "Sunny, 72F",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:33.392Z",
+  "endTime": "2026-10-21T17:17:35.819Z",
+  "name": "pydanticai-multiple-tools-weather",
+  "metadata": {
+    "test_type": "multiple_tools_weather"
+  },
+  "tags": [
+    "pydanticai",
+    "multiple-tools",
+    "weather"
+  ],
+  "environment": "development",
+  "threadId": "multiple-tools-weather-123",
+  "input": "Use the get_weather tool exactly once to get the weather in Tokyo.",
+  "output": "The weather in Tokyo is sunny with a temperature of 72\u00b0F.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Sunny, 72F",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    }
+  ]
+}

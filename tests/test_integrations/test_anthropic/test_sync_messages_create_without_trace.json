@@ -1,0 +1,40 @@
+{
+  "uuid": "27f7dcb975031a9a34802bf0ba70486c",
+  "baseSpans": [],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "e98426d285bfd1ff",
+      "name": "chat claude-sonnet-4-5",
+      "status": "SUCCESS",
+      "type": "llm",
+      "startTime": "2026-10-21T14:45:12.602Z",
+      "endTime": "2026-10-21T14:45:14.861Z",
+      "input": [
+        {
+          "role": "System Instruction",
+          "content": "You are a helpful assistant. Always generate a string response."
+        },
+        {
+          "role": "user",
+          "content": "Hello, how are you?"
+        }
+      ],
+      "output": "Hello! I'm doing well, thank you for asking. I'm here and ready to help you with whatever you need. How are you doing today? Is there anything I can assist you with?",
+      "integration": "Anthropic",
+      "model": "claude-sonnet-4-5",
+      "provider": "Anthropic",
+      "inputTokenCount": 25.0,
+      "outputTokenCount": 43.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T14:45:12.602Z",
+  "endTime": "2026-10-21T14:45:14.861Z",
+  "name": "chat claude-sonnet-4-5",
+  "environment": "development",
+  "input": "Hello, how are you?",
+  "output": "Hello! I'm doing well, thank you for asking. I'm here and ready to help you with whatever you need. How are you doing today? Is there anything I can assist you with?",
+  "status": "SUCCESS"
+}

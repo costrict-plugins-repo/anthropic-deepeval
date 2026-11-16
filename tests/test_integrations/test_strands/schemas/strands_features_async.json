@@ -1,0 +1,276 @@
+{
+  "uuid": "ececc3be6de8fd5c70e461feab9de579",
+  "baseSpans": [
+    {
+      "uuid": "b2ba9a365c1ad399",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "be684958232e8bce",
+      "startTime": "2026-10-21T17:48:03.723Z",
+      "endTime": "2026-10-21T17:48:04.582Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'"
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "name": "special_tool",
+                "input": {
+                  "query": "Async Data"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "Processed: Async Data"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands"
+    },
+    {
+      "uuid": "62486031971fe026",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "be684958232e8bce",
+      "startTime": "2026-10-21T17:48:02.795Z",
+      "endTime": "2026-10-21T17:48:03.723Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "name": "special_tool",
+                "input": {
+                  "query": "Async Data"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "description": "A tool used by feature tests.\n\nMutates its own span via ``update_current_span(...)`` so the\nplaceholder push/pop pattern is exercised end-to-end. With the\nPOC migration this lands on ``confident.span.metric_collection``\nof THIS tool span (no longer a no-op as it was under the old\n``is_test_mode`` path).",
+          "output": "Processed: Async Data",
+          "inputParameters": {
+            "query": "Async Data"
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "be684958232e8bce",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:48:02.795Z",
+      "endTime": "2026-10-21T17:48:04.582Z",
+      "input": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'",
+      "output": "Processed: Async Data\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "description": "A tool used by feature tests.\n\nMutates its own span via ``update_current_span(...)`` so the\nplaceholder push/pop pattern is exercised end-to-end. With the\nPOC migration this lands on ``confident.span.metric_collection``\nof THIS tool span (no longer a no-op as it was under the old\n``is_test_mode`` path).",
+          "output": "Processed: Async Data",
+          "inputParameters": {
+            "query": "Async Data"
+          }
+        }
+      ],
+      "availableTools": [
+        "special_tool"
+      ],
+      "agentHandoffs": [],
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.5,
+          "success": false,
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gpt-5-nano"
+        }
+      ]
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "365c677d9174de33",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b2ba9a365c1ad399",
+      "startTime": "2026-10-21T17:48:03.723Z",
+      "endTime": "2026-10-21T17:48:04.580Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'"
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "name": "special_tool",
+                "input": {
+                  "query": "Async Data"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "Processed: Async Data"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "output": "Processed: Async Data",
+      "integration": "Strands",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 163.0,
+      "outputTokenCount": 5.0
+    },
+    {
+      "uuid": "39e0f5ad318de01c",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "62486031971fe026",
+      "startTime": "2026-10-21T17:48:02.795Z",
+      "endTime": "2026-10-21T17:48:03.721Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_EWqErFdzPFHSS8RT6hq90y4y",
+                "name": "special_tool",
+                "input": {
+                  "query": "Async Data"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "special_tool",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "Async Data"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 136.0,
+      "outputTokenCount": 15.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "5d416cba7831fbed",
+      "name": "special_tool",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "62486031971fe026",
+      "startTime": "2026-10-21T17:48:03.721Z",
+      "endTime": "2026-10-21T17:48:03.722Z",
+      "input": {
+        "query": "Async Data"
+      },
+      "output": "Processed: Async Data",
+      "integration": "Strands",
+      "description": "A tool used by feature tests.\n\nMutates its own span via ``update_current_span(...)`` so the\nplaceholder push/pop pattern is exercised end-to-end. With the\nPOC migration this lands on ``confident.span.metric_collection``\nof THIS tool span (no longer a no-op as it was under the old\n``is_test_mode`` path)."
+    }
+  ],
+  "startTime": "2026-10-21T17:48:02.795Z",
+  "endTime": "2026-10-21T17:48:04.582Z",
+  "name": "strands-full-features-async",
+  "metadata": {
+    "env": "testing_async",
+    "mode": "async"
+  },
+  "tags": [
+    "strands",
+    "features",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "thread-async-features-002",
+  "input": "You are a helpful assistant. Be concise. Use the special_tool to process 'Async Data'",
+  "output": "Processed: Async Data\n",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "special_tool",
+      "type": "FUNCTION",
+      "description": "A tool used by feature tests.\n\nMutates its own span via ``update_current_span(...)`` so the\nplaceholder push/pop pattern is exercised end-to-end. With the\nPOC migration this lands on ``confident.span.metric_collection``\nof THIS tool span (no longer a no-op as it was under the old\n``is_test_mode`` path).",
+      "output": "Processed: Async Data",
+      "inputParameters": {
+        "query": "Async Data"
+      }
+    }
+  ]
+}

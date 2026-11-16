@@ -1,0 +1,551 @@
+{
+  "uuid": "c5e26cd1a0644b343d498ca66d05ce97",
+  "baseSpans": [
+    {
+      "uuid": "2b2108a3cab6e953",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "69dc1cb154f8f4c5",
+      "startTime": "2026-10-23T08:41:52.297Z",
+      "endTime": "2026-10-23T08:41:53.020Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "25.0\u00b0C = 77.0\u00b0F",
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "25\u00b0C = 77\u00b0F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "165b9d86128e1a06",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2b2108a3cab6e953",
+      "startTime": "2026-10-23T08:41:53.019Z",
+      "endTime": "2026-10-23T08:41:53.020Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "25.0\u00b0C = 77.0\u00b0F",
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "25\u00b0C = 77\u00b0F"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "c3d1a1dec62ea1c4",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "69dc1cb154f8f4c5",
+      "startTime": "2026-10-23T08:41:52.295Z",
+      "endTime": "2026-10-23T08:41:52.296Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "25.0\u00b0C = 77.0\u00b0F",
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "convert_temperature",
+          "type": "FUNCTION",
+          "output": "25.0\u00b0C = 77.0\u00b0F",
+          "inputParameters": {
+            "celsius": 25
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "16c6836879c7572b",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "69dc1cb154f8f4c5",
+      "startTime": "2026-10-23T08:41:51.257Z",
+      "endTime": "2026-10-23T08:41:52.294Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "14573556a158e786",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "16c6836879c7572b",
+      "startTime": "2026-10-23T08:41:52.294Z",
+      "endTime": "2026-10-23T08:41:52.294Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "69dc1cb154f8f4c5",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:51.256Z",
+      "endTime": "2026-10-23T08:41:53.021Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "convert_temperature",
+                "arguments": {
+                  "celsius": 25
+                },
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "25.0\u00b0C = 77.0\u00b0F",
+                "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "25\u00b0C = 77\u00b0F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "convert_temperature",
+          "type": "FUNCTION",
+          "output": "25.0\u00b0C = 77.0\u00b0F",
+          "inputParameters": {
+            "celsius": 25
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e86b4fbb549a12df",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "2b2108a3cab6e953",
+      "startTime": "2026-10-23T08:41:52.297Z",
+      "endTime": "2026-10-23T08:41:53.018Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "convert_temperature",
+            "arguments": {
+              "celsius": 25
+            },
+            "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "25.0\u00b0C = 77.0\u00b0F",
+            "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+          }
+        }
+      ],
+      "output": "25\u00b0C = 77\u00b0F",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 187.0,
+      "outputTokenCount": 9.0
+    },
+    {
+      "uuid": "665187b0bf998243",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "16c6836879c7572b",
+      "startTime": "2026-10-23T08:41:51.257Z",
+      "endTime": "2026-10-23T08:41:52.292Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "convert_temperature",
+            "arguments": {
+              "celsius": 25
+            },
+            "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "convert_temperature",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "celsius": 25
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 148.0,
+      "outputTokenCount": 18.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "7bdb62b19509b8d2",
+      "name": "convert_temperature",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "c3d1a1dec62ea1c4",
+      "startTime": "2026-10-23T08:41:52.296Z",
+      "endTime": "2026-10-23T08:41:52.296Z",
+      "input": {
+        "celsius": 25
+      },
+      "output": "25.0\u00b0C = 77.0\u00b0F",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:51.256Z",
+  "endTime": "2026-10-23T08:41:53.021Z",
+  "name": "langgraph-metric-collection",
+  "metadata": {
+    "test_type": "metric_collection"
+  },
+  "tags": [
+    "langgraph",
+    "metric-collection"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the convert_temperature tool to convert 25 degrees Celsius to Fahrenheit. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "convert_temperature",
+            "arguments": {
+              "celsius": 25
+            },
+            "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "25.0\u00b0C = 77.0\u00b0F",
+            "id": "call_nAWBm00nGFOvWcrvJz2t7Ziw"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "25\u00b0C = 77\u00b0F"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "convert_temperature",
+      "type": "FUNCTION",
+      "output": "25.0\u00b0C = 77.0\u00b0F",
+      "inputParameters": {
+        "celsius": 25
+      }
+    }
+  ]
+}

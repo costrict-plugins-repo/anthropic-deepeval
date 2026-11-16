@@ -1,0 +1,209 @@
+{
+  "uuid": "b2b241a0ebb3784b74081395c18a91fd",
+  "baseSpans": [
+    {
+      "uuid": "450126f14b3989bf",
+      "name": "invocation",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T16:50:03.050Z",
+      "endTime": "2026-10-21T16:50:05.832Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "aa728f88e7a7870f",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "be689474e9404509",
+      "startTime": "2026-10-21T16:50:04.731Z",
+      "endTime": "2026-10-21T16:50:05.828Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "dfb5ff2f5993ef97",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "90aee3310c6c34c5",
+      "startTime": "2026-10-21T16:50:03.087Z",
+      "endTime": "2026-10-21T16:50:04.724Z",
+      "integration": "Google ADK"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "6146c2b5d7117376",
+      "name": "calculator_assistant",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "450126f14b3989bf",
+      "startTime": "2026-10-21T16:50:03.052Z",
+      "endTime": "2026-10-21T16:50:05.830Z",
+      "input": "What is 9 multiplied by 6?",
+      "output": "54",
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result.",
+          "output": 54,
+          "inputParameters": {
+            "b": 6,
+            "operation": "multiply",
+            "a": 9
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "be689474e9404509",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "6146c2b5d7117376",
+      "startTime": "2026-10-21T16:50:04.730Z",
+      "endTime": "2026-10-21T16:50:05.830Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise.\n\nYou are an agent. Your internal name is \"calculator_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "What is 9 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "b": 6,
+              "operation": "multiply",
+              "a": 9
+            }
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "response": {
+              "result": 54
+            }
+          }
+        }
+      ],
+      "output": "54",
+      "integration": "Google ADK",
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 197.0,
+      "outputTokenCount": 2.0
+    },
+    {
+      "uuid": "90aee3310c6c34c5",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "6146c2b5d7117376",
+      "startTime": "2026-10-21T16:50:03.086Z",
+      "endTime": "2026-10-21T16:50:04.729Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise.\n\nYou are an agent. Your internal name is \"calculator_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "What is 9 multiplied by 6?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "arguments": {
+              "b": 6,
+              "operation": "multiply",
+              "a": 9
+            }
+          }
+        }
+      ],
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "b": 6,
+            "operation": "multiply",
+            "a": 9
+          }
+        }
+      ],
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 160.0,
+      "outputTokenCount": 63.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "708b0c39f719ebad",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "6146c2b5d7117376",
+      "startTime": "2026-10-21T16:50:04.727Z",
+      "endTime": "2026-10-21T16:50:04.729Z",
+      "input": {
+        "b": 6,
+        "operation": "multiply",
+        "a": 9
+      },
+      "output": 54,
+      "integration": "Google ADK",
+      "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result."
+    }
+  ],
+  "startTime": "2026-10-21T16:50:03.050Z",
+  "endTime": "2026-10-21T16:50:05.832Z",
+  "name": "googleadk-async-tool-test",
+  "metadata": {
+    "test_type": "async_tool"
+  },
+  "tags": [
+    "googleadk",
+    "tool",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "async-tool-123",
+  "input": "What is 9 multiplied by 6?",
+  "output": "54",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "description": "Perform basic arithmetic operations.\n\nArgs:\n    operation: One of ``add``, ``subtract``, ``multiply``, ``divide``.\n    a: The first operand.\n    b: The second operand.\n\nReturns:\n    A dict with a ``result`` key holding the numeric result.",
+      "output": 54,
+      "inputParameters": {
+        "b": 6,
+        "operation": "multiply",
+        "a": 9
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "test_name_1",
+  "uuid": "99f19027-9219-48d5-9d88-cf3763ea954f",
+  "baseSpans": [],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "e9cdf97c392cefdd",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "99f19027-9219-48d5-9d88-cf3763ea954f",
+      "startTime": "2026-10-21T20:45:08.155Z",
+      "endTime": "2026-10-21T20:45:09.971Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Always generate a string response."
+        },
+        {
+          "role": "user",
+          "content": "Hello, how are you?"
+        }
+      ],
+      "output": "Hello! I'm just a program, but I'm here and ready to help you. How can I assist you today?",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 29,
+      "outputTokenCount": 24
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:08.154Z",
+  "endTime": "2026-10-21T20:45:09.971Z",
+  "environment": "testing",
+  "metadata": {
+    "test_metadata_1": "test_value_1"
+  },
+  "tags": [
+    "test_tag_1"
+  ],
+  "threadId": "test_thread_id_1",
+  "input": "Hello, how are you?",
+  "output": "Hello! I'm just a program, but I'm here and ready to help you. How can I assist you today?",
+  "status": "SUCCESS"
+}

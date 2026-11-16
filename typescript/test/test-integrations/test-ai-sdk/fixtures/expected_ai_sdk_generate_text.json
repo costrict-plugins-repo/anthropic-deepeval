@@ -1,0 +1,66 @@
+{
+  "name": "Vercel Text Gen Trace",
+  "uuid": "4f89b601-90a5-4737-a17f-cf07cec430f8",
+  "baseSpans": [
+    {
+      "uuid": "81fbfd8e805861e1",
+      "name": "step 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "4f89b601-90a5-4737-a17f-cf07cec430f8",
+      "parentUuid": "277b191bbcc4c5ad",
+      "startTime": "2026-10-21T20:45:40.441Z",
+      "endTime": "2026-10-21T20:45:41.806Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "277b191bbcc4c5ad",
+      "name": "invoke_agent gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "4f89b601-90a5-4737-a17f-cf07cec430f8",
+      "startTime": "2026-10-21T20:45:40.438Z",
+      "endTime": "2026-10-21T20:45:41.807Z",
+      "input": "Why is the sky blue? Answer in one short sentence.",
+      "output": "The sky is blue because shorter blue wavelengths of sunlight are scattered in all directions by the atmosphere.",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "b14849618fa73d7d",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "4f89b601-90a5-4737-a17f-cf07cec430f8",
+      "parentUuid": "81fbfd8e805861e1",
+      "startTime": "2026-10-21T20:45:40.441Z",
+      "endTime": "2026-10-21T20:45:41.804Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Why is the sky blue? Answer in one short sentence."
+        }
+      ],
+      "output": "The sky is blue because shorter blue wavelengths of sunlight are scattered in all directions by the atmosphere.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 19,
+      "outputTokenCount": 20
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:40.434Z",
+  "endTime": "2026-10-21T20:45:41.808Z",
+  "environment": "testing",
+  "tags": [
+    "vercel",
+    "generateText"
+  ],
+  "threadId": "vercel-thread-1",
+  "input": "Why is the sky blue? Answer in one short sentence.",
+  "output": "The sky is blue because shorter blue wavelengths of sunlight are scattered in all directions by the atmosphere.",
+  "status": "SUCCESS"
+}

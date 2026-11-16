@@ -1,0 +1,453 @@
+{
+  "uuid": "eedd528180a0225bfbe4282e5bb2cd2b",
+  "baseSpans": [
+    {
+      "uuid": "2bd3e0d189ef8cff",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "dab2e8406d5c2961",
+      "startTime": "2026-11-04T06:52:41.462Z",
+      "endTime": "2026-11-04T06:52:42.160Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 8 multiplied by 6?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "multiply",
+                "arguments": {
+                  "a": 8,
+                  "b": 6
+                },
+                "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "48",
+                "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": "8 multiplied by 6 is 48."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "967db394be05e689",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "dab2e8406d5c2961",
+      "startTime": "2026-11-04T06:52:41.458Z",
+      "endTime": "2026-11-04T06:52:41.461Z",
+      "input": [
+        {
+          "name": "multiply",
+          "args": {
+            "a": 8,
+            "b": 6
+          },
+          "id": "call_oVfDwEIhXQNXaaGWCseudvZt",
+          "type": "tool_call"
+        }
+      ],
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "48",
+                "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "48",
+          "inputParameters": {
+            "a": 8,
+            "b": 6
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "83fe244d05a87164",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "dab2e8406d5c2961",
+      "startTime": "2026-11-04T06:52:40.388Z",
+      "endTime": "2026-11-04T06:52:41.457Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 8 multiplied by 6?"
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": ""
+                  },
+                  {
+                    "type": "tool_call",
+                    "name": "multiply",
+                    "arguments": {
+                      "a": 8,
+                      "b": 6
+                    },
+                    "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "dab2e8406d5c2961",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:52:40.386Z",
+      "endTime": "2026-11-04T06:52:42.161Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 8 multiplied by 6?"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 8 multiplied by 6?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "multiply",
+                "arguments": {
+                  "a": 8,
+                  "b": 6
+                },
+                "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "48",
+                "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "8 multiplied by 6 is 48."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "48",
+          "inputParameters": {
+            "a": 8,
+            "b": 6
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4ddc14b8956881bb",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "2bd3e0d189ef8cff",
+      "startTime": "2026-11-04T06:52:41.463Z",
+      "endTime": "2026-11-04T06:52:42.159Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant that can perform mathematical operations."
+        },
+        {
+          "role": "user",
+          "content": "What is 8 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "multiply",
+            "arguments": {
+              "a": 8,
+              "b": 6
+            },
+            "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "48",
+            "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+          }
+        }
+      ],
+      "output": "8 multiplied by 6 is 48.",
+      "integration": "LangGraph",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 92.0,
+      "outputTokenCount": 10.0
+    },
+    {
+      "uuid": "0b689a6821389ce8",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "83fe244d05a87164",
+      "startTime": "2026-11-04T06:52:40.389Z",
+      "endTime": "2026-11-04T06:52:41.455Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant that can perform mathematical operations."
+        },
+        {
+          "role": "user",
+          "content": "What is 8 multiplied by 6?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "multiply",
+            "arguments": {
+              "a": 8,
+              "b": 6
+            },
+            "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "a": 8,
+            "b": 6
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 67.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d346e084e11d7dc3",
+      "name": "multiply",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "967db394be05e689",
+      "startTime": "2026-11-04T06:52:41.460Z",
+      "endTime": "2026-11-04T06:52:41.460Z",
+      "input": {
+        "a": 8,
+        "b": 6
+      },
+      "output": "48",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-11-04T06:52:40.386Z",
+  "endTime": "2026-11-04T06:52:42.161Z",
+  "name": "LangGraph",
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 8 multiplied by 6?"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 8 multiplied by 6?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "multiply",
+            "arguments": {
+              "a": 8,
+              "b": 6
+            },
+            "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "48",
+            "id": "call_oVfDwEIhXQNXaaGWCseudvZt"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "8 multiplied by 6 is 48."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "multiply",
+      "type": "FUNCTION",
+      "output": "48",
+      "inputParameters": {
+        "a": 8,
+        "b": 6
+      }
+    }
+  ]
+}

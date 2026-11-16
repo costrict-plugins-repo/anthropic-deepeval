@@ -1,0 +1,1303 @@
+{
+  "uuid": "9d8f7df13278ae1e9c380cf2809ecb87",
+  "baseSpans": [
+    {
+      "uuid": "cd2a8816583f0403",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "389bace52138628d",
+      "startTime": "2026-10-23T08:41:47.748Z",
+      "endTime": "2026-10-23T08:41:48.695Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "10% discount applied",
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Coupon **SAVE10** applied successfully \u2014 you now have a **10% discount** on your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "cc3d25ed11d7193b",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "cd2a8816583f0403",
+      "startTime": "2026-10-23T08:41:48.695Z",
+      "endTime": "2026-10-23T08:41:48.695Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "10% discount applied",
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Coupon **SAVE10** applied successfully \u2014 you now have a **10% discount** on your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "b7ebf4c2e154979c",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "389bace52138628d",
+      "startTime": "2026-10-23T08:41:47.745Z",
+      "endTime": "2026-10-23T08:41:47.746Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "10% discount applied",
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "apply_coupon",
+          "type": "FUNCTION",
+          "output": "10% discount applied",
+          "inputParameters": {
+            "code": "SAVE10"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "f1e3152b8e9771e6",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "389bace52138628d",
+      "startTime": "2026-10-23T08:41:46.691Z",
+      "endTime": "2026-10-23T08:41:47.744Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "e7cbbdbd5f06e364",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "f1e3152b8e9771e6",
+      "startTime": "2026-10-23T08:41:47.744Z",
+      "endTime": "2026-10-23T08:41:47.744Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "389bace52138628d",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:46.691Z",
+      "endTime": "2026-10-23T08:41:48.696Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 apples to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "apples",
+                  "quantity": 3
+                },
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x apples to cart",
+                "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Added 3 apples to your cart."
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use view_cart to show what I have"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "view_cart",
+                "arguments": {},
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+                "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apply coupon SAVE10"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "apply_coupon",
+                "arguments": {
+                  "code": "SAVE10"
+                },
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "10% discount applied",
+                "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Coupon **SAVE10** applied successfully \u2014 you now have a **10% discount** on your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "apply_coupon",
+          "type": "FUNCTION",
+          "output": "10% discount applied",
+          "inputParameters": {
+            "code": "SAVE10"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e767e61510b576ac",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "cd2a8816583f0403",
+      "startTime": "2026-10-23T08:41:47.748Z",
+      "endTime": "2026-10-23T08:41:48.694Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful shopping assistant. Help users:\n        - Add/remove items from their cart\n        - View their cart\n        - Apply coupons\n        - Complete checkout\n        Remember the conversation context."
+        },
+        {
+          "role": "user",
+          "content": "Add 3 apples to my cart"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "apples",
+              "quantity": 3
+            },
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Added 3x apples to cart",
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Added 3 apples to your cart."
+        },
+        {
+          "role": "user",
+          "content": "Use view_cart to show what I have"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "view_cart",
+            "arguments": {},
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+        },
+        {
+          "role": "user",
+          "content": "Apply coupon SAVE10"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "apply_coupon",
+            "arguments": {
+              "code": "SAVE10"
+            },
+            "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "10% discount applied",
+            "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+          }
+        }
+      ],
+      "output": "Coupon **SAVE10** applied successfully \u2014 you now have a **10% discount** on your cart.",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 452.0,
+      "outputTokenCount": 24.0
+    },
+    {
+      "uuid": "4aacb731067e0fe9",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "f1e3152b8e9771e6",
+      "startTime": "2026-10-23T08:41:46.692Z",
+      "endTime": "2026-10-23T08:41:47.744Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful shopping assistant. Help users:\n        - Add/remove items from their cart\n        - View their cart\n        - Apply coupons\n        - Complete checkout\n        Remember the conversation context."
+        },
+        {
+          "role": "user",
+          "content": "Add 3 apples to my cart"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "apples",
+              "quantity": 3
+            },
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Added 3x apples to cart",
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Added 3 apples to your cart."
+        },
+        {
+          "role": "user",
+          "content": "Use view_cart to show what I have"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "view_cart",
+            "arguments": {},
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+        },
+        {
+          "role": "user",
+          "content": "Apply coupon SAVE10"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "apply_coupon",
+            "arguments": {
+              "code": "SAVE10"
+            },
+            "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "apply_coupon",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "code": "SAVE10"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 419.0,
+      "outputTokenCount": 18.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d315857233df4cb8",
+      "name": "apply_coupon",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b7ebf4c2e154979c",
+      "startTime": "2026-10-23T08:41:47.746Z",
+      "endTime": "2026-10-23T08:41:47.746Z",
+      "input": {
+        "code": "SAVE10"
+      },
+      "output": "10% discount applied",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:46.691Z",
+  "endTime": "2026-10-23T08:41:48.696Z",
+  "name": "langgraph-multi-turn-3",
+  "tags": [
+    "langgraph",
+    "multi-turn",
+    "turn-3"
+  ],
+  "environment": "development",
+  "threadId": "test-shopping-001",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Apply coupon SAVE10"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Add 3 apples to my cart"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "apples",
+              "quantity": 3
+            },
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Added 3x apples to cart",
+            "id": "call_TDcWQOC908X2btiaSNyRBX8S"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Added 3 apples to your cart."
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use view_cart to show what I have"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "view_cart",
+            "arguments": {},
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Cart: 2x Apple, 1x Banana, 3x Orange",
+            "id": "call_VRHTzSrzpkflqXH1z9I9ErPm"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Your cart currently has:\n- 2x Apple\n- 1x Banana\n- 3x Orange"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Apply coupon SAVE10"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "apply_coupon",
+            "arguments": {
+              "code": "SAVE10"
+            },
+            "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "10% discount applied",
+            "id": "call_Jb5bf9Yepi4470Rn0dtHHV1F"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Coupon **SAVE10** applied successfully \u2014 you now have a **10% discount** on your cart."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "apply_coupon",
+      "type": "FUNCTION",
+      "output": "10% discount applied",
+      "inputParameters": {
+        "code": "SAVE10"
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "uuid": "f6377d81-9545-4c06-b7a5-47657129309d",
+  "baseSpans": [
+    {
+      "uuid": "a3884e6a2a33d827",
+      "name": "RetrieverQueryEngine.query",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T17:14:08.828Z",
+      "endTime": "2026-10-21T17:14:09.687Z",
+      "input": {
+        "str_or_query_bundle": "What is Python?"
+      },
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "a01508b03b5580cb",
+      "name": "RetrieverQueryEngine._query",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "a3884e6a2a33d827",
+      "startTime": "2026-10-21T17:14:08.829Z",
+      "endTime": "2026-10-21T17:14:09.686Z",
+      "input": {
+        "query_bundle": "What is Python?"
+      },
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "ac0453fa57353eb2",
+      "name": "CompactAndRefine.synthesize",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "a01508b03b5580cb",
+      "startTime": "2026-10-21T17:14:08.831Z",
+      "endTime": "2026-10-21T17:14:09.686Z",
+      "input": {
+        "query": "What is Python?"
+      },
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "1ac15952d6c7b151",
+      "name": "CompactAndRefine.get_response",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "ac0453fa57353eb2",
+      "startTime": "2026-10-21T17:14:08.832Z",
+      "endTime": "2026-10-21T17:14:09.686Z",
+      "input": {
+        "query_str": "What is Python?"
+      },
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "c5ee4ae7a019cbe9",
+      "name": "CompactAndRefine.get_response",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1ac15952d6c7b151",
+      "startTime": "2026-10-21T17:14:08.833Z",
+      "endTime": "2026-10-21T17:14:09.686Z",
+      "input": {
+        "query_str": "What is Python?"
+      },
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "8a46d91d5b943819",
+      "name": "DefaultRefineProgram.__call__",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "c5ee4ae7a019cbe9",
+      "startTime": "2026-10-21T17:14:08.834Z",
+      "endTime": "2026-10-21T17:14:09.686Z",
+      "input": {},
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "d01d3f888f609249",
+      "name": "TokenTextSplitter.split_text",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "c5ee4ae7a019cbe9",
+      "startTime": "2026-10-21T17:14:08.834Z",
+      "endTime": "2026-10-21T17:14:08.834Z",
+      "input": {},
+      "output": [
+        "Python is a high-level, interpreted programming language known for its simplicity."
+      ],
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "3492e7a68d26fe33",
+      "name": "TokenTextSplitter.split_text",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1ac15952d6c7b151",
+      "startTime": "2026-10-21T17:14:08.833Z",
+      "endTime": "2026-10-21T17:14:08.833Z",
+      "input": {},
+      "output": [
+        "Python is a high-level, interpreted programming language known for its simplicity."
+      ],
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "cd7c35c52dce5d26",
+      "name": "DeterministicRetriever._retrieve",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "fefb93c7bd0a0b3c",
+      "startTime": "2026-10-21T17:14:08.831Z",
+      "endTime": "2026-10-21T17:14:08.831Z",
+      "input": {
+        "query_bundle": "What is Python?"
+      },
+      "output": [
+        {
+          "text": "Python is a high-level, interpreted programming language known for its simplicity.",
+          "score": 0.95
+        }
+      ],
+      "integration": "LlamaIndex"
+    }
+  ],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "64c5db8511e3a064",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "8a46d91d5b943819",
+      "startTime": "2026-10-21T17:14:08.841Z",
+      "endTime": "2026-10-21T17:14:09.684Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are an expert Q&A system that is trusted around the world.\nAlways answer the query using the provided context information, and not prior knowledge.\nSome rules to follow:\n1. Never directly reference the given context in your answer.\n2. Avoid statements like 'Based on the context, ...' or 'The context information ...' or anything along those lines."
+        },
+        {
+          "role": "user",
+          "content": "Context information is below.\n---------------------\nPython is a high-level, interpreted programming language known for its simplicity.\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: What is Python?\nAnswer: "
+        }
+      ],
+      "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI",
+      "inputTokenCount": 128.0,
+      "outputTokenCount": 14.0
+    }
+  ],
+  "retrieverSpans": [
+    {
+      "uuid": "fefb93c7bd0a0b3c",
+      "name": "DeterministicRetriever.retrieve",
+      "status": "SUCCESS",
+      "type": "retriever",
+      "parentUuid": "a01508b03b5580cb",
+      "startTime": "2026-10-21T17:14:08.830Z",
+      "endTime": "2026-10-21T17:14:08.831Z",
+      "input": {
+        "str_or_query_bundle": "What is Python?"
+      },
+      "output": [
+        {
+          "text": "Python is a high-level, interpreted programming language known for its simplicity.",
+          "score": 0.95
+        }
+      ],
+      "integration": "LlamaIndex",
+      "retrievalContext": [
+        "Python is a high-level, interpreted programming language known for its simplicity."
+      ],
+      "embedder": ""
+    }
+  ],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:14:08.828Z",
+  "endTime": "2026-10-21T17:14:09.687Z",
+  "name": "llama_index_rag",
+  "tags": [
+    "llama_index",
+    "rag",
+    "python"
+  ],
+  "environment": "development",
+  "threadId": "llama_index_thread_id",
+  "input": "Context information is below.\n---------------------\nPython is a high-level, interpreted programming language known for its simplicity.\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: What is Python?\nAnswer: ",
+  "output": "Python is a high-level, interpreted programming language known for its simplicity.",
+  "status": "SUCCESS"
+}

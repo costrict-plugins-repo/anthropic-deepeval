@@ -1,0 +1,279 @@
+{
+  "uuid": "09a0195fae0885ea2e2167279011fe9d",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "58a870ec079f1399",
+      "name": "simple_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:00.404Z",
+      "endTime": "2026-10-23T08:41:04.388Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_web",
+                "arguments": {
+                  "query": "weather san francisco"
+                },
+                "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "San Francisco weather: Foggy, 58F, humidity 75%",
+                "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Weather in San Francisco: foggy, 58\u00b0F, humidity 75%."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "search_web",
+          "type": "FUNCTION",
+          "output": "San Francisco weather: Foggy, 58F, humidity 75%",
+          "inputParameters": {
+            "query": "weather san francisco"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "c767c35312969d77",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "58a870ec079f1399",
+      "startTime": "2026-10-23T08:41:01.495Z",
+      "endTime": "2026-10-23T08:41:04.384Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "weather san francisco"
+            },
+            "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "San Francisco weather: Foggy, 58F, humidity 75%",
+            "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+          }
+        }
+      ],
+      "output": "Weather in San Francisco: foggy, 58\u00b0F, humidity 75%.",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 191.0,
+      "outputTokenCount": 19.0
+    },
+    {
+      "uuid": "ae2e0751028238b6",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "58a870ec079f1399",
+      "startTime": "2026-10-23T08:41:00.407Z",
+      "endTime": "2026-10-23T08:41:01.492Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "weather san francisco"
+            },
+            "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "search_web",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "weather san francisco"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 145.0,
+      "outputTokenCount": 20.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "a64602ec5a9ffd31",
+      "name": "search_web",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "58a870ec079f1399",
+      "startTime": "2026-10-23T08:41:01.494Z",
+      "endTime": "2026-10-23T08:41:01.494Z",
+      "input": {
+        "query": "weather san francisco"
+      },
+      "output": "San Francisco weather: Foggy, 58F, humidity 75%",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:00.404Z",
+  "endTime": "2026-10-23T08:41:04.388Z",
+  "name": "langchain-agent-simple",
+  "metadata": {
+    "test_type": "agent"
+  },
+  "tags": [
+    "langchain",
+    "agent",
+    "simple"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_web tool to search for 'weather san francisco'. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "weather san francisco"
+            },
+            "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "San Francisco weather: Foggy, 58F, humidity 75%",
+            "id": "call_SGuwDBf6s7dKIqiyCaspzwZ4"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Weather in San Francisco: foggy, 58\u00b0F, humidity 75%."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "search_web",
+      "type": "FUNCTION",
+      "output": "San Francisco weather: Foggy, 58F, humidity 75%",
+      "inputParameters": {
+        "query": "weather san francisco"
+      }
+    }
+  ]
+}

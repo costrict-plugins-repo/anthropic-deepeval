@@ -1,0 +1,223 @@
+{
+  "uuid": "d15a8a667457c754084eaea0465ba46b",
+  "baseSpans": [
+    {
+      "uuid": "d6ceac78e2fd5612",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2c796daacdcfecbf",
+      "startTime": "2026-11-04T06:56:28.662Z",
+      "endTime": "2026-11-04T06:56:29.366Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": "<thinking>The user wants to know the result of multiplying 9 by 6. This is a simple arithmetic operation that can be done using the 'calculate' tool with the 'multiply' operation.</thinking>\n"
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "tooluse_8kVO6jnisbYc7vxy1NT9ek",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "54.0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands"
+    },
+    {
+      "uuid": "b08fcb9919778510",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2c796daacdcfecbf",
+      "startTime": "2026-11-04T06:56:27.295Z",
+      "endTime": "2026-11-04T06:56:28.662Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        }
+      ],
+      "output": "<thinking>The user wants to know the result of multiplying 9 by 6. This is a simple arithmetic operation that can be done using the 'calculate' tool with the 'multiply' operation.</thinking>\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.",
+          "output": "54.0",
+          "inputParameters": {
+            "a": 9,
+            "b": 6,
+            "operation": "multiply"
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "2c796daacdcfecbf",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:56:27.293Z",
+      "endTime": "2026-11-04T06:56:29.367Z",
+      "input": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?",
+      "output": "<thinking>The 'calculate' tool has returned the result of 9 multiplied by 6, which is 54.</thinking> The result of 9 multiplied by 6 is 54.\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.",
+          "output": "54.0",
+          "inputParameters": {
+            "a": 9,
+            "b": 6,
+            "operation": "multiply"
+          }
+        }
+      ],
+      "availableTools": [
+        "calculate"
+      ],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e8f800578744589f",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d6ceac78e2fd5612",
+      "startTime": "2026-11-04T06:56:28.662Z",
+      "endTime": "2026-11-04T06:56:29.366Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": "<thinking>The user wants to know the result of multiplying 9 by 6. This is a simple arithmetic operation that can be done using the 'calculate' tool with the 'multiply' operation.</thinking>\n"
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "tooluse_8kVO6jnisbYc7vxy1NT9ek",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "54.0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "output": "<thinking>The 'calculate' tool has returned the result of 9 multiplied by 6, which is 54.</thinking> The result of 9 multiplied by 6 is 54.",
+      "integration": "Strands",
+      "model": "amazon.nova-lite-v1:0",
+      "inputTokenCount": 553.0,
+      "outputTokenCount": 43.0
+    },
+    {
+      "uuid": "c3c86d4b412c8dcd",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b08fcb9919778510",
+      "startTime": "2026-11-04T06:56:27.295Z",
+      "endTime": "2026-11-04T06:56:28.657Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        }
+      ],
+      "output": "<thinking>The user wants to know the result of multiplying 9 by 6. This is a simple arithmetic operation that can be done using the 'calculate' tool with the 'multiply' operation.</thinking>\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "a": 9,
+            "b": 6,
+            "operation": "multiply"
+          }
+        }
+      ],
+      "model": "amazon.nova-lite-v1:0",
+      "inputTokenCount": 458.0,
+      "outputTokenCount": 66.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d0fae0fce6d01ae7",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b08fcb9919778510",
+      "startTime": "2026-11-04T06:56:28.660Z",
+      "endTime": "2026-11-04T06:56:28.661Z",
+      "input": {
+        "a": 9,
+        "b": 6,
+        "operation": "multiply"
+      },
+      "output": "54.0",
+      "integration": "Strands",
+      "description": "Perform basic arithmetic operations."
+    }
+  ],
+  "startTime": "2026-11-04T06:56:27.293Z",
+  "endTime": "2026-11-04T06:56:29.367Z",
+  "name": "agentcore-async-tool-test",
+  "metadata": {
+    "test_type": "async_tool"
+  },
+  "tags": [
+    "agentcore",
+    "tool",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "async-tool-123",
+  "input": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?",
+  "output": "<thinking>The 'calculate' tool has returned the result of 9 multiplied by 6, which is 54.</thinking> The result of 9 multiplied by 6 is 54.\n",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "description": "Perform basic arithmetic operations.",
+      "output": "54.0",
+      "inputParameters": {
+        "a": 9,
+        "b": 6,
+        "operation": "multiply"
+      }
+    }
+  ]
+}

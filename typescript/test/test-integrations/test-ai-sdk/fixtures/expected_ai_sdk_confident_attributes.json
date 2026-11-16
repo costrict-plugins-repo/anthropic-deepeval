@@ -1,0 +1,70 @@
+{
+  "name": "DeepEval Attributes Trace",
+  "uuid": "79f86797-164a-4ca1-ab7c-468d9b2965b3",
+  "baseSpans": [
+    {
+      "uuid": "edee7148d1cfcb02",
+      "name": "step 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "79f86797-164a-4ca1-ab7c-468d9b2965b3",
+      "parentUuid": "ae332677eb7e4d92",
+      "startTime": "2026-10-21T20:45:45.916Z",
+      "endTime": "2026-10-21T20:45:46.847Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "ae332677eb7e4d92",
+      "name": "invoke_agent gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "79f86797-164a-4ca1-ab7c-468d9b2965b3",
+      "startTime": "2026-10-21T20:45:45.915Z",
+      "endTime": "2026-10-21T20:45:46.847Z",
+      "input": "What is the capital of France?",
+      "output": "The capital of France is Paris.",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e9b5ebab06df747d",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "79f86797-164a-4ca1-ab7c-468d9b2965b3",
+      "parentUuid": "edee7148d1cfcb02",
+      "startTime": "2026-10-21T20:45:45.916Z",
+      "endTime": "2026-10-21T20:45:46.845Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "What is the capital of France?"
+        }
+      ],
+      "output": "The capital of France is Paris.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 14,
+      "outputTokenCount": 8
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:45.915Z",
+  "endTime": "2026-10-21T20:45:46.848Z",
+  "environment": "testing",
+  "metadata": {
+    "custom_business_id": "biz_789"
+  },
+  "tags": [
+    "vercel",
+    "attributes-test",
+    "evaluation"
+  ],
+  "threadId": "test_thread_id",
+  "input": "What is the capital of France?",
+  "output": "The capital of France is Paris.",
+  "status": "SUCCESS"
+}

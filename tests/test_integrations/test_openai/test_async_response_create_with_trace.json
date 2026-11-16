@@ -1,0 +1,47 @@
+{
+  "uuid": "a0e718d6-5188-4b03-8452-db8cd5fbb9e4",
+  "baseSpans": [],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "88de2befee5bbee8",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "startTime": "2026-10-21T14:05:35.894Z",
+      "endTime": "2026-10-21T14:05:38.710Z",
+      "input": [
+        {
+          "role": "System Instruction",
+          "content": "You are a helpful assistant. Always generate a string response."
+        },
+        {
+          "role": "user",
+          "content": "Hello, how are you?"
+        }
+      ],
+      "output": "Hello! I'm here and ready to help. How can I assist you today?",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI",
+      "inputTokenCount": 29.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T14:05:35.894Z",
+  "endTime": "2026-10-21T14:05:38.710Z",
+  "name": "test_name_1",
+  "metadata": {
+    "test_metadata_1": "test_value_1"
+  },
+  "tags": [
+    "test_tag_1"
+  ],
+  "environment": "development",
+  "threadId": "test_thread_id_1",
+  "input": "Hello, how are you?",
+  "output": "Hello! I'm here and ready to help. How can I assist you today?",
+  "status": "SUCCESS"
+}

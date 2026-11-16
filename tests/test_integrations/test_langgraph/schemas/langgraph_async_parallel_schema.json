@@ -1,0 +1,919 @@
+{
+  "uuid": "5449531ea956e76f5b340e21101347de",
+  "baseSpans": [
+    {
+      "uuid": "d39d9245497cf07d",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2297b45214c61291",
+      "startTime": "2026-10-23T08:41:15.203Z",
+      "endTime": "2026-10-23T08:41:16.147Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Sydney, Australia",
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Tokyo, Japan",
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tech stocks rally as AI boom continues",
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Here\u2019s the combined result:\n\n- Sydney, Australia: No weather data available\n- Tokyo, Japan: No weather data available\n- Tech news: Tech stocks rally as AI boom continues"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "f4a1bb0d30a7bc33",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "d39d9245497cf07d",
+      "startTime": "2026-10-23T08:41:16.146Z",
+      "endTime": "2026-10-23T08:41:16.147Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Sydney, Australia",
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Tokyo, Japan",
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tech stocks rally as AI boom continues",
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Here\u2019s the combined result:\n\n- Sydney, Australia: No weather data available\n- Tokyo, Japan: No weather data available\n- Tech news: Tech stocks rally as AI boom continues"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "02b10bb26aced322",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2297b45214c61291",
+      "startTime": "2026-10-23T08:41:15.200Z",
+      "endTime": "2026-10-23T08:41:15.202Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Sydney, Australia",
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Tokyo, Japan",
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tech stocks rally as AI boom continues",
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "No weather data for Sydney, Australia",
+          "inputParameters": {
+            "city": "Sydney, Australia"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "No weather data for Tokyo, Japan",
+          "inputParameters": {
+            "city": "Tokyo, Japan"
+          }
+        },
+        {
+          "name": "search_news",
+          "type": "FUNCTION",
+          "output": "Tech stocks rally as AI boom continues",
+          "inputParameters": {
+            "topic": "tech"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "9c9d909485990cd7",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2297b45214c61291",
+      "startTime": "2026-10-23T08:41:13.754Z",
+      "endTime": "2026-10-23T08:41:15.198Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "0d6c2f2530cbcbd2",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "9c9d909485990cd7",
+      "startTime": "2026-10-23T08:41:15.197Z",
+      "endTime": "2026-10-23T08:41:15.198Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "2297b45214c61291",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:13.753Z",
+      "endTime": "2026-10-23T08:41:16.147Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Sydney, Australia"
+                },
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo, Japan"
+                },
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              },
+              {
+                "type": "tool_call",
+                "name": "search_news",
+                "arguments": {
+                  "topic": "tech"
+                },
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Sydney, Australia",
+                "id": "call_52aby79m92jOcIPWXj0iVQBB"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "No weather data for Tokyo, Japan",
+                "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Tech stocks rally as AI boom continues",
+                "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Here\u2019s the combined result:\n\n- Sydney, Australia: No weather data available\n- Tokyo, Japan: No weather data available\n- Tech news: Tech stocks rally as AI boom continues"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "No weather data for Sydney, Australia",
+          "inputParameters": {
+            "city": "Sydney, Australia"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "No weather data for Tokyo, Japan",
+          "inputParameters": {
+            "city": "Tokyo, Japan"
+          }
+        },
+        {
+          "name": "search_news",
+          "type": "FUNCTION",
+          "output": "Tech stocks rally as AI boom continues",
+          "inputParameters": {
+            "topic": "tech"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "a3e9734960681534",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d39d9245497cf07d",
+      "startTime": "2026-10-23T08:41:15.203Z",
+      "endTime": "2026-10-23T08:41:16.146Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant with access to multiple tools.\n        When asked for multiple pieces of information, call all relevant tools in parallel."
+        },
+        {
+          "role": "user",
+          "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Sydney, Australia"
+            },
+            "id": "call_52aby79m92jOcIPWXj0iVQBB"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo, Japan"
+            },
+            "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_news",
+            "arguments": {
+              "topic": "tech"
+            },
+            "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "No weather data for Sydney, Australia",
+            "id": "call_52aby79m92jOcIPWXj0iVQBB"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "No weather data for Tokyo, Japan",
+            "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Tech stocks rally as AI boom continues",
+            "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+          }
+        }
+      ],
+      "output": "Here\u2019s the combined result:\n\n- Sydney, Australia: No weather data available\n- Tokyo, Japan: No weather data available\n- Tech news: Tech stocks rally as AI boom continues",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 403.0,
+      "outputTokenCount": 40.0
+    },
+    {
+      "uuid": "6093be22483b1da6",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9c9d909485990cd7",
+      "startTime": "2026-10-23T08:41:13.755Z",
+      "endTime": "2026-10-23T08:41:15.194Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful assistant with access to multiple tools.\n        When asked for multiple pieces of information, call all relevant tools in parallel."
+        },
+        {
+          "role": "user",
+          "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Sydney, Australia"
+            },
+            "id": "call_52aby79m92jOcIPWXj0iVQBB"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo, Japan"
+            },
+            "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_news",
+            "arguments": {
+              "topic": "tech"
+            },
+            "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Sydney, Australia"
+          }
+        },
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo, Japan"
+          }
+        },
+        {
+          "name": "search_news",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "topic": "tech"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 298.0,
+      "outputTokenCount": 65.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "9b90e41b5ec478a4",
+      "name": "search_news",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "02b10bb26aced322",
+      "startTime": "2026-10-23T08:41:15.202Z",
+      "endTime": "2026-10-23T08:41:15.202Z",
+      "input": {
+        "topic": "tech"
+      },
+      "output": "Tech stocks rally as AI boom continues",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "482be4f4faf79e95",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "02b10bb26aced322",
+      "startTime": "2026-10-23T08:41:15.201Z",
+      "endTime": "2026-10-23T08:41:15.201Z",
+      "input": {
+        "city": "Tokyo, Japan"
+      },
+      "output": "No weather data for Tokyo, Japan",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "2234f0ff90fcacc4",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "02b10bb26aced322",
+      "startTime": "2026-10-23T08:41:15.201Z",
+      "endTime": "2026-10-23T08:41:15.201Z",
+      "input": {
+        "city": "Sydney, Australia"
+      },
+      "output": "No weather data for Sydney, Australia",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:13.753Z",
+  "endTime": "2026-10-23T08:41:16.147Z",
+  "name": "langgraph-parallel-async",
+  "tags": [
+    "langgraph",
+    "parallel",
+    "async"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Do the following using tools (do not ask clarification questions):1) Call get_weather with location=Sydney, Australia. 2) Call get_weather with location=Tokyo, Japan. 3) Call search_news with topic=tech. Then return a short combined result."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Sydney, Australia"
+            },
+            "id": "call_52aby79m92jOcIPWXj0iVQBB"
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo, Japan"
+            },
+            "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+          },
+          {
+            "type": "tool_call",
+            "name": "search_news",
+            "arguments": {
+              "topic": "tech"
+            },
+            "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "No weather data for Sydney, Australia",
+            "id": "call_52aby79m92jOcIPWXj0iVQBB"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "No weather data for Tokyo, Japan",
+            "id": "call_Rfq7fT1w3dGvwe54AETg0VMv"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Tech stocks rally as AI boom continues",
+            "id": "call_Ho1M7WbnbnqDJXiagbIITP2o"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Here\u2019s the combined result:\n\n- Sydney, Australia: No weather data available\n- Tokyo, Japan: No weather data available\n- Tech news: Tech stocks rally as AI boom continues"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "No weather data for Sydney, Australia",
+      "inputParameters": {
+        "city": "Sydney, Australia"
+      }
+    },
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "No weather data for Tokyo, Japan",
+      "inputParameters": {
+        "city": "Tokyo, Japan"
+      }
+    },
+    {
+      "name": "search_news",
+      "type": "FUNCTION",
+      "output": "Tech stocks rally as AI boom continues",
+      "inputParameters": {
+        "topic": "tech"
+      }
+    }
+  ]
+}

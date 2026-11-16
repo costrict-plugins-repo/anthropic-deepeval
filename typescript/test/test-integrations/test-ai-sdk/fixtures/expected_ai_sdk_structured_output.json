@@ -1,0 +1,67 @@
+{
+  "name": "Vercel Object Gen Trace",
+  "uuid": "cb9ef256-e644-4e17-a797-b357568d7821",
+  "baseSpans": [
+    {
+      "uuid": "892da194d79f9bac",
+      "name": "step 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "cb9ef256-e644-4e17-a797-b357568d7821",
+      "parentUuid": "7b0efc8377476e57",
+      "startTime": "2026-10-21T20:45:43.903Z",
+      "endTime": "2026-10-21T20:45:45.911Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "7b0efc8377476e57",
+      "name": "invoke_agent gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "cb9ef256-e644-4e17-a797-b357568d7821",
+      "startTime": "2026-10-21T20:45:43.902Z",
+      "endTime": "2026-10-21T20:45:45.911Z",
+      "input": "Generate a recipe for a classic margarita. You MUST include EXACTLY 3 ingredients and EXACTLY 3 steps.",
+      "output": "{\"recipe\":{\"name\":\"Classic Margarita\",\"ingredients\":[{\"name\":\"Tequila\",\"amount\":\"2 oz\"},{\"name\":\"Lime juice\",\"amount\":\"1 oz\"},{\"name\":\"Triple sec\",\"amount\":\"1 oz\"}],\"steps\":[\"Rub the rim of a glass with a lime wedge and dip it in salt to coat.\",\"In a shaker, combine tequila, lime juice, and triple sec with ice. Shake well.\",\"Strain the mixture into the prepared glass filled with ice and garnish with a lime wedge.\"]}}",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "380c04cd0647f1d3",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "cb9ef256-e644-4e17-a797-b357568d7821",
+      "parentUuid": "892da194d79f9bac",
+      "startTime": "2026-10-21T20:45:43.903Z",
+      "endTime": "2026-10-21T20:45:45.910Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Generate a recipe for a classic margarita. You MUST include EXACTLY 3 ingredients and EXACTLY 3 steps."
+        }
+      ],
+      "output": "{\"recipe\":{\"name\":\"Classic Margarita\",\"ingredients\":[{\"name\":\"Tequila\",\"amount\":\"2 oz\"},{\"name\":\"Lime juice\",\"amount\":\"1 oz\"},{\"name\":\"Triple sec\",\"amount\":\"1 oz\"}],\"steps\":[\"Rub the rim of a glass with a lime wedge and dip it in salt to coat.\",\"In a shaker, combine tequila, lime juice, and triple sec with ice. Shake well.\",\"Strain the mixture into the prepared glass filled with ice and garnish with a lime wedge.\"]}}",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 104,
+      "outputTokenCount": 103
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:43.900Z",
+  "endTime": "2026-10-21T20:45:45.912Z",
+  "environment": "testing",
+  "tags": [
+    "vercel",
+    "generateText",
+    "structuredSchema"
+  ],
+  "threadId": "vercel-thread-3",
+  "input": "Generate a recipe for a classic margarita. You MUST include EXACTLY 3 ingredients and EXACTLY 3 steps.",
+  "output": "{\"recipe\":{\"name\":\"Classic Margarita\",\"ingredients\":[{\"name\":\"Tequila\",\"amount\":\"2 oz\"},{\"name\":\"Lime juice\",\"amount\":\"1 oz\"},{\"name\":\"Triple sec\",\"amount\":\"1 oz\"}],\"steps\":[\"Rub the rim of a glass with a lime wedge and dip it in salt to coat.\",\"In a shaker, combine tequila, lime juice, and triple sec with ice. Shake well.\",\"Strain the mixture into the prepared glass filled with ice and garnish with a lime wedge.\"]}}",
+  "status": "SUCCESS"
+}

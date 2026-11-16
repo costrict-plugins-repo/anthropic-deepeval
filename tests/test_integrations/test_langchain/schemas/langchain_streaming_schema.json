@@ -1,0 +1,279 @@
+{
+  "uuid": "df634ed6c4a46a22f277a95cfc9f5f70",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "b7fcb4ef04f8e69d",
+      "name": "streaming_single_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:46.086Z",
+      "endTime": "2026-10-23T08:40:49.180Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "MSFT"
+                },
+                "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$378.90 (+0.8%)",
+                "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "MSFT is trading at **$378.90** (**+0.8%**)."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$378.90 (+0.8%)",
+          "inputParameters": {
+            "symbol": "MSFT"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "5c9aaf3291582a32",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b7fcb4ef04f8e69d",
+      "startTime": "2026-10-23T08:40:47.002Z",
+      "endTime": "2026-10-23T08:40:49.180Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "MSFT"
+            },
+            "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "$378.90 (+0.8%)",
+            "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+          }
+        }
+      ],
+      "output": "MSFT is trading at **$378.90** (**+0.8%**).",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 191.0,
+      "outputTokenCount": 22.0
+    },
+    {
+      "uuid": "5ec2ec96f7c15f3c",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b7fcb4ef04f8e69d",
+      "startTime": "2026-10-23T08:40:46.087Z",
+      "endTime": "2026-10-23T08:40:47.000Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "MSFT"
+            },
+            "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "MSFT"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 151.0,
+      "outputTokenCount": 19.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "fcd51a6943abc5ba",
+      "name": "get_stock_price",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b7fcb4ef04f8e69d",
+      "startTime": "2026-10-23T08:40:47.001Z",
+      "endTime": "2026-10-23T08:40:47.002Z",
+      "input": {
+        "symbol": "MSFT"
+      },
+      "output": "$378.90 (+0.8%)",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:40:46.086Z",
+  "endTime": "2026-10-23T08:40:49.180Z",
+  "name": "langchain-streaming-sync",
+  "metadata": {
+    "test_type": "streaming_sync"
+  },
+  "tags": [
+    "langchain",
+    "streaming",
+    "sync"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_stock_price tool to get the stock price for MSFT. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "MSFT"
+            },
+            "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "$378.90 (+0.8%)",
+            "id": "call_YdkA1rXAcgA0Txe5EtsIzZRi"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "MSFT is trading at **$378.90** (**+0.8%**)."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_stock_price",
+      "type": "FUNCTION",
+      "output": "$378.90 (+0.8%)",
+      "inputParameters": {
+        "symbol": "MSFT"
+      }
+    }
+  ]
+}

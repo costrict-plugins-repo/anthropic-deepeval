@@ -1,0 +1,75 @@
+{
+  "uuid": "fa7f3f202b21d9f72b2841217a339908",
+  "baseSpans": [
+    {
+      "uuid": "29d777b7d8dcd146",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "614e1c2b43c59d31",
+      "startTime": "2026-11-04T06:52:56.906Z",
+      "endTime": "2026-11-04T06:52:57.976Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Be concise, reply with one short sentence only. Say hello in exactly three words."
+        }
+      ],
+      "integration": "Strands"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "614e1c2b43c59d31",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:52:56.906Z",
+      "endTime": "2026-11-04T06:52:57.976Z",
+      "input": "Be concise, reply with one short sentence only. Say hello in exactly three words.",
+      "output": "Hello, there, friend.\n",
+      "integration": "Strands",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4e8fcc56f3697a17",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "29d777b7d8dcd146",
+      "startTime": "2026-11-04T06:52:56.906Z",
+      "endTime": "2026-11-04T06:52:57.975Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Be concise, reply with one short sentence only. Say hello in exactly three words."
+        }
+      ],
+      "output": "Hello, there, friend.",
+      "integration": "Strands",
+      "model": "amazon.nova-lite-v1:0",
+      "inputTokenCount": 17.0,
+      "outputTokenCount": 7.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-11-04T06:52:56.906Z",
+  "endTime": "2026-11-04T06:52:57.976Z",
+  "name": "agentcore-simple-test",
+  "metadata": {
+    "test_type": "simple"
+  },
+  "tags": [
+    "agentcore",
+    "simple"
+  ],
+  "environment": "development",
+  "threadId": "simple-123",
+  "input": "Be concise, reply with one short sentence only. Say hello in exactly three words.",
+  "output": "Hello, there, friend.\n",
+  "status": "SUCCESS"
+}

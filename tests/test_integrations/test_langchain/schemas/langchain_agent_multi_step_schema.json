@@ -1,0 +1,276 @@
+{
+  "uuid": "69872ddc07d35050dae6c539325045d2",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "e09f8e0d72b8e0cb",
+      "name": "multi_step_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:00.659Z",
+      "endTime": "2026-10-23T08:41:02.715Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "search_web",
+                "arguments": {
+                  "query": "stock price apple"
+                },
+                "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Apple (AAPL) stock: $178.50, up 1.2%",
+                "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Apple (AAPL) stock: $178.50, up 1.2%"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "search_web",
+          "type": "FUNCTION",
+          "output": "Apple (AAPL) stock: $178.50, up 1.2%",
+          "inputParameters": {
+            "query": "stock price apple"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "3c78e511870d7e21",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "e09f8e0d72b8e0cb",
+      "startTime": "2026-10-23T08:41:01.761Z",
+      "endTime": "2026-10-23T08:41:02.713Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "stock price apple"
+            },
+            "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Apple (AAPL) stock: $178.50, up 1.2%",
+            "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+          }
+        }
+      ],
+      "output": "Apple (AAPL) stock: $178.50, up 1.2%",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 209.0,
+      "outputTokenCount": 21.0
+    },
+    {
+      "uuid": "61f0381eafd3b7dc",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "e09f8e0d72b8e0cb",
+      "startTime": "2026-10-23T08:41:00.660Z",
+      "endTime": "2026-10-23T08:41:01.757Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "stock price apple"
+            },
+            "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "search_web",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "query": "stock price apple"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 161.0,
+      "outputTokenCount": 19.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "2e9dd5e6e659597d",
+      "name": "search_web",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "e09f8e0d72b8e0cb",
+      "startTime": "2026-10-23T08:41:01.760Z",
+      "endTime": "2026-10-23T08:41:01.761Z",
+      "input": {
+        "query": "stock price apple"
+      },
+      "output": "Apple (AAPL) stock: $178.50, up 1.2%",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:00.659Z",
+  "endTime": "2026-10-23T08:41:02.715Z",
+  "name": "langchain-agent-multi-step",
+  "tags": [
+    "langchain",
+    "agent",
+    "multi-step"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the search_web tool to search for 'stock price apple'. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "search_web",
+            "arguments": {
+              "query": "stock price apple"
+            },
+            "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Apple (AAPL) stock: $178.50, up 1.2%",
+            "id": "call_oYVbYmnTOw68fx8IFuR0YBIc"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Apple (AAPL) stock: $178.50, up 1.2%"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "search_web",
+      "type": "FUNCTION",
+      "output": "Apple (AAPL) stock: $178.50, up 1.2%",
+      "inputParameters": {
+        "query": "stock price apple"
+      }
+    }
+  ]
+}

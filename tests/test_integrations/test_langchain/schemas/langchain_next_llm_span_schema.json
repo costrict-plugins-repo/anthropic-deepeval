@@ -1,0 +1,453 @@
+{
+  "uuid": "f98287b681b14b0dc2b283fa2620b3ff",
+  "baseSpans": [
+    {
+      "uuid": "f28f649eb866f25d",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1b99337806784656",
+      "startTime": "2026-11-04T06:52:45.127Z",
+      "endTime": "2026-11-04T06:52:46.192Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 7 squared? Call the tool and reply with just the number."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "square",
+                "arguments": {
+                  "n": 7
+                },
+                "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "49",
+                "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": "49"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "91e84f7e8874851f",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1b99337806784656",
+      "startTime": "2026-11-04T06:52:45.126Z",
+      "endTime": "2026-11-04T06:52:45.127Z",
+      "input": [
+        {
+          "name": "square",
+          "args": {
+            "n": 7
+          },
+          "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7",
+          "type": "tool_call"
+        }
+      ],
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "49",
+                "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "output": "49",
+          "inputParameters": {
+            "n": 7
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "898962148d800173",
+      "name": "model",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1b99337806784656",
+      "startTime": "2026-11-04T06:52:44.128Z",
+      "endTime": "2026-11-04T06:52:45.125Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 7 squared? Call the tool and reply with just the number."
+              }
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "type": "command",
+          "update": {
+            "messages": [
+              {
+                "role": "assistant",
+                "parts": [
+                  {
+                    "type": "text",
+                    "content": ""
+                  },
+                  {
+                    "type": "tool_call",
+                    "name": "square",
+                    "arguments": {
+                      "n": 7
+                    },
+                    "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "1b99337806784656",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-11-04T06:52:44.127Z",
+      "endTime": "2026-11-04T06:52:46.194Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 7 squared? Call the tool and reply with just the number."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What is 7 squared? Call the tool and reply with just the number."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "square",
+                "arguments": {
+                  "n": 7
+                },
+                "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "49",
+                "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "49"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "output": "49",
+          "inputParameters": {
+            "n": 7
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "b504cd6a8f70bbea",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "f28f649eb866f25d",
+      "startTime": "2026-11-04T06:52:45.128Z",
+      "endTime": "2026-11-04T06:52:46.191Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a math assistant. Always call the `square` tool to compute squares; do not compute them yourself. After the tool result, reply with the integer result and nothing else."
+        },
+        {
+          "role": "user",
+          "content": "What is 7 squared? Call the tool and reply with just the number."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 7
+            },
+            "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "49",
+            "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+          }
+        }
+      ],
+      "output": "49",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 208.0,
+      "outputTokenCount": 4.0
+    },
+    {
+      "uuid": "54851b7f352c9200",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "898962148d800173",
+      "startTime": "2026-11-04T06:52:44.129Z",
+      "endTime": "2026-11-04T06:52:45.124Z",
+      "metadata": {
+        "prompt_variant": "B",
+        "purpose": "next_llm_only"
+      },
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a math assistant. Always call the `square` tool to compute squares; do not compute them yourself. After the tool result, reply with the integer result and nothing else."
+        },
+        {
+          "role": "user",
+          "content": "What is 7 squared? Call the tool and reply with just the number."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 7
+            },
+            "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "square",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "n": 7
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 181.0,
+      "outputTokenCount": 16.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "7fa7e45a3ad42bce",
+      "name": "square",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "91e84f7e8874851f",
+      "startTime": "2026-11-04T06:52:45.126Z",
+      "endTime": "2026-11-04T06:52:45.127Z",
+      "input": {
+        "n": 7
+      },
+      "output": "49",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-11-04T06:52:44.127Z",
+  "endTime": "2026-11-04T06:52:46.194Z",
+  "name": "langchain-next-llm-span",
+  "metadata": {
+    "test_type": "next_llm_span"
+  },
+  "tags": [
+    "langchain",
+    "next-llm"
+  ],
+  "environment": "development",
+  "threadId": "next-llm-span-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 7 squared? Call the tool and reply with just the number."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What is 7 squared? Call the tool and reply with just the number."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "square",
+            "arguments": {
+              "n": 7
+            },
+            "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "49",
+            "id": "call_SXm2wwuwDvLjxrSQH3dwBiK7"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "49"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "square",
+      "type": "FUNCTION",
+      "output": "49",
+      "inputParameters": {
+        "n": 7
+      }
+    }
+  ]
+}

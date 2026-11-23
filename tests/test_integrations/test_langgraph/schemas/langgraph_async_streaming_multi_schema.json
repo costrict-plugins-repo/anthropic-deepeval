@@ -1,0 +1,731 @@
+{
+  "uuid": "0f433641a5f862b567c26a9630a6a36e",
+  "baseSpans": [
+    {
+      "uuid": "4369e7422762fc19",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "bac9ff0b868850bc",
+      "startTime": "2026-10-23T08:41:11.838Z",
+      "endTime": "2026-10-23T08:41:14.893Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$185.20 (-0.3%)",
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "AMZN:\n- Stock price: $185.20 (-0.3%)\n- Company info: Amazon.com Inc. \u2014 E-commerce/Cloud, Market Cap: $1.9T"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "d286bf692c2b386a",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "4369e7422762fc19",
+      "startTime": "2026-10-23T08:41:14.893Z",
+      "endTime": "2026-10-23T08:41:14.893Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$185.20 (-0.3%)",
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "AMZN:\n- Stock price: $185.20 (-0.3%)\n- Company info: Amazon.com Inc. \u2014 E-commerce/Cloud, Market Cap: $1.9T"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "9572d3e2855adc37",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "bac9ff0b868850bc",
+      "startTime": "2026-10-23T08:41:11.829Z",
+      "endTime": "2026-10-23T08:41:11.837Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$185.20 (-0.3%)",
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$185.20 (-0.3%)",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "output": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "ee6dd8b51ca532c8",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "bac9ff0b868850bc",
+      "startTime": "2026-10-23T08:41:10.480Z",
+      "endTime": "2026-10-23T08:41:11.825Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "6213c7ffeb279b50",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "ee6dd8b51ca532c8",
+      "startTime": "2026-10-23T08:41:11.823Z",
+      "endTime": "2026-10-23T08:41:11.824Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "bac9ff0b868850bc",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:10.479Z",
+      "endTime": "2026-10-23T08:41:14.894Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Get the stock price and company info for AMZN"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_stock_price",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              },
+              {
+                "type": "tool_call",
+                "name": "get_company_info",
+                "arguments": {
+                  "symbol": "AMZN"
+                },
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "$185.20 (-0.3%)",
+                "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+                "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "AMZN:\n- Stock price: $185.20 (-0.3%)\n- Company info: Amazon.com Inc. \u2014 E-commerce/Cloud, Market Cap: $1.9T"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "output": "$185.20 (-0.3%)",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "output": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "cb220b1fe90393ac",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "4369e7422762fc19",
+      "startTime": "2026-10-23T08:41:11.839Z",
+      "endTime": "2026-10-23T08:41:14.892Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Get the stock price and company info for AMZN"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "$185.20 (-0.3%)",
+            "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+            "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+          }
+        }
+      ],
+      "output": "AMZN:\n- Stock price: $185.20 (-0.3%)\n- Company info: Amazon.com Inc. \u2014 E-commerce/Cloud, Market Cap: $1.9T",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 257.0,
+      "outputTokenCount": 41.0
+    },
+    {
+      "uuid": "1ed6a2bf7b647b85",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "ee6dd8b51ca532c8",
+      "startTime": "2026-10-23T08:41:10.481Z",
+      "endTime": "2026-10-23T08:41:11.819Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Get the stock price and company info for AMZN"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_stock_price",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        },
+        {
+          "name": "get_company_info",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "symbol": "AMZN"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 162.0,
+      "outputTokenCount": 51.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "a8dbe863cef4a8ea",
+      "name": "get_company_info",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9572d3e2855adc37",
+      "startTime": "2026-10-23T08:41:11.836Z",
+      "endTime": "2026-10-23T08:41:11.836Z",
+      "input": {
+        "symbol": "AMZN"
+      },
+      "output": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "d53094a2e5adf3bc",
+      "name": "get_stock_price",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9572d3e2855adc37",
+      "startTime": "2026-10-23T08:41:11.834Z",
+      "endTime": "2026-10-23T08:41:11.835Z",
+      "input": {
+        "symbol": "AMZN"
+      },
+      "output": "$185.20 (-0.3%)",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:10.479Z",
+  "endTime": "2026-10-23T08:41:14.894Z",
+  "name": "langgraph-streaming-async-multi",
+  "tags": [
+    "langgraph",
+    "streaming",
+    "async",
+    "multi"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Get the stock price and company info for AMZN"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Get the stock price and company info for AMZN"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_stock_price",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+          },
+          {
+            "type": "tool_call",
+            "name": "get_company_info",
+            "arguments": {
+              "symbol": "AMZN"
+            },
+            "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "$185.20 (-0.3%)",
+            "id": "call_1ipt0dTFCRDrrddP9vdLIk1l"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+            "id": "call_CmIDLiLWwcWCP9CFeGoXNprw"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "AMZN:\n- Stock price: $185.20 (-0.3%)\n- Company info: Amazon.com Inc. \u2014 E-commerce/Cloud, Market Cap: $1.9T"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_company_info",
+      "type": "FUNCTION",
+      "output": "Amazon.com Inc. - E-commerce/Cloud, Market Cap: $1.9T",
+      "inputParameters": {
+        "symbol": "AMZN"
+      }
+    },
+    {
+      "name": "get_stock_price",
+      "type": "FUNCTION",
+      "output": "$185.20 (-0.3%)",
+      "inputParameters": {
+        "symbol": "AMZN"
+      }
+    }
+  ]
+}

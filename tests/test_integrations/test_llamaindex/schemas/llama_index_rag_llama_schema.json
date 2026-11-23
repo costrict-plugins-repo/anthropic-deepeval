@@ -1,0 +1,199 @@
+{
+  "uuid": "dbbc7c88-7e94-4a86-af4e-e262b9b0c082",
+  "baseSpans": [
+    {
+      "uuid": "63bf2f08685d3fcb",
+      "name": "RetrieverQueryEngine.query",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T17:14:09.706Z",
+      "endTime": "2026-10-21T17:14:10.652Z",
+      "input": {
+        "str_or_query_bundle": "What is LlamaIndex?"
+      },
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "e50ce9f58e826ab9",
+      "name": "RetrieverQueryEngine._query",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "63bf2f08685d3fcb",
+      "startTime": "2026-10-21T17:14:09.706Z",
+      "endTime": "2026-10-21T17:14:10.651Z",
+      "input": {
+        "query_bundle": "What is LlamaIndex?"
+      },
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "ea471b113ff3139f",
+      "name": "CompactAndRefine.synthesize",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e50ce9f58e826ab9",
+      "startTime": "2026-10-21T17:14:09.707Z",
+      "endTime": "2026-10-21T17:14:10.651Z",
+      "input": {
+        "query": "What is LlamaIndex?"
+      },
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "77d18a2bbed64b4f",
+      "name": "CompactAndRefine.get_response",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "ea471b113ff3139f",
+      "startTime": "2026-10-21T17:14:09.708Z",
+      "endTime": "2026-10-21T17:14:10.651Z",
+      "input": {
+        "query_str": "What is LlamaIndex?"
+      },
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "4bba82486eabd082",
+      "name": "CompactAndRefine.get_response",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "77d18a2bbed64b4f",
+      "startTime": "2026-10-21T17:14:09.710Z",
+      "endTime": "2026-10-21T17:14:10.651Z",
+      "input": {
+        "query_str": "What is LlamaIndex?"
+      },
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "1f3e8e2d008fc4ce",
+      "name": "DefaultRefineProgram.__call__",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "4bba82486eabd082",
+      "startTime": "2026-10-21T17:14:09.710Z",
+      "endTime": "2026-10-21T17:14:10.650Z",
+      "input": {},
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "48eab66b2ba80f1b",
+      "name": "TokenTextSplitter.split_text",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "4bba82486eabd082",
+      "startTime": "2026-10-21T17:14:09.710Z",
+      "endTime": "2026-10-21T17:14:09.710Z",
+      "input": {},
+      "output": [
+        "LlamaIndex is a data framework for your LLM applications."
+      ],
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "eea08822c01a7259",
+      "name": "TokenTextSplitter.split_text",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "77d18a2bbed64b4f",
+      "startTime": "2026-10-21T17:14:09.709Z",
+      "endTime": "2026-10-21T17:14:09.709Z",
+      "input": {},
+      "output": [
+        "LlamaIndex is a data framework for your LLM applications."
+      ],
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "4ca352a3e53d7d7f",
+      "name": "DeterministicRetriever._retrieve",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2a81a27a90bfaa45",
+      "startTime": "2026-10-21T17:14:09.707Z",
+      "endTime": "2026-10-21T17:14:09.707Z",
+      "input": {
+        "query_bundle": "What is LlamaIndex?"
+      },
+      "output": [
+        {
+          "text": "LlamaIndex is a data framework for your LLM applications.",
+          "score": 0.98
+        }
+      ],
+      "integration": "LlamaIndex"
+    }
+  ],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "57d97ac27239a51b",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "1f3e8e2d008fc4ce",
+      "startTime": "2026-10-21T17:14:09.711Z",
+      "endTime": "2026-10-21T17:14:10.649Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are an expert Q&A system that is trusted around the world.\nAlways answer the query using the provided context information, and not prior knowledge.\nSome rules to follow:\n1. Never directly reference the given context in your answer.\n2. Avoid statements like 'Based on the context, ...' or 'The context information ...' or anything along those lines."
+        },
+        {
+          "role": "user",
+          "content": "Context information is below.\n---------------------\nLlamaIndex is a data framework for your LLM applications.\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: What is LlamaIndex?\nAnswer: "
+        }
+      ],
+      "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI",
+      "inputTokenCount": 129.0,
+      "outputTokenCount": 20.0
+    }
+  ],
+  "retrieverSpans": [
+    {
+      "uuid": "2a81a27a90bfaa45",
+      "name": "DeterministicRetriever.retrieve",
+      "status": "SUCCESS",
+      "type": "retriever",
+      "parentUuid": "e50ce9f58e826ab9",
+      "startTime": "2026-10-21T17:14:09.707Z",
+      "endTime": "2026-10-21T17:14:09.707Z",
+      "input": {
+        "str_or_query_bundle": "What is LlamaIndex?"
+      },
+      "output": [
+        {
+          "text": "LlamaIndex is a data framework for your LLM applications.",
+          "score": 0.98
+        }
+      ],
+      "integration": "LlamaIndex",
+      "retrievalContext": [
+        "LlamaIndex is a data framework for your LLM applications."
+      ],
+      "embedder": ""
+    }
+  ],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:14:09.705Z",
+  "endTime": "2026-10-21T17:14:10.652Z",
+  "name": "llama_index_rag",
+  "tags": [
+    "llama_index",
+    "rag",
+    "llama"
+  ],
+  "environment": "development",
+  "threadId": "llama_index_thread_id",
+  "input": "Context information is below.\n---------------------\nLlamaIndex is a data framework for your LLM applications.\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: What is LlamaIndex?\nAnswer: ",
+  "output": "LlamaIndex is a data framework designed for use in LLM (Large Language Model) applications.",
+  "status": "SUCCESS"
+}

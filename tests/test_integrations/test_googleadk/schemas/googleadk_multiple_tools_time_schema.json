@@ -1,0 +1,203 @@
+{
+  "uuid": "65b2353f3bf28eb5515a751ca15ee7a2",
+  "baseSpans": [
+    {
+      "uuid": "94e9962c34c18234",
+      "name": "invocation",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T16:45:22.015Z",
+      "endTime": "2026-10-21T16:45:25.142Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "61dbea36d92133b3",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "3a885f5507e5a40b",
+      "startTime": "2026-10-21T16:45:23.948Z",
+      "endTime": "2026-10-21T16:45:25.140Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "38ea9a24a93a72dc",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "3fcc3593ed2a72af",
+      "startTime": "2026-10-21T16:45:22.113Z",
+      "endTime": "2026-10-21T16:45:23.935Z",
+      "integration": "Google ADK"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "a5eb472d6b99ec60",
+      "name": "multi_tool_assistant",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "94e9962c34c18234",
+      "startTime": "2026-10-21T16:45:22.018Z",
+      "endTime": "2026-10-21T16:45:25.141Z",
+      "input": "Use the get_time tool exactly once to get the current time in London.",
+      "output": "The current time in London is 7:00 AM GMT.",
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "description": "Get the current time for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``time`` key holding the formatted time string.",
+          "output": {
+            "time": "7:00 AM GMT"
+          },
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "3a885f5507e5a40b",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "a5eb472d6b99ec60",
+      "startTime": "2026-10-21T16:45:23.948Z",
+      "endTime": "2026-10-21T16:45:25.141Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise.\n\nYou are an agent. Your internal name is \"multi_tool_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_time tool exactly once to get the current time in London."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_time",
+            "arguments": {
+              "city": "London"
+            }
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "response": {
+              "time": "7:00 AM GMT"
+            }
+          }
+        }
+      ],
+      "output": "The current time in London is 7:00 AM GMT.",
+      "integration": "Google ADK",
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 265.0,
+      "outputTokenCount": 14.0
+    },
+    {
+      "uuid": "3fcc3593ed2a72af",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "a5eb472d6b99ec60",
+      "startTime": "2026-10-21T16:45:22.113Z",
+      "endTime": "2026-10-21T16:45:23.947Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise.\n\nYou are an agent. Your internal name is \"multi_tool_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_time tool exactly once to get the current time in London."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_time",
+            "arguments": {
+              "city": "London"
+            }
+          }
+        }
+      ],
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "London"
+          }
+        }
+      ],
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 230.0,
+      "outputTokenCount": 55.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "994bad3b5f14e9d6",
+      "name": "get_time",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "a5eb472d6b99ec60",
+      "startTime": "2026-10-21T16:45:23.944Z",
+      "endTime": "2026-10-21T16:45:23.946Z",
+      "input": {
+        "city": "London"
+      },
+      "output": {
+        "time": "7:00 AM GMT"
+      },
+      "integration": "Google ADK",
+      "description": "Get the current time for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``time`` key holding the formatted time string."
+    }
+  ],
+  "startTime": "2026-10-21T16:45:22.015Z",
+  "endTime": "2026-10-21T16:45:25.142Z",
+  "name": "googleadk-multiple-tools-time",
+  "metadata": {
+    "test_type": "multiple_tools_time"
+  },
+  "tags": [
+    "googleadk",
+    "multiple-tools",
+    "time"
+  ],
+  "environment": "development",
+  "threadId": "multiple-tools-time-123",
+  "input": "Use the get_time tool exactly once to get the current time in London.",
+  "output": "The current time in London is 7:00 AM GMT.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_time",
+      "type": "FUNCTION",
+      "description": "Get the current time for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``time`` key holding the formatted time string.",
+      "output": {
+        "time": "7:00 AM GMT"
+      },
+      "inputParameters": {
+        "city": "London"
+      }
+    }
+  ]
+}

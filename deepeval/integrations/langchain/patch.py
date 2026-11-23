@@ -1,0 +1,42 @@
+import functools
+from deepeval.metrics import BaseMetric
+from deepeval.tracing.context import update_current_span
+from typing import List, Optional, Callable
+from langchain_core.tools import tool as original_tool, BaseTool
+
+
+def tool(
+    *args,
+    metrics: Optional[List[BaseMetric]] = None,
+    # Deprecated, ignored: a Confident AI platform setting. Don't build on it.
+    metric_collection: Optional[str] = None,
+    **kwargs
+):
+    """
+    Patched version of langchain_core.tools.tool that prints inputs and outputs
+    """
+
+    # original_tool returns a decorator function, so we need to return a decorator
+    def decorator(func: Callable) -> BaseTool:
+        func = _patch_tool_decorator(func, metrics)
+        tool_instance = original_tool(*args, **kwargs)(func)
+        return tool_instance
+
+    return decorator
+
+
+def _patch_tool_decorator(
+    func: Callable,
+    metrics: Optional[List[BaseMetric]] = None,
+):
+    original_func = func
+
+    @functools.wraps(original_func)
+    def wrapper(*args, **kwargs):
+        # The tool body runs inside its confident-trace tool span.
+        update_current_span(metrics=metrics)
+        res = original_func(*args, **kwargs)
+        return res
+
+    tool = wrapper
+    return tool

@@ -1,0 +1,35 @@
+{
+  "name": "chat gpt-4o-mini",
+  "uuid": "edb2cff97bfca6b1fed64ad1fe21a8f6",
+  "baseSpans": [],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "dff29f93cea0edbf",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "edb2cff97bfca6b1fed64ad1fe21a8f6",
+      "startTime": "2026-10-21T20:45:05.923Z",
+      "endTime": "2026-10-21T20:45:07.130Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Hello, how are you?"
+        }
+      ],
+      "output": "Hello! I'm just a program, so I don't have feelings, but I'm here and ready to help you. How can I assist you today?",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 13,
+      "outputTokenCount": 29
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:05.923Z",
+  "endTime": "2026-10-21T20:45:07.132Z",
+  "environment": "testing",
+  "input": "Hello, how are you?",
+  "output": "Hello! I'm just a program, so I don't have feelings, but I'm here and ready to help you. How can I assist you today?",
+  "status": "SUCCESS"
+}

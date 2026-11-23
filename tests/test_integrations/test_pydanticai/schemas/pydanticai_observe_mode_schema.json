@@ -1,0 +1,79 @@
+{
+  "uuid": "b951a7b9-c6ac-4187-b373-f2efd7abdde4",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "a8751d54-98bc-42d6-b219-9d5726510969",
+      "name": "observe_outer",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:35.825Z",
+      "endTime": "2026-10-21T17:17:37.088Z",
+      "input": {
+        "p": "Say hello in exactly three words."
+      },
+      "output": "Hello, how are you?",
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "881c4ffb07c2fba9",
+      "name": "modes_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "a8751d54-98bc-42d6-b219-9d5726510969",
+      "startTime": "2026-10-21T17:17:35.827Z",
+      "endTime": "2026-10-21T17:17:37.087Z",
+      "input": "Say hello in exactly three words.",
+      "output": "Hello, how are you?",
+      "integration": "PydanticAI",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "d77db263c4c6c358",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "881c4ffb07c2fba9",
+      "startTime": "2026-10-21T17:17:35.829Z",
+      "endTime": "2026-10-21T17:17:37.085Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Be concise, reply with one short sentence only."
+        },
+        {
+          "role": "user",
+          "content": "Say hello in exactly three words."
+        }
+      ],
+      "output": "Hello, how are you?",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 28.0,
+      "outputTokenCount": 7.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:17:35.825Z",
+  "endTime": "2026-10-21T17:17:37.088Z",
+  "name": "pydanticai-observe-trace",
+  "metadata": {
+    "mode": "observe",
+    "source": "runtime"
+  },
+  "tags": [
+    "observe-mode",
+    "runtime"
+  ],
+  "environment": "development",
+  "threadId": "observe-mode-123",
+  "input": "Say hello in exactly three words.",
+  "output": "Hello, how are you?",
+  "status": "SUCCESS"
+}

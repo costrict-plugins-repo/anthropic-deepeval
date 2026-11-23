@@ -1,0 +1,112 @@
+{
+  "uuid": "4d5fa52dfafcce2cd5df3af38e745ec4",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "379d8e0644c263d6",
+      "name": "simple_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:38:25.850Z",
+      "endTime": "2026-10-23T08:40:28.341Z",
+      "input": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Say hello in one short sentence."
+            }
+          ]
+        }
+      ],
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Say hello in one short sentence."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Hello!"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "67e76d5cda2346d7",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "379d8e0644c263d6",
+      "startTime": "2026-10-23T08:38:25.851Z",
+      "endTime": "2026-10-23T08:40:28.335Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Say hello in one short sentence."
+        }
+      ],
+      "output": "Hello!",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 13.0,
+      "outputTokenCount": 5.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-23T08:38:25.850Z",
+  "endTime": "2026-10-23T08:40:28.341Z",
+  "name": "langchain-async-simple",
+  "metadata": {
+    "test_type": "async_simple"
+  },
+  "tags": [
+    "langchain",
+    "async",
+    "simple"
+  ],
+  "environment": "development",
+  "threadId": "async-simple-123",
+  "input": "Say hello in one short sentence.",
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Say hello in one short sentence."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Hello!"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS"
+}

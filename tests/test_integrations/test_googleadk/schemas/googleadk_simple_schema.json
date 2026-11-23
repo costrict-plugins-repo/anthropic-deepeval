@@ -1,0 +1,84 @@
+{
+  "uuid": "f40583fbe651a1b59ec96e54602eb340",
+  "baseSpans": [
+    {
+      "uuid": "8aa43f1955a75eb3",
+      "name": "invocation",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T16:42:39.633Z",
+      "endTime": "2026-10-21T16:42:41.030Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "57cbd6a5be735b2b",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e0b5e56ade770ce5",
+      "startTime": "2026-10-21T16:42:39.668Z",
+      "endTime": "2026-10-21T16:42:41.025Z",
+      "integration": "Google ADK"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "2aaf4e43f9f19fab",
+      "name": "simple_assistant",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "8aa43f1955a75eb3",
+      "startTime": "2026-10-21T16:42:39.641Z",
+      "endTime": "2026-10-21T16:42:41.028Z",
+      "input": "Say hello in exactly three words.",
+      "output": "Hello there!",
+      "integration": "Google ADK",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "e0b5e56ade770ce5",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "2aaf4e43f9f19fab",
+      "startTime": "2026-10-21T16:42:39.668Z",
+      "endTime": "2026-10-21T16:42:41.027Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a concise assistant. Reply with one short sentence only.\n\nYou are an agent. Your internal name is \"simple_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "Say hello in exactly three words."
+        }
+      ],
+      "output": "Hello there!",
+      "integration": "Google ADK",
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 37.0,
+      "outputTokenCount": 39.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T16:42:39.633Z",
+  "endTime": "2026-10-21T16:42:41.030Z",
+  "name": "googleadk-simple-test",
+  "metadata": {
+    "test_type": "simple"
+  },
+  "tags": [
+    "googleadk",
+    "simple"
+  ],
+  "environment": "development",
+  "threadId": "simple-123",
+  "input": "Say hello in exactly three words.",
+  "output": "Hello there!",
+  "status": "SUCCESS"
+}

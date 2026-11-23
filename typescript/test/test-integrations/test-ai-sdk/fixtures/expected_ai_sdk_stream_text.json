@@ -1,0 +1,66 @@
+{
+  "name": "Vercel Stream Gen Trace",
+  "uuid": "b840a6f8-7bbe-4376-8aa6-0283063946ae",
+  "baseSpans": [
+    {
+      "uuid": "03c2ceb08cf19634",
+      "name": "step 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "b840a6f8-7bbe-4376-8aa6-0283063946ae",
+      "parentUuid": "5feacf3abde3774b",
+      "startTime": "2026-10-21T20:45:41.816Z",
+      "endTime": "2026-10-21T20:45:43.897Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "5feacf3abde3774b",
+      "name": "invoke_agent gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "b840a6f8-7bbe-4376-8aa6-0283063946ae",
+      "startTime": "2026-10-21T20:45:41.813Z",
+      "endTime": "2026-10-21T20:45:43.897Z",
+      "input": "Count from 1 to 5.",
+      "output": "1, 2, 3, 4, 5.",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "88f5d20f30f49c69",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "b840a6f8-7bbe-4376-8aa6-0283063946ae",
+      "parentUuid": "03c2ceb08cf19634",
+      "startTime": "2026-10-21T20:45:41.816Z",
+      "endTime": "2026-10-21T20:45:43.895Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Count from 1 to 5."
+        }
+      ],
+      "output": "1, 2, 3, 4, 5.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 15,
+      "outputTokenCount": 15
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:41.810Z",
+  "endTime": "2026-10-21T20:45:43.898Z",
+  "environment": "testing",
+  "tags": [
+    "vercel",
+    "streamText"
+  ],
+  "threadId": "vercel-thread-2",
+  "input": "Count from 1 to 5.",
+  "output": "1, 2, 3, 4, 5.",
+  "status": "SUCCESS"
+}

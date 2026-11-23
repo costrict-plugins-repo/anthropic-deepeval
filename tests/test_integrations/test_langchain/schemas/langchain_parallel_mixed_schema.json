@@ -1,0 +1,276 @@
+{
+  "uuid": "551cec0de55e82da46bbca768b255d26",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "eb38a02ff84aafe9",
+      "name": "parallel_mixed_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:54.905Z",
+      "endTime": "2026-10-23T08:40:56.781Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Paris"
+                },
+                "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Partly cloudy, 65F",
+                "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Weather in Paris: Partly cloudy, 65\u00b0F."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Partly cloudy, 65F",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "476ef2c29dcbeae9",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "eb38a02ff84aafe9",
+      "startTime": "2026-10-23T08:40:55.855Z",
+      "endTime": "2026-10-23T08:40:56.780Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Paris"
+            },
+            "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Partly cloudy, 65F",
+            "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+          }
+        }
+      ],
+      "output": "Weather in Paris: Partly cloudy, 65\u00b0F.",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 244.0,
+      "outputTokenCount": 15.0
+    },
+    {
+      "uuid": "3eafaa9e0795877e",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "eb38a02ff84aafe9",
+      "startTime": "2026-10-23T08:40:54.906Z",
+      "endTime": "2026-10-23T08:40:55.852Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Paris"
+            },
+            "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 209.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "ded1ca3f17d39ddb",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "eb38a02ff84aafe9",
+      "startTime": "2026-10-23T08:40:55.854Z",
+      "endTime": "2026-10-23T08:40:55.855Z",
+      "input": {
+        "city": "Paris"
+      },
+      "output": "Partly cloudy, 65F",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:40:54.905Z",
+  "endTime": "2026-10-23T08:40:56.781Z",
+  "name": "langchain-parallel-mixed",
+  "tags": [
+    "langchain",
+    "parallel",
+    "mixed"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather in Paris. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Paris"
+            },
+            "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Partly cloudy, 65F",
+            "id": "call_c7Cy8X0cZwn0qWNrh0SqRmmQ"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Weather in Paris: Partly cloudy, 65\u00b0F."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Partly cloudy, 65F",
+      "inputParameters": {
+        "city": "Paris"
+      }
+    }
+  ]
+}

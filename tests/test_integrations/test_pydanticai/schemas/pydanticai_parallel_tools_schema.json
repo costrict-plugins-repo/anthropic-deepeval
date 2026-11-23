@@ -1,0 +1,224 @@
+{
+  "uuid": "8db589c8bfb4d31a7bd83e9bd8fa5b49",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "4e0f1c16483696f2",
+      "name": "multiple_tools_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:34.414Z",
+      "endTime": "2026-10-21T17:17:37.467Z",
+      "input": "Use both the get_weather tool AND the get_time tool for Paris. Call both tools exactly once each.",
+      "output": "The current weather in Paris is cloudy with a temperature of 62\u00b0F. The time is 8:00 AM CET.",
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Cloudy, 62F",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        },
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "output": "8:00 AM CET",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "d9650806d5d59fb2",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "4e0f1c16483696f2",
+      "startTime": "2026-10-21T17:17:36.123Z",
+      "endTime": "2026-10-21T17:17:37.465Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use both the get_weather tool AND the get_time tool for Paris. Call both tools exactly once each."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_D3A0NXDY0sKkOUP1azTZ4Ty3",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Paris\"}"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_ZCZ6UsjquKTv3P7EGysVzm4L",
+            "name": "get_time",
+            "arguments": "{\"city\":\"Paris\"}"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_D3A0NXDY0sKkOUP1azTZ4Ty3",
+            "name": "get_weather",
+            "result": "Cloudy, 62F"
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_ZCZ6UsjquKTv3P7EGysVzm4L",
+            "name": "get_time",
+            "result": "8:00 AM CET"
+          }
+        }
+      ],
+      "output": "The current weather in Paris is cloudy with a temperature of 62\u00b0F. The time is 8:00 AM CET.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 234.0,
+      "outputTokenCount": 27.0
+    },
+    {
+      "uuid": "6fe554c38b65716a",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "4e0f1c16483696f2",
+      "startTime": "2026-10-21T17:17:34.416Z",
+      "endTime": "2026-10-21T17:17:36.119Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant with access to weather and time tools. When asked about weather, use the get_weather tool. When asked about time, use the get_time tool. Be concise in your responses."
+        },
+        {
+          "role": "user",
+          "content": "Use both the get_weather tool AND the get_time tool for Paris. Call both tools exactly once each."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_D3A0NXDY0sKkOUP1azTZ4Ty3",
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Paris\"}"
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_ZCZ6UsjquKTv3P7EGysVzm4L",
+            "name": "get_time",
+            "arguments": "{\"city\":\"Paris\"}"
+          }
+        }
+      ],
+      "integration": "PydanticAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        },
+        {
+          "name": "get_time",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 183.0,
+      "outputTokenCount": 45.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "6f424b2451a2ac99",
+      "name": "get_time",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "4e0f1c16483696f2",
+      "startTime": "2026-10-21T17:17:36.121Z",
+      "endTime": "2026-10-21T17:17:36.122Z",
+      "input": {
+        "city": "Paris"
+      },
+      "output": "8:00 AM CET",
+      "integration": "PydanticAI"
+    },
+    {
+      "uuid": "a2af73849291662b",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "4e0f1c16483696f2",
+      "startTime": "2026-10-21T17:17:36.121Z",
+      "endTime": "2026-10-21T17:17:36.122Z",
+      "input": {
+        "city": "Paris"
+      },
+      "output": "Cloudy, 62F",
+      "integration": "PydanticAI"
+    }
+  ],
+  "startTime": "2026-10-21T17:17:34.414Z",
+  "endTime": "2026-10-21T17:17:37.467Z",
+  "name": "pydanticai-parallel-tools",
+  "metadata": {
+    "test_type": "parallel_tools"
+  },
+  "tags": [
+    "pydanticai",
+    "parallel-tools"
+  ],
+  "environment": "development",
+  "threadId": "parallel-tools-123",
+  "input": "Use both the get_weather tool AND the get_time tool for Paris. Call both tools exactly once each.",
+  "output": "The current weather in Paris is cloudy with a temperature of 62\u00b0F. The time is 8:00 AM CET.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_time",
+      "type": "FUNCTION",
+      "output": "8:00 AM CET",
+      "inputParameters": {
+        "city": "Paris"
+      }
+    },
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Cloudy, 62F",
+      "inputParameters": {
+        "city": "Paris"
+      }
+    }
+  ]
+}

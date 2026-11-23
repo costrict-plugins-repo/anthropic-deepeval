@@ -1,0 +1,182 @@
+{
+  "name": "Agent workflow",
+  "uuid": "9f951e102b85e8a29c82b651c8e91cff",
+  "baseSpans": [
+    {
+      "uuid": "728a15ece5280bb5",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "startTime": "2026-10-21T20:44:52.119Z",
+      "endTime": "2026-10-21T20:44:55.339Z"
+    },
+    {
+      "uuid": "4b860a3fa4efdc4f",
+      "name": "Agent workflow",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "728a15ece5280bb5",
+      "startTime": "2026-10-21T20:44:52.120Z",
+      "endTime": "2026-10-21T20:44:55.340Z"
+    },
+    {
+      "uuid": "f89b3ad967d80f5c",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "a56be09431768661",
+      "startTime": "2026-10-21T20:44:52.120Z",
+      "endTime": "2026-10-21T20:44:53.746Z"
+    },
+    {
+      "uuid": "3bddd97b534508e9",
+      "name": "handoff",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "f89b3ad967d80f5c",
+      "startTime": "2026-10-21T20:44:53.745Z",
+      "endTime": "2026-10-21T20:44:53.746Z"
+    },
+    {
+      "uuid": "39c3465981c40682",
+      "name": "turn",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "ec6d2109f91efe8c",
+      "startTime": "2026-10-21T20:44:53.746Z",
+      "endTime": "2026-10-21T20:44:55.339Z"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "a56be09431768661",
+      "name": "TriageAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "4b860a3fa4efdc4f",
+      "startTime": "2026-10-21T20:44:52.120Z",
+      "endTime": "2026-10-21T20:44:53.746Z",
+      "input": "Hola, ¿cómo estás?",
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "transfer_to_SpanishAgent",
+            "id": "call_FyzGqi72afNLlZseCFmmhkVO",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    },
+    {
+      "uuid": "ec6d2109f91efe8c",
+      "name": "SpanishAgent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "4b860a3fa4efdc4f",
+      "startTime": "2026-10-21T20:44:53.746Z",
+      "endTime": "2026-10-21T20:44:55.340Z",
+      "input": "Hola, ¿cómo estás?",
+      "output": "Hola.",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "50b7759f9a034f5a",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "f89b3ad967d80f5c",
+      "startTime": "2026-10-21T20:44:52.120Z",
+      "endTime": "2026-10-21T20:44:53.744Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "If input is Spanish, handoff to SpanishAgent. Else EnglishAgent."
+        },
+        {
+          "role": "user",
+          "content": "Hola, ¿cómo estás?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "transfer_to_SpanishAgent",
+            "id": "call_FyzGqi72afNLlZseCFmmhkVO",
+            "arguments": "{}"
+          }
+        }
+      ],
+      "toolsCalled": [
+        {
+          "name": "transfer_to_SpanishAgent",
+          "inputParameters": {}
+        }
+      ],
+      "model": "gpt-4o-2024-08-06",
+      "inputTokenCount": 89,
+      "outputTokenCount": 15
+    },
+    {
+      "uuid": "0fbaef6ffe7a6ae0",
+      "name": "response",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "9f951e102b85e8a29c82b651c8e91cff",
+      "parentUuid": "39c3465981c40682",
+      "startTime": "2026-10-21T20:44:53.748Z",
+      "endTime": "2026-10-21T20:44:55.338Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You speak Spanish. Answer 'Hola' to everything."
+        },
+        {
+          "role": "user",
+          "content": "Hola, ¿cómo estás?"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "transfer_to_SpanishAgent",
+            "id": "call_FyzGqi72afNLlZseCFmmhkVO",
+            "arguments": "{}"
+          }
+        },
+        {
+          "role": "user"
+        }
+      ],
+      "output": "Hola.",
+      "model": "gpt-4o-2024-08-06",
+      "inputTokenCount": 61,
+      "outputTokenCount": 3
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:44:52.119Z",
+  "endTime": "2026-10-21T20:44:55.340Z",
+  "environment": "testing",
+  "metadata": {},
+  "input": "Hola, ¿cómo estás?",
+  "output": "Hola.",
+  "status": "SUCCESS"
+}

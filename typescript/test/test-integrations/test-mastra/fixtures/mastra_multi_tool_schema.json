@@ -1,0 +1,622 @@
+{
+  "name": "mastra-multi-tool-test",
+  "uuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+  "baseSpans": [
+    {
+      "uuid": "d9f30f5447b02801",
+      "name": "llm: 'gpt-4o-mini'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "73e92731f5463b32",
+      "startTime": "2026-10-21T20:45:24.740Z",
+      "endTime": "2026-10-21T20:45:28.139Z"
+    },
+    {
+      "uuid": "bc36bb473741859d",
+      "name": "step: 0",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "d9f30f5447b02801",
+      "startTime": "2026-10-21T20:45:24.742Z",
+      "endTime": "2026-10-21T20:45:26.857Z",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": {
+            "weather": "Cloudy, 68F"
+          },
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "calculate",
+          "output": {
+            "result": "125 * 5 = 625"
+          },
+          "inputParameters": {
+            "expression": "125 * 5"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "6f31d865a6d16131",
+      "name": "llm request processor: provider-history-compat",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "bc36bb473741859d",
+      "startTime": "2026-10-21T20:45:24.743Z",
+      "endTime": "2026-10-21T20:45:24.743Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "What is the weather in Tokyo, and what is 125 * 5?",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615524739
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "e980a83991c7a419",
+      "name": "llm request processor: unsupported-file-handler",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "bc36bb473741859d",
+      "startTime": "2026-10-21T20:45:24.743Z",
+      "endTime": "2026-10-21T20:45:24.743Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "What is the weather in Tokyo, and what is 125 * 5?",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615524739
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "6e62b2e3c2aaaee5",
+      "name": "chunk: 'tool-call'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "9b8af394d35ef49f",
+      "startTime": "2026-10-21T20:45:26.844Z",
+      "endTime": "2026-10-21T20:45:26.845Z",
+      "output": {
+        "toolName": "get_weather",
+        "toolCallId": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+        "toolInput": {
+          "city": "Tokyo"
+        }
+      }
+    },
+    {
+      "uuid": "7b24fd7f1ecae268",
+      "name": "chunk: 'tool-call'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "9b8af394d35ef49f",
+      "startTime": "2026-10-21T20:45:26.846Z",
+      "endTime": "2026-10-21T20:45:26.847Z",
+      "output": {
+        "toolName": "calculate",
+        "toolCallId": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+        "toolInput": {
+          "expression": "125 * 5"
+        }
+      }
+    },
+    {
+      "uuid": "709a8c49262bce4c",
+      "name": "chunk: 'tool-result'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "9b8af394d35ef49f",
+      "startTime": "2026-10-21T20:45:26.854Z",
+      "endTime": "2026-10-21T20:45:26.854Z"
+    },
+    {
+      "uuid": "16aec30839c440d6",
+      "name": "chunk: 'tool-result'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "9b8af394d35ef49f",
+      "startTime": "2026-10-21T20:45:26.854Z",
+      "endTime": "2026-10-21T20:45:26.854Z"
+    },
+    {
+      "uuid": "80e0c913f67deff5",
+      "name": "step: 1",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "d9f30f5447b02801",
+      "startTime": "2026-10-21T20:45:26.859Z",
+      "endTime": "2026-10-21T20:45:28.138Z"
+    },
+    {
+      "uuid": "90a8218a0bdedac9",
+      "name": "llm request processor: provider-history-compat",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "80e0c913f67deff5",
+      "startTime": "2026-10-21T20:45:26.860Z",
+      "endTime": "2026-10-21T20:45:26.860Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "What is the weather in Tokyo, and what is 125 * 5?",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615524739
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "tool-call",
+                "toolCallId": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+                "toolName": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad924667ffc87d1bfca270b7ada945a"
+                  }
+                }
+              },
+              {
+                "type": "tool-call",
+                "toolCallId": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+                "toolName": "calculate",
+                "input": {
+                  "expression": "125 * 5"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad92466801487d19cac7be95e3d7b4f"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "content": [
+              {
+                "type": "tool-result",
+                "toolCallId": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+                "toolName": "get_weather",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "weather": "Cloudy, 68F"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad924667ffc87d1bfca270b7ada945a"
+                  }
+                },
+                "input": {
+                  "city": "Tokyo"
+                }
+              },
+              {
+                "type": "tool-result",
+                "toolCallId": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+                "toolName": "calculate",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "result": "125 * 5 = 625"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad92466801487d19cac7be95e3d7b4f"
+                  }
+                },
+                "input": {
+                  "expression": "125 * 5"
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 1,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "e4e664258b3730fc",
+      "name": "llm request processor: unsupported-file-handler",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "80e0c913f67deff5",
+      "startTime": "2026-10-21T20:45:26.861Z",
+      "endTime": "2026-10-21T20:45:26.861Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "What is the weather in Tokyo, and what is 125 * 5?",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615524739
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "tool-call",
+                "toolCallId": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+                "toolName": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad924667ffc87d1bfca270b7ada945a"
+                  }
+                }
+              },
+              {
+                "type": "tool-call",
+                "toolCallId": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+                "toolName": "calculate",
+                "input": {
+                  "expression": "125 * 5"
+                },
+                "providerExecuted": "[unsupported]",
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad92466801487d19cac7be95e3d7b4f"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "content": [
+              {
+                "type": "tool-result",
+                "toolCallId": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+                "toolName": "get_weather",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "weather": "Cloudy, 68F"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad924667ffc87d1bfca270b7ada945a"
+                  }
+                },
+                "input": {
+                  "city": "Tokyo"
+                }
+              },
+              {
+                "type": "tool-result",
+                "toolCallId": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+                "toolName": "calculate",
+                "output": {
+                  "type": "json",
+                  "value": {
+                    "result": "125 * 5 = 625"
+                  }
+                },
+                "providerOptions": {
+                  "openai": {
+                    "itemId": "fc_0fc55cf47489c415006ad92466801487d19cac7be95e3d7b4f"
+                  }
+                },
+                "input": {
+                  "expression": "125 * 5"
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 1,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "7714aec492fffdfe",
+      "name": "chunk: 'text'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "d7d4f2e0bba3d5d5",
+      "startTime": "2026-10-21T20:45:28.131Z",
+      "endTime": "2026-10-21T20:45:28.132Z",
+      "output": {
+        "text": "The weather in Tokyo is cloudy with a temperature of 68°F. \n\nAdditionally, \\( 125 \\times 5 = 625 \\)."
+      }
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "73e92731f5463b32",
+      "name": "agent run: 'assistant-agent'",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "startTime": "2026-10-21T20:45:24.737Z",
+      "endTime": "2026-10-21T20:45:28.140Z",
+      "input": "What is the weather in Tokyo, and what is 125 * 5?",
+      "output": "The weather in Tokyo is cloudy with a temperature of 68°F. \n\nAdditionally, \\( 125 \\times 5 = 625 \\).",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "output": {
+            "weather": "Cloudy, 68F"
+          },
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "calculate",
+          "output": {
+            "result": "125 * 5 = 625"
+          },
+          "inputParameters": {
+            "expression": "125 * 5"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "9b8af394d35ef49f",
+      "name": "inference: 0",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "bc36bb473741859d",
+      "startTime": "2026-10-21T20:45:24.743Z",
+      "endTime": "2026-10-21T20:45:26.857Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "What is the weather in Tokyo, and what is 125 * 5?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_g9pcCwV7UpzXDo3LJHWzlZRu",
+            "arguments": {
+              "city": "Tokyo"
+            }
+          }
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "calculate",
+            "id": "call_mjNGRMFEDaXKT26SKKNpoRFT",
+            "arguments": {
+              "expression": "125 * 5"
+            }
+          }
+        }
+      ],
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        },
+        {
+          "name": "calculate",
+          "inputParameters": {
+            "expression": "125 * 5"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 99,
+      "outputTokenCount": 47
+    },
+    {
+      "uuid": "d7d4f2e0bba3d5d5",
+      "name": "inference: 1",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "80e0c913f67deff5",
+      "startTime": "2026-10-21T20:45:26.862Z",
+      "endTime": "2026-10-21T20:45:28.137Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Use the get_weather tool for weather and the calculate tool for math. Do not answer from memory."
+        },
+        {
+          "role": "user",
+          "content": "What is the weather in Tokyo, and what is 125 * 5?"
+        },
+        {
+          "role": "assistant",
+          "content": "[tool: get_weather][tool: calculate]"
+        },
+        {
+          "role": "tool",
+          "content": "[tool-result: get_weather][tool-result: calculate]"
+        }
+      ],
+      "output": "The weather in Tokyo is cloudy with a temperature of 68°F. \n\nAdditionally, \\( 125 \\times 5 = 625 \\).",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 161,
+      "outputTokenCount": 31
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "9a52aad8ddbea50b",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "bc36bb473741859d",
+      "startTime": "2026-10-21T20:45:26.851Z",
+      "endTime": "2026-10-21T20:45:26.853Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": {
+        "weather": "Cloudy, 68F"
+      }
+    },
+    {
+      "uuid": "72c17ddac07c0e97",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "f2dfe9c3ecb8b95679f0d18008baa603",
+      "parentUuid": "bc36bb473741859d",
+      "startTime": "2026-10-21T20:45:26.851Z",
+      "endTime": "2026-10-21T20:45:26.853Z",
+      "input": {
+        "expression": "125 * 5"
+      },
+      "output": {
+        "result": "125 * 5 = 625"
+      }
+    }
+  ],
+  "startTime": "2026-10-21T20:45:24.737Z",
+  "endTime": "2026-10-21T20:45:29.747Z",
+  "environment": "testing",
+  "metadata": {
+    "runId": "bcf37fbc-8d64-4a4d-a42e-06790556a64b",
+    "environment": "test"
+  },
+  "tags": [
+    "mastra",
+    "multi-tool"
+  ],
+  "input": "What is the weather in Tokyo, and what is 125 * 5?",
+  "output": "The weather in Tokyo is cloudy with a temperature of 68°F. \n\nAdditionally, \\( 125 \\times 5 = 625 \\).",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "output": {
+        "weather": "Cloudy, 68F"
+      },
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    },
+    {
+      "name": "calculate",
+      "output": {
+        "result": "125 * 5 = 625"
+      },
+      "inputParameters": {
+        "expression": "125 * 5"
+      }
+    }
+  ],
+  "status": "SUCCESS"
+}

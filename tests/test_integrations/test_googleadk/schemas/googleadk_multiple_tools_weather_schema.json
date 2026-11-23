@@ -1,0 +1,203 @@
+{
+  "uuid": "484ac2f260292bf25a206f002e88ba3d",
+  "baseSpans": [
+    {
+      "uuid": "cb7776f7931d3566",
+      "name": "invocation",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T16:44:11.809Z",
+      "endTime": "2026-10-21T16:44:14.726Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "c2b3be42bc9a3f07",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "6aca183d4ce15b16",
+      "startTime": "2026-10-21T16:44:13.557Z",
+      "endTime": "2026-10-21T16:44:14.719Z",
+      "integration": "Google ADK"
+    },
+    {
+      "uuid": "1229660382f75500",
+      "name": "generate_content gemini-2.5-flash",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1b2bb1141510e82d",
+      "startTime": "2026-10-21T16:44:11.857Z",
+      "endTime": "2026-10-21T16:44:13.547Z",
+      "integration": "Google ADK"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "8c207bbc8f9e67a6",
+      "name": "multi_tool_assistant",
+      "status": "SUCCESS",
+      "type": "agent",
+      "parentUuid": "cb7776f7931d3566",
+      "startTime": "2026-10-21T16:44:11.811Z",
+      "endTime": "2026-10-21T16:44:14.722Z",
+      "input": "Use the get_weather tool exactly once to get the weather in Tokyo.",
+      "output": "The weather in Tokyo is Sunny, 72F.",
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "description": "Get the current weather for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``report`` key holding the weather string.",
+          "output": {
+            "report": "Sunny, 72F"
+          },
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "6aca183d4ce15b16",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "8c207bbc8f9e67a6",
+      "startTime": "2026-10-21T16:44:13.557Z",
+      "endTime": "2026-10-21T16:44:14.721Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise.\n\nYou are an agent. Your internal name is \"multi_tool_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool exactly once to get the weather in Tokyo."
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            }
+          }
+        },
+        {
+          "role": "user",
+          "content": {
+            "type": "tool_call_response",
+            "response": {
+              "report": "Sunny, 72F"
+            }
+          }
+        }
+      ],
+      "output": "The weather in Tokyo is Sunny, 72F.",
+      "integration": "Google ADK",
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 264.0,
+      "outputTokenCount": 12.0
+    },
+    {
+      "uuid": "1b2bb1141510e82d",
+      "name": "call_llm",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "8c207bbc8f9e67a6",
+      "startTime": "2026-10-21T16:44:11.857Z",
+      "endTime": "2026-10-21T16:44:13.555Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You have access to weather and time tools. When asked about weather, use get_weather. When asked about time, use get_time. Be concise.\n\nYou are an agent. Your internal name is \"multi_tool_assistant\"."
+        },
+        {
+          "role": "user",
+          "content": "Use the get_weather tool exactly once to get the weather in Tokyo."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            }
+          }
+        }
+      ],
+      "integration": "Google ADK",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "model": "gemini-2.5-flash",
+      "provider": "Gemini",
+      "inputTokenCount": 229.0,
+      "outputTokenCount": 54.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "298244829271bedc",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "8c207bbc8f9e67a6",
+      "startTime": "2026-10-21T16:44:13.550Z",
+      "endTime": "2026-10-21T16:44:13.554Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": {
+        "report": "Sunny, 72F"
+      },
+      "integration": "Google ADK",
+      "description": "Get the current weather for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``report`` key holding the weather string."
+    }
+  ],
+  "startTime": "2026-10-21T16:44:11.809Z",
+  "endTime": "2026-10-21T16:44:14.726Z",
+  "name": "googleadk-multiple-tools-weather",
+  "metadata": {
+    "test_type": "multiple_tools_weather"
+  },
+  "tags": [
+    "googleadk",
+    "multiple-tools",
+    "weather"
+  ],
+  "environment": "development",
+  "threadId": "multiple-tools-weather-123",
+  "input": "Use the get_weather tool exactly once to get the weather in Tokyo.",
+  "output": "The weather in Tokyo is Sunny, 72F.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "description": "Get the current weather for a city.\n\nArgs:\n    city: The city name (e.g. ``\"Tokyo\"``).\n\nReturns:\n    A dict with a ``report`` key holding the weather string.",
+      "output": {
+        "report": "Sunny, 72F"
+      },
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    }
+  ]
+}

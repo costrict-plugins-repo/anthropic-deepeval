@@ -1,0 +1,172 @@
+{
+  "name": "mastra-simple-test",
+  "uuid": "c418a5a9970288bec103c6db6de3750f",
+  "baseSpans": [
+    {
+      "uuid": "513b2d6787f9fad1",
+      "name": "llm: 'gpt-4o-mini'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "b68fcb26f5dbdb1b",
+      "startTime": "2026-10-21T20:45:14.669Z",
+      "endTime": "2026-10-21T20:45:15.937Z"
+    },
+    {
+      "uuid": "ebc614d94a30e499",
+      "name": "step: 0",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "513b2d6787f9fad1",
+      "startTime": "2026-10-21T20:45:14.678Z",
+      "endTime": "2026-10-21T20:45:15.935Z"
+    },
+    {
+      "uuid": "fac6725afc375e12",
+      "name": "llm request processor: provider-history-compat",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "ebc614d94a30e499",
+      "startTime": "2026-10-21T20:45:14.683Z",
+      "endTime": "2026-10-21T20:45:14.684Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant. Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Say hello in one short sentence.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615514664
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "c327c0c655f1c2e4",
+      "name": "llm request processor: unsupported-file-handler",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "ebc614d94a30e499",
+      "startTime": "2026-10-21T20:45:14.685Z",
+      "endTime": "2026-10-21T20:45:14.685Z",
+      "input": {
+        "prompt": [
+          {
+            "role": "system",
+            "content": "You are a helpful assistant. Answer in one short sentence."
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Say hello in one short sentence.",
+                "providerOptions": {
+                  "mastra": {
+                    "createdAt": 1792615514664
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "stepNumber": 0,
+        "retryCount": 0
+      },
+      "output": {
+        "shortCircuited": false
+      }
+    },
+    {
+      "uuid": "9200e30903558b8d",
+      "name": "chunk: 'text'",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "a36bc2282b2a216b",
+      "startTime": "2026-10-21T20:45:15.928Z",
+      "endTime": "2026-10-21T20:45:15.929Z",
+      "output": {
+        "text": "Hello!"
+      }
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "b68fcb26f5dbdb1b",
+      "name": "agent run: 'simple-agent'",
+      "status": "SUCCESS",
+      "type": "agent",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "startTime": "2026-10-21T20:45:14.657Z",
+      "endTime": "2026-10-21T20:45:16.018Z",
+      "input": "Say hello in one short sentence.",
+      "output": "Hello!",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "a36bc2282b2a216b",
+      "name": "inference: 0",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "c418a5a9970288bec103c6db6de3750f",
+      "parentUuid": "ebc614d94a30e499",
+      "startTime": "2026-10-21T20:45:14.686Z",
+      "endTime": "2026-10-21T20:45:15.935Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Answer in one short sentence."
+        },
+        {
+          "role": "user",
+          "content": "Say hello in one short sentence."
+        }
+      ],
+      "output": "Hello!",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 30,
+      "outputTokenCount": 3
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T20:45:14.657Z",
+  "endTime": "2026-10-21T20:45:19.691Z",
+  "environment": "testing",
+  "metadata": {
+    "test_type": "simple",
+    "runId": "546921a7-217b-4686-9343-cd09fa9a0728",
+    "environment": "test"
+  },
+  "tags": [
+    "mastra",
+    "simple"
+  ],
+  "threadId": "simple-123",
+  "input": "Say hello in one short sentence.",
+  "output": "Hello!",
+  "status": "SUCCESS"
+}

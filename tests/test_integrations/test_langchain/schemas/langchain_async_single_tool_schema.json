@@ -1,0 +1,280 @@
+{
+  "uuid": "82225d7c41963d1611783f0c1667c4e8",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "d481648c91fe4562",
+      "name": "single_tool_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:38:25.853Z",
+      "endTime": "2026-10-23T08:38:30.469Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Foggy, 58F",
+                "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "San Francisco: Foggy, 58\u00b0F"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Foggy, 58F",
+          "inputParameters": {
+            "city": "San Francisco"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "7472b04fe125b5dc",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d481648c91fe4562",
+      "startTime": "2026-10-23T08:38:27.221Z",
+      "endTime": "2026-10-23T08:38:30.465Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Foggy, 58F",
+            "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+          }
+        }
+      ],
+      "output": "San Francisco: Foggy, 58\u00b0F",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 180.0,
+      "outputTokenCount": 12.0
+    },
+    {
+      "uuid": "31a8f79635b09dc3",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d481648c91fe4562",
+      "startTime": "2026-10-23T08:38:25.854Z",
+      "endTime": "2026-10-23T08:38:27.217Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "San Francisco"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 145.0,
+      "outputTokenCount": 18.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "9c4fc862a2d1c429",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "d481648c91fe4562",
+      "startTime": "2026-10-23T08:38:27.220Z",
+      "endTime": "2026-10-23T08:38:27.221Z",
+      "input": {
+        "city": "San Francisco"
+      },
+      "output": "Foggy, 58F",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:38:25.853Z",
+  "endTime": "2026-10-23T08:38:30.469Z",
+  "name": "langchain-async-single-tool",
+  "metadata": {
+    "test_type": "async_single_tool"
+  },
+  "tags": [
+    "langchain",
+    "async",
+    "single-tool"
+  ],
+  "environment": "development",
+  "threadId": "async-single-tool-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get weather for San Francisco. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Foggy, 58F",
+            "id": "call_b8VmWx4vzKxUHfF59OE1fhrl"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "San Francisco: Foggy, 58\u00b0F"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Foggy, 58F",
+      "inputParameters": {
+        "city": "San Francisco"
+      }
+    }
+  ]
+}

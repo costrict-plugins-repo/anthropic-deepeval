@@ -1,0 +1,94 @@
+{
+  "uuid": "122a8f5e-1aca-48f2-ad7f-f2bd40caf2f1",
+  "baseSpans": [
+    {
+      "uuid": "e1cd0e93bc5ca673",
+      "name": "RouterQueryEngine.query",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T17:14:10.678Z",
+      "endTime": "2026-10-21T17:14:11.779Z",
+      "input": {
+        "str_or_query_bundle": "Calculate 21 + 21"
+      },
+      "output": "Calculated Result: 42 (Mock)",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "7a620ea786f2e3de",
+      "name": "RouterQueryEngine._query",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e1cd0e93bc5ca673",
+      "startTime": "2026-10-21T17:14:10.678Z",
+      "endTime": "2026-10-21T17:14:11.779Z",
+      "input": {
+        "query_bundle": "Calculate 21 + 21"
+      },
+      "output": "Calculated Result: 42 (Mock)",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "9a4c24e658a0cb3f",
+      "name": "LLMSingleSelector._select",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "7a620ea786f2e3de",
+      "startTime": "2026-10-21T17:14:10.679Z",
+      "endTime": "2026-10-21T17:14:11.779Z",
+      "input": {
+        "query": "Calculate 21 + 21"
+      },
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "0b30d0a579759784",
+      "name": "SelectionOutputParser.parse",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "9a4c24e658a0cb3f",
+      "startTime": "2026-10-21T17:14:11.778Z",
+      "endTime": "2026-10-21T17:14:11.779Z",
+      "input": {},
+      "integration": "LlamaIndex"
+    }
+  ],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "2a4bf3bbebb298ef",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9a4c24e658a0cb3f",
+      "startTime": "2026-10-21T17:14:10.692Z",
+      "endTime": "2026-10-21T17:14:11.778Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Some choices are given below. It is provided in a numbered list (1 to 2), where each item in the list corresponds to a summary.\n---------------------\n(1) Useful for questions about Python or LlamaIndex programming.\n\n(2) Useful for questions about math or calculations.\n---------------------\nUsing only the choices above and not prior knowledge, return the choice that is most relevant to the question: 'Calculate 21 + 21'\n\n\nThe output should be ONLY JSON formatted as a JSON instance.\n\nHere is an example:\n[\n    {{\n        choice: 1,\n        reason: \"<insert reason for choice>\"\n    }},\n    ...\n]\n"
+        }
+      ],
+      "output": "```json\n[\n    {\n        \"choice\": 2,\n        \"reason\": \"The question 'Calculate 21 + 21' is related to math or calculations, which aligns with choice 2.\"\n    }\n]\n```",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI",
+      "inputTokenCount": 135.0,
+      "outputTokenCount": 46.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:14:10.677Z",
+  "endTime": "2026-10-21T17:14:11.780Z",
+  "name": "llama_index_router",
+  "tags": [
+    "llama_index",
+    "router"
+  ],
+  "environment": "development",
+  "threadId": "llama_index_thread_id",
+  "input": "Some choices are given below. It is provided in a numbered list (1 to 2), where each item in the list corresponds to a summary.\n---------------------\n(1) Useful for questions about Python or LlamaIndex programming.\n\n(2) Useful for questions about math or calculations.\n---------------------\nUsing only the choices above and not prior knowledge, return the choice that is most relevant to the question: 'Calculate 21 + 21'\n\n\nThe output should be ONLY JSON formatted as a JSON instance.\n\nHere is an example:\n[\n    {{\n        choice: 1,\n        reason: \"<insert reason for choice>\"\n    }},\n    ...\n]\n",
+  "output": "```json\n[\n    {\n        \"choice\": 2,\n        \"reason\": \"The question 'Calculate 21 + 21' is related to math or calculations, which aligns with choice 2.\"\n    }\n]\n```",
+  "status": "SUCCESS"
+}

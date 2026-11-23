@@ -1,0 +1,122 @@
+{
+  "uuid": "636fc24f455298ba580b2ca72ce2d23e",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "9e841c1e5de45153",
+      "name": "general_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:52.657Z",
+      "endTime": "2026-10-23T08:40:53.576Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Say hello in one short sentence."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Say hello in one short sentence."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Hello!"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "d7dc2f9bce12faec",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "9e841c1e5de45153",
+      "startTime": "2026-10-23T08:40:52.658Z",
+      "endTime": "2026-10-23T08:40:53.575Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Say hello in one short sentence."
+        }
+      ],
+      "output": "Hello!",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 13.0,
+      "outputTokenCount": 5.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-23T08:40:52.657Z",
+  "endTime": "2026-10-23T08:40:53.576Z",
+  "name": "langchain-conditional-general",
+  "tags": [
+    "langchain",
+    "conditional",
+    "general"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Say hello in one short sentence."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Say hello in one short sentence."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Hello!"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS"
+}

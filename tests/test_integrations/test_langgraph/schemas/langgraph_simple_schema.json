@@ -1,0 +1,552 @@
+{
+  "uuid": "c1c1b90bad6f208d8792bd80c21486a9",
+  "baseSpans": [
+    {
+      "uuid": "d1fbd6be496c81b7",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e58230edc42b9532",
+      "startTime": "2026-10-23T08:41:28.639Z",
+      "endTime": "2026-10-23T08:41:30.264Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Foggy, 58\u00b0F",
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "The weather in San Francisco is **foggy and 58\u00b0F**."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "444f0992a05e2cf7",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "d1fbd6be496c81b7",
+      "startTime": "2026-10-23T08:41:30.264Z",
+      "endTime": "2026-10-23T08:41:30.264Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Foggy, 58\u00b0F",
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "The weather in San Francisco is **foggy and 58\u00b0F**."
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "9f84718977691ed7",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e58230edc42b9532",
+      "startTime": "2026-10-23T08:41:28.638Z",
+      "endTime": "2026-10-23T08:41:28.639Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Foggy, 58\u00b0F",
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Foggy, 58\u00b0F",
+          "inputParameters": {
+            "city": "San Francisco"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "c85ae85092c78c62",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "e58230edc42b9532",
+      "startTime": "2026-10-23T08:41:27.668Z",
+      "endTime": "2026-10-23T08:41:28.637Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "e423d4c42290322a",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "c85ae85092c78c62",
+      "startTime": "2026-10-23T08:41:28.637Z",
+      "endTime": "2026-10-23T08:41:28.637Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "e58230edc42b9532",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:27.667Z",
+      "endTime": "2026-10-23T08:41:30.264Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "What's the weather in San Francisco?"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "San Francisco"
+                },
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Foggy, 58\u00b0F",
+                "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "The weather in San Francisco is **foggy and 58\u00b0F**."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Foggy, 58\u00b0F",
+          "inputParameters": {
+            "city": "San Francisco"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4c743fc9a5ee16a7",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "d1fbd6be496c81b7",
+      "startTime": "2026-10-23T08:41:28.640Z",
+      "endTime": "2026-10-23T08:41:30.263Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "What's the weather in San Francisco?"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Foggy, 58\u00b0F",
+            "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+          }
+        }
+      ],
+      "output": "The weather in San Francisco is **foggy and 58\u00b0F**.",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 168.0,
+      "outputTokenCount": 18.0
+    },
+    {
+      "uuid": "7ad4cb3176154c4d",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "c85ae85092c78c62",
+      "startTime": "2026-10-23T08:41:27.669Z",
+      "endTime": "2026-10-23T08:41:28.636Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "What's the weather in San Francisco?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "San Francisco"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 133.0,
+      "outputTokenCount": 18.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "bf471c6b10076bb3",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9f84718977691ed7",
+      "startTime": "2026-10-23T08:41:28.639Z",
+      "endTime": "2026-10-23T08:41:28.639Z",
+      "input": {
+        "city": "San Francisco"
+      },
+      "output": "Foggy, 58\u00b0F",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:27.667Z",
+  "endTime": "2026-10-23T08:41:30.264Z",
+  "name": "langgraph-simple-test",
+  "metadata": {
+    "test_type": "simple"
+  },
+  "tags": [
+    "langgraph",
+    "simple"
+  ],
+  "environment": "development",
+  "threadId": "simple-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What's the weather in San Francisco?"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "What's the weather in San Francisco?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "San Francisco"
+            },
+            "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Foggy, 58\u00b0F",
+            "id": "call_TFdKnbtPVR2EahG7lb1GkDcP"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "The weather in San Francisco is **foggy and 58\u00b0F**."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Foggy, 58\u00b0F",
+      "inputParameters": {
+        "city": "San Francisco"
+      }
+    }
+  ]
+}

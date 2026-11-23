@@ -1,0 +1,279 @@
+{
+  "uuid": "49541e15ffba366cd8fc24fe7fed2d6b",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "b6f46b3a67d20b74",
+      "name": "city_info_chain",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:40:44.264Z",
+      "endTime": "2026-10-23T08:40:46.199Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "get_weather",
+                "arguments": {
+                  "city": "Tokyo"
+                },
+                "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Cloudy, 68F",
+                "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Tokyo weather: Cloudy, 68\u00b0F."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": "Cloudy, 68F",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "0c85e1019f2ada59",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b6f46b3a67d20b74",
+      "startTime": "2026-10-23T08:40:45.210Z",
+      "endTime": "2026-10-23T08:40:46.199Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Cloudy, 68F",
+            "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+          }
+        }
+      ],
+      "output": "Tokyo weather: Cloudy, 68\u00b0F.",
+      "integration": "LangChain",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 221.0,
+      "outputTokenCount": 13.0
+    },
+    {
+      "uuid": "934a92a5fcf673ea",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b6f46b3a67d20b74",
+      "startTime": "2026-10-23T08:40:44.265Z",
+      "endTime": "2026-10-23T08:40:45.209Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+          }
+        }
+      ],
+      "integration": "LangChain",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "city": "Tokyo"
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 187.0,
+      "outputTokenCount": 17.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d437c5ffb87209a0",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "b6f46b3a67d20b74",
+      "startTime": "2026-10-23T08:40:45.209Z",
+      "endTime": "2026-10-23T08:40:45.210Z",
+      "input": {
+        "city": "Tokyo"
+      },
+      "output": "Cloudy, 68F",
+      "integration": "LangChain"
+    }
+  ],
+  "startTime": "2026-10-23T08:40:44.264Z",
+  "endTime": "2026-10-23T08:40:46.199Z",
+  "name": "langchain-multi-tool-test",
+  "metadata": {
+    "test_type": "multiple_tools"
+  },
+  "tags": [
+    "langchain",
+    "multiple-tools"
+  ],
+  "environment": "development",
+  "threadId": "multi-tool-123",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Use the get_weather tool to get the weather for Tokyo. Do not ask clarifying questions."
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "get_weather",
+            "arguments": {
+              "city": "Tokyo"
+            },
+            "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Cloudy, 68F",
+            "id": "call_hrlYUvb6HI4dKBng070Z6fK2"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Tokyo weather: Cloudy, 68\u00b0F."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "get_weather",
+      "type": "FUNCTION",
+      "output": "Cloudy, 68F",
+      "inputParameters": {
+        "city": "Tokyo"
+      }
+    }
+  ]
+}

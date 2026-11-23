@@ -1,0 +1,294 @@
+{
+  "uuid": "55431d0b-1c50-4b29-a142-ef9abadb0e23",
+  "baseSpans": [
+    {
+      "uuid": "713ddf683cb8fca2",
+      "name": "BaseWorkflowAgent.parse_agent_output",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:03.140Z",
+      "endTime": "2026-10-21T17:14:03.143Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "1fc831cbc7f77d4b",
+      "name": "BaseWorkflowAgent.run_agent_step",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:02.086Z",
+      "endTime": "2026-10-21T17:14:03.139Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "e3045373e6287072",
+      "name": "ReActOutputParser.parse",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "1fc831cbc7f77d4b",
+      "startTime": "2026-10-21T17:14:03.138Z",
+      "endTime": "2026-10-21T17:14:03.138Z",
+      "input": {},
+      "output": "The result of 50 * 2 is 100.",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "f2bad3280454a6c3",
+      "name": "BaseWorkflowAgent.setup_agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:02.084Z",
+      "endTime": "2026-10-21T17:14:02.084Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "a021de40234bbe3b",
+      "name": "BaseWorkflowAgent.aggregate_tool_results",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:02.081Z",
+      "endTime": "2026-10-21T17:14:02.083Z",
+      "input": {
+        "ev": {
+          "tool_name": "multiply",
+          "tool_kwargs": {
+            "a": 50,
+            "b": 2
+          },
+          "tool_output": "100"
+        }
+      },
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "10c7fbf47dcfbd06",
+      "name": "BaseWorkflowAgent.call_tool",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:02.077Z",
+      "endTime": "2026-10-21T17:14:02.080Z",
+      "input": {
+        "ev": {
+          "tool_name": "multiply",
+          "tool_kwargs": {
+            "a": 50,
+            "b": 2
+          }
+        }
+      },
+      "output": {
+        "tool_name": "multiply",
+        "tool_kwargs": {
+          "a": 50,
+          "b": 2
+        },
+        "tool_output": "100"
+      },
+      "integration": "LlamaIndex",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "100",
+          "inputParameters": {
+            "a": 50,
+            "b": 2
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "bbffe096c2d56d91",
+      "name": "BaseWorkflowAgent.parse_agent_output",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:02.075Z",
+      "endTime": "2026-10-21T17:14:02.076Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "be86bd79094d54d1",
+      "name": "BaseWorkflowAgent.run_agent_step",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:00.788Z",
+      "endTime": "2026-10-21T17:14:02.073Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "a07af3b00bd2d2b3",
+      "name": "ReActOutputParser.parse",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "be86bd79094d54d1",
+      "startTime": "2026-10-21T17:14:02.072Z",
+      "endTime": "2026-10-21T17:14:02.073Z",
+      "input": {},
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "82a7ed8330b90b78",
+      "name": "BaseWorkflowAgent.setup_agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:00.787Z",
+      "endTime": "2026-10-21T17:14:00.787Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "d31905bb09328064",
+      "name": "BaseWorkflowAgent.init_run",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "303028591e590ad0",
+      "startTime": "2026-10-21T17:14:00.785Z",
+      "endTime": "2026-10-21T17:14:00.786Z",
+      "input": {
+        "ev": {
+          "user_msg": "Calculate 50 * 2"
+        }
+      },
+      "integration": "LlamaIndex"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "303028591e590ad0",
+      "name": "Agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:14:00.784Z",
+      "endTime": "2026-10-21T17:14:03.144Z",
+      "input": {
+        "start_event": {
+          "user_msg": "Calculate 50 * 2"
+        }
+      },
+      "output": "Thought: I can answer without using any more tools. I'll use the user's language to answer.\nAnswer: The result of 50 * 2 is 100.",
+      "integration": "LlamaIndex",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "100",
+          "inputParameters": {
+            "a": 50,
+            "b": 2
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4c2f783618d73945",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "1fc831cbc7f77d4b",
+      "startTime": "2026-10-21T17:14:02.088Z",
+      "endTime": "2026-10-21T17:14:03.138Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are designed to help with a variety of tasks, from answering questions to providing summaries to other types of analyses.\n\n## Tools\n\nYou have access to a wide variety of tools. You are responsible for using the tools in any sequence you deem appropriate to complete the task at hand.\nThis may require breaking the task into subtasks and using different tools to complete each subtask.\n\nYou have access to the following tools:\n> Tool Name: get_weather\nTool Description: get_weather(city: str) -> str\nUseful for getting the weather for a specific city.\nTool Args: {\"properties\": {\"city\": {\"title\": \"City\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}\n\n> Tool Name: multiply\nTool Description: multiply(a: float, b: float) -> float\nUseful for multiplying two numbers.\nTool Args: {\"properties\": {\"a\": {\"title\": \"A\", \"type\": \"number\"}, \"b\": {\"title\": \"B\", \"type\": \"number\"}}, \"required\": [\"a\", \"b\"], \"type\": \"object\"}\n\n\nHere is some context to help you answer the question and plan:\nYou are a helpful assistant. You MUST use the provided tools to answer questions. Do not answer from your own knowledge.\n\n\n## Output Format\n\nPlease answer in the same language as the question and use the following format:\n\n```\nThought: The current language of the user is: (user's language). I need to use a tool to help me answer the question.\nAction: tool name (one of get_weather, multiply) if using a tool.\nAction Input: the input to the tool, in a JSON format representing the kwargs (e.g. {\"input\": \"hello world\", \"num_beams\": 5})\n```\n\nPlease ALWAYS start with a Thought.\n\nNEVER surround your response with markdown code markers. You may use code markers within your response if you need to.\n\nPlease use a valid JSON format for the Action Input. Do NOT do this {'input': 'hello world', 'num_beams': 5}. If you include the \"Action:\" line, then you MUST include the \"Action Input:\" line too, even if the tool does not need kwargs, in that case you MUST use \"Action Input: {}\".\n\nIf this format is used, the tool will respond in the following format:\n\n```\nObservation: tool response\n```\n\nYou should keep repeating the above format till you have enough information to answer the question without using any more tools. At that point, you MUST respond in one of the following two formats:\n\n```\nThought: I can answer without using any more tools. I'll use the user's language to answer\nAnswer: [your answer here (In the same language as the user's question)]\n```\n\n```\nThought: I cannot answer the question with the provided tools.\nAnswer: [your answer here (In the same language as the user's question)]\n```\n\n## Current Conversation\n\nBelow is the current conversation consisting of interleaving human and assistant messages.\n"
+        },
+        {
+          "role": "user",
+          "content": "Calculate 50 * 2"
+        },
+        {
+          "role": "assistant",
+          "content": "Thought: The current language of the user is English. I need to use a tool to help me answer the question.\nAction: multiply\nAction Input: {'a': 50, 'b': 2}"
+        },
+        {
+          "role": "user",
+          "content": "Observation: 100"
+        }
+      ],
+      "output": "Thought: I can answer without using any more tools. I'll use the user's language to answer.\nAnswer: The result of 50 * 2 is 100.",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI"
+    },
+    {
+      "uuid": "cd737177d216d01c",
+      "name": "chat gpt-4o",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "be86bd79094d54d1",
+      "startTime": "2026-10-21T17:14:00.796Z",
+      "endTime": "2026-10-21T17:14:02.071Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are designed to help with a variety of tasks, from answering questions to providing summaries to other types of analyses.\n\n## Tools\n\nYou have access to a wide variety of tools. You are responsible for using the tools in any sequence you deem appropriate to complete the task at hand.\nThis may require breaking the task into subtasks and using different tools to complete each subtask.\n\nYou have access to the following tools:\n> Tool Name: get_weather\nTool Description: get_weather(city: str) -> str\nUseful for getting the weather for a specific city.\nTool Args: {\"properties\": {\"city\": {\"title\": \"City\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}\n\n> Tool Name: multiply\nTool Description: multiply(a: float, b: float) -> float\nUseful for multiplying two numbers.\nTool Args: {\"properties\": {\"a\": {\"title\": \"A\", \"type\": \"number\"}, \"b\": {\"title\": \"B\", \"type\": \"number\"}}, \"required\": [\"a\", \"b\"], \"type\": \"object\"}\n\n\nHere is some context to help you answer the question and plan:\nYou are a helpful assistant. You MUST use the provided tools to answer questions. Do not answer from your own knowledge.\n\n\n## Output Format\n\nPlease answer in the same language as the question and use the following format:\n\n```\nThought: The current language of the user is: (user's language). I need to use a tool to help me answer the question.\nAction: tool name (one of get_weather, multiply) if using a tool.\nAction Input: the input to the tool, in a JSON format representing the kwargs (e.g. {\"input\": \"hello world\", \"num_beams\": 5})\n```\n\nPlease ALWAYS start with a Thought.\n\nNEVER surround your response with markdown code markers. You may use code markers within your response if you need to.\n\nPlease use a valid JSON format for the Action Input. Do NOT do this {'input': 'hello world', 'num_beams': 5}. If you include the \"Action:\" line, then you MUST include the \"Action Input:\" line too, even if the tool does not need kwargs, in that case you MUST use \"Action Input: {}\".\n\nIf this format is used, the tool will respond in the following format:\n\n```\nObservation: tool response\n```\n\nYou should keep repeating the above format till you have enough information to answer the question without using any more tools. At that point, you MUST respond in one of the following two formats:\n\n```\nThought: I can answer without using any more tools. I'll use the user's language to answer\nAnswer: [your answer here (In the same language as the user's question)]\n```\n\n```\nThought: I cannot answer the question with the provided tools.\nAnswer: [your answer here (In the same language as the user's question)]\n```\n\n## Current Conversation\n\nBelow is the current conversation consisting of interleaving human and assistant messages.\n"
+        },
+        {
+          "role": "user",
+          "content": "Calculate 50 * 2"
+        }
+      ],
+      "output": "Thought: The current language of the user is English. I need to use a tool to help me answer the question.\nAction: multiply\nAction Input: {\"a\": 50, \"b\": 2}",
+      "integration": "OpenAI",
+      "model": "gpt-4o",
+      "provider": "OpenAI"
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "d5ad61ce9842d6da",
+      "name": "multiply",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "10c7fbf47dcfbd06",
+      "startTime": "2026-10-21T17:14:02.077Z",
+      "endTime": "2026-10-21T17:14:02.079Z",
+      "input": {
+        "a": 50,
+        "b": 2
+      },
+      "output": "100",
+      "integration": "LlamaIndex"
+    }
+  ],
+  "startTime": "2026-10-21T17:14:00.781Z",
+  "endTime": "2026-10-21T17:14:03.145Z",
+  "name": "llama_index_async_agent",
+  "tags": [
+    "llama_index",
+    "async",
+    "agent",
+    "math"
+  ],
+  "environment": "development",
+  "threadId": "llama_async_index_thread_id",
+  "input": {
+    "start_event": {
+      "user_msg": "Calculate 50 * 2"
+    }
+  },
+  "output": "Thought: I can answer without using any more tools. I'll use the user's language to answer.\nAnswer: The result of 50 * 2 is 100.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "multiply",
+      "type": "FUNCTION",
+      "output": "100",
+      "inputParameters": {
+        "a": 50,
+        "b": 2
+      }
+    }
+  ]
+}

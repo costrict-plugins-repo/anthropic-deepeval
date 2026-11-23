@@ -1,0 +1,76 @@
+{
+  "uuid": "74f6fd1594a171d5fa8f2136eeba9df2",
+  "baseSpans": [
+    {
+      "uuid": "6ea953f3449189ea",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "659a75e8a0248212",
+      "startTime": "2026-10-21T17:50:03.100Z",
+      "endTime": "2026-10-21T17:50:04.206Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Be concise, reply with one short sentence only. Say hello in exactly three words."
+        }
+      ],
+      "integration": "Strands"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "659a75e8a0248212",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:50:03.100Z",
+      "endTime": "2026-10-21T17:50:04.207Z",
+      "input": "Be concise, reply with one short sentence only. Say hello in exactly three words.",
+      "output": "Hello, how are you?\n",
+      "integration": "Strands",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "fa665617525c49f8",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "6ea953f3449189ea",
+      "startTime": "2026-10-21T17:50:03.100Z",
+      "endTime": "2026-10-21T17:50:04.205Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "Be concise, reply with one short sentence only. Say hello in exactly three words."
+        }
+      ],
+      "output": "Hello, how are you?",
+      "integration": "Strands",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 40.0,
+      "outputTokenCount": 7.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:50:03.100Z",
+  "endTime": "2026-10-21T17:50:04.207Z",
+  "name": "strands-simple-test",
+  "metadata": {
+    "test_type": "simple"
+  },
+  "tags": [
+    "strands",
+    "simple"
+  ],
+  "environment": "development",
+  "threadId": "simple-123",
+  "input": "Be concise, reply with one short sentence only. Say hello in exactly three words.",
+  "output": "Hello, how are you?\n",
+  "status": "SUCCESS"
+}

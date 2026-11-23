@@ -1,0 +1,134 @@
+{
+  "uuid": "3ec5e4e1-f7fd-484e-9c3f-b65864c64d74",
+  "baseSpans": [
+    {
+      "uuid": "37b95ea4-1448-4797-b3b8-8a16b0d672e5",
+      "name": "run_main",
+      "status": "SUCCESS",
+      "type": "base",
+      "startTime": "2026-10-21T14:05:41.880Z",
+      "endTime": "2026-10-21T14:05:45.431Z",
+      "input": {},
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "output": {
+            "location": "San Francisco",
+            "temperature": 18,
+            "unit": "C",
+            "condition": "partly cloudy"
+          },
+          "inputParameters": {
+            "location": "San Francisco",
+            "unit": "c"
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "5405043b8c3cc61e",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "37b95ea4-1448-4797-b3b8-8a16b0d672e5",
+      "startTime": "2026-10-21T14:05:43.622Z",
+      "endTime": "2026-10-21T14:05:45.431Z",
+      "input": [
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_E9yOsmllFab5ZXYbMaWxiEqJ",
+            "response": "{\"location\": \"San Francisco\", \"temperature\": 18, \"unit\": \"C\", \"condition\": \"partly cloudy\"}"
+          }
+        }
+      ],
+      "output": "The weather in San Francisco is 18\u00b0C and partly cloudy. \n\n**Travel Tip:** Dress in layers to stay comfortable, as temperatures can fluctuate throughout the day!",
+      "integration": "OpenAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 85.0,
+      "outputTokenCount": 34.0
+    },
+    {
+      "uuid": "bdfc89654b401f2c",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "37b95ea4-1448-4797-b3b8-8a16b0d672e5",
+      "startTime": "2026-10-21T14:05:41.888Z",
+      "endTime": "2026-10-21T14:05:43.621Z",
+      "input": [
+        {
+          "role": "System Instruction",
+          "content": "You are a helpful assistant. Use tools when they are needed to get accurate data."
+        },
+        {
+          "role": "user",
+          "content": "What's the weather in San Francisco in celsius? Then give a one-sentence travel tip that fits the weather."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_E9yOsmllFab5ZXYbMaWxiEqJ",
+            "name": "get_weather",
+            "arguments": {
+              "location": "San Francisco",
+              "unit": "c"
+            }
+          }
+        }
+      ],
+      "integration": "OpenAI",
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "location": "San Francisco",
+            "unit": "c"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 106.0,
+      "outputTokenCount": 20.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "0441f634-e1c8-414b-a83b-f45ef297b83e",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "37b95ea4-1448-4797-b3b8-8a16b0d672e5",
+      "startTime": "2026-10-21T14:05:43.622Z",
+      "endTime": "2026-10-21T14:05:43.622Z",
+      "input": {
+        "location": "San Francisco",
+        "unit": "c"
+      },
+      "output": {
+        "location": "San Francisco",
+        "temperature": 18,
+        "unit": "C",
+        "condition": "partly cloudy"
+      }
+    }
+  ],
+  "startTime": "2026-10-21T14:05:41.880Z",
+  "endTime": "2026-10-21T14:05:45.431Z",
+  "environment": "development",
+  "input": "What's the weather in San Francisco in celsius? Then give a one-sentence travel tip that fits the weather.",
+  "output": "The weather in San Francisco is 18\u00b0C and partly cloudy. \n\n**Travel Tip:** Dress in layers to stay comfortable, as temperatures can fluctuate throughout the day!",
+  "status": "SUCCESS"
+}

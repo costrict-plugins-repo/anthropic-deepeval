@@ -1,0 +1,570 @@
+{
+  "uuid": "024a82c88f655620fb5fc8d2f87be889",
+  "baseSpans": [
+    {
+      "uuid": "359bd36c633c562e",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2f1431025b591bfe",
+      "startTime": "2026-10-23T08:41:45.567Z",
+      "endTime": "2026-10-23T08:41:46.822Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x oranges to cart",
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Done \u2014 I added 3 oranges to your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "7fc607e81a2c179a",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "359bd36c633c562e",
+      "startTime": "2026-10-23T08:41:46.822Z",
+      "endTime": "2026-10-23T08:41:46.822Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x oranges to cart",
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Done \u2014 I added 3 oranges to your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "output": "__end__",
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "9ef4621ff5635709",
+      "name": "tools",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2f1431025b591bfe",
+      "startTime": "2026-10-23T08:41:45.564Z",
+      "endTime": "2026-10-23T08:41:45.566Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x oranges to cart",
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "add_to_cart",
+          "type": "FUNCTION",
+          "output": "Added 3x oranges to cart",
+          "inputParameters": {
+            "item": "oranges",
+            "quantity": 3
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "734c8b27dcd8a1fd",
+      "name": "agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "2f1431025b591bfe",
+      "startTime": "2026-10-23T08:41:44.433Z",
+      "endTime": "2026-10-23T08:41:45.562Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph"
+    },
+    {
+      "uuid": "a1e7e0f4e63dda49",
+      "name": "should_continue",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "734c8b27dcd8a1fd",
+      "startTime": "2026-10-23T08:41:45.561Z",
+      "endTime": "2026-10-23T08:41:45.562Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          }
+        ]
+      },
+      "output": "tools",
+      "integration": "LangGraph"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "2f1431025b591bfe",
+      "name": "LangGraph",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-23T08:41:44.432Z",
+      "endTime": "2026-10-23T08:41:46.823Z",
+      "input": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          }
+        ]
+      },
+      "output": {
+        "messages": [
+          {
+            "role": "user",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Add 3 oranges to my cart"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": ""
+              },
+              {
+                "type": "tool_call",
+                "name": "add_to_cart",
+                "arguments": {
+                  "item": "oranges",
+                  "quantity": 3
+                },
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "parts": [
+              {
+                "type": "tool_call_response",
+                "response": "Added 3x oranges to cart",
+                "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+              }
+            ]
+          },
+          {
+            "role": "assistant",
+            "parts": [
+              {
+                "type": "text",
+                "content": "Done \u2014 I added 3 oranges to your cart."
+              }
+            ]
+          }
+        ]
+      },
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "add_to_cart",
+          "type": "FUNCTION",
+          "output": "Added 3x oranges to cart",
+          "inputParameters": {
+            "item": "oranges",
+            "quantity": 3
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "8b78dfff989692d2",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "359bd36c633c562e",
+      "startTime": "2026-10-23T08:41:45.568Z",
+      "endTime": "2026-10-23T08:41:46.822Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful shopping assistant. Help users:\n        - Add/remove items from their cart\n        - View their cart\n        - Apply coupons\n        - Complete checkout\n        Remember the conversation context."
+        },
+        {
+          "role": "user",
+          "content": "Add 3 oranges to my cart"
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "oranges",
+              "quantity": 3
+            },
+            "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "response": "Added 3x oranges to cart",
+            "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+          }
+        }
+      ],
+      "output": "Done \u2014 I added 3 oranges to your cart.",
+      "integration": "LangGraph",
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 317.0,
+      "outputTokenCount": 14.0
+    },
+    {
+      "uuid": "94cd253ec20f70f3",
+      "name": "ChatOpenAI",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "734c8b27dcd8a1fd",
+      "startTime": "2026-10-23T08:41:44.433Z",
+      "endTime": "2026-10-23T08:41:45.558Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a helpful shopping assistant. Help users:\n        - Add/remove items from their cart\n        - View their cart\n        - Apply coupons\n        - Complete checkout\n        Remember the conversation context."
+        },
+        {
+          "role": "user",
+          "content": "Add 3 oranges to my cart"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "oranges",
+              "quantity": 3
+            },
+            "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+          }
+        }
+      ],
+      "integration": "LangGraph",
+      "toolsCalled": [
+        {
+          "name": "add_to_cart",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "item": "oranges",
+            "quantity": 3
+          }
+        }
+      ],
+      "model": "gpt-5.4-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 275.0,
+      "outputTokenCount": 23.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "2d2626e2d4abd0f7",
+      "name": "add_to_cart",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "9ef4621ff5635709",
+      "startTime": "2026-10-23T08:41:45.565Z",
+      "endTime": "2026-10-23T08:41:45.566Z",
+      "input": {
+        "item": "oranges",
+        "quantity": 3
+      },
+      "output": "Added 3x oranges to cart",
+      "integration": "LangGraph"
+    }
+  ],
+  "startTime": "2026-10-23T08:41:44.432Z",
+  "endTime": "2026-10-23T08:41:46.823Z",
+  "name": "langgraph-stateless",
+  "tags": [
+    "langgraph",
+    "stateless"
+  ],
+  "environment": "development",
+  "input": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Add 3 oranges to my cart"
+          }
+        ]
+      }
+    ]
+  },
+  "output": {
+    "messages": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Add 3 oranges to my cart"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": ""
+          },
+          {
+            "type": "tool_call",
+            "name": "add_to_cart",
+            "arguments": {
+              "item": "oranges",
+              "quantity": 3
+            },
+            "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "parts": [
+          {
+            "type": "tool_call_response",
+            "response": "Added 3x oranges to cart",
+            "id": "call_u5NkG2RILK5uV6Uj7z3g4Qur"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "parts": [
+          {
+            "type": "text",
+            "content": "Done \u2014 I added 3 oranges to your cart."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "add_to_cart",
+      "type": "FUNCTION",
+      "output": "Added 3x oranges to cart",
+      "inputParameters": {
+        "item": "oranges",
+        "quantity": 3
+      }
+    }
+  ]
+}

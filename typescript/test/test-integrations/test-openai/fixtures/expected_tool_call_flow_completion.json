@@ -1,0 +1,135 @@
+{
+  "uuid": "b7983072-bb13-4306-bf63-f80feff9cce0",
+  "baseSpans": [
+    {
+      "uuid": "599d5426-0d54-4aa1-b471-052d4ee0c2d9",
+      "name": "run_main_completion",
+      "status": "SUCCESS",
+      "type": "base",
+      "traceUuid": "b7983072-bb13-4306-bf63-f80feff9cce0",
+      "startTime": "2026-10-21T20:45:00.829Z",
+      "endTime": "2026-10-21T20:45:02.838Z",
+      "input": {
+        "args": []
+      }
+    }
+  ],
+  "agentSpans": [],
+  "llmSpans": [
+    {
+      "uuid": "be8588d4050a302f",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "b7983072-bb13-4306-bf63-f80feff9cce0",
+      "parentUuid": "599d5426-0d54-4aa1-b471-052d4ee0c2d9",
+      "startTime": "2026-10-21T20:45:00.830Z",
+      "endTime": "2026-10-21T20:45:01.677Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Use tools when they are needed to get accurate data."
+        },
+        {
+          "role": "user",
+          "content": "What's the weather in San Francisco in celsius? Then give a one-sentence travel tip that fits the weather."
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_2uOQMs7A18miWjQs99KZScK2",
+            "arguments": "{\"location\":\"San Francisco\",\"unit\":\"c\"}"
+          }
+        }
+      ],
+      "toolsCalled": [
+        {
+          "name": "get_weather",
+          "inputParameters": {
+            "location": "San Francisco",
+            "unit": "c"
+          }
+        }
+      ],
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 108,
+      "outputTokenCount": 19
+    },
+    {
+      "uuid": "c38a34ab308b3533",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "traceUuid": "b7983072-bb13-4306-bf63-f80feff9cce0",
+      "parentUuid": "599d5426-0d54-4aa1-b471-052d4ee0c2d9",
+      "startTime": "2026-10-21T20:45:01.680Z",
+      "endTime": "2026-10-21T20:45:02.837Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant. Use tools when they are needed to get accurate data."
+        },
+        {
+          "role": "user",
+          "content": "What's the weather in San Francisco in celsius? Then give a one-sentence travel tip that fits the weather."
+        },
+        {
+          "role": "assistant",
+          "content": ""
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "name": "get_weather",
+            "id": "call_2uOQMs7A18miWjQs99KZScK2",
+            "arguments": "{\"location\":\"San Francisco\",\"unit\":\"c\"}"
+          }
+        },
+        {
+          "role": "tool",
+          "content": "{\"location\":\"San Francisco\",\"temperature\":18,\"unit\":\"C\",\"condition\":\"partly cloudy\"}"
+        }
+      ],
+      "output": "The current temperature in San Francisco is 18°C and the weather is partly cloudy. A great travel tip for this weather is to dress in layers, as the temperature can change throughout the day, and don't forget to bring a light jacket for the cooler evenings.",
+      "model": "gpt-4o-mini-2024-07-18",
+      "inputTokenCount": 98,
+      "outputTokenCount": 52
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "667c80a4-c117-407f-8ecb-34e34b6bed65",
+      "name": "get_weather",
+      "status": "SUCCESS",
+      "type": "tool",
+      "traceUuid": "b7983072-bb13-4306-bf63-f80feff9cce0",
+      "parentUuid": "599d5426-0d54-4aa1-b471-052d4ee0c2d9",
+      "startTime": "2026-10-21T20:45:01.679Z",
+      "endTime": "2026-10-21T20:45:01.680Z",
+      "input": {
+        "args": [
+          "San Francisco",
+          "c"
+        ]
+      },
+      "output": {
+        "location": "San Francisco",
+        "temperature": 18,
+        "unit": "C",
+        "condition": "partly cloudy"
+      }
+    }
+  ],
+  "startTime": "2026-10-21T20:45:00.829Z",
+  "endTime": "2026-10-21T20:45:02.838Z",
+  "environment": "testing",
+  "input": "What's the weather in San Francisco in celsius? Then give a one-sentence travel tip that fits the weather.",
+  "output": "The current temperature in San Francisco is 18°C and the weather is partly cloudy. A great travel tip for this weather is to dress in layers, as the temperature can change throughout the day, and don't forget to bring a light jacket for the cooler evenings.",
+  "status": "SUCCESS"
+}

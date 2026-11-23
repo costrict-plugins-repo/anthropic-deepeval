@@ -1,0 +1,283 @@
+{
+  "uuid": "00dd42f884a192e3fbb7bea267465549",
+  "baseSpans": [
+    {
+      "uuid": "a08e425276248419",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "4ef3be276dc6a71a",
+      "startTime": "2026-10-21T17:47:59.218Z",
+      "endTime": "2026-10-21T17:48:00.294Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "name": "calculate",
+                "input": {
+                  "operation": "multiply",
+                  "a": 9,
+                  "b": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "54.0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands"
+    },
+    {
+      "uuid": "1c0d14b3bdd9356a",
+      "name": "execute_event_loop_cycle",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "4ef3be276dc6a71a",
+      "startTime": "2026-10-21T17:47:57.706Z",
+      "endTime": "2026-10-21T17:47:59.218Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "name": "calculate",
+                "input": {
+                  "operation": "multiply",
+                  "a": 9,
+                  "b": 6
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.",
+          "output": "54.0",
+          "inputParameters": {
+            "operation": "multiply",
+            "a": 9,
+            "b": 6
+          }
+        }
+      ]
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "4ef3be276dc6a71a",
+      "name": "Strands Agents",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:47:57.704Z",
+      "endTime": "2026-10-21T17:48:00.298Z",
+      "input": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?",
+      "output": "9 multiplied by 6 is 54.\n",
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "description": "Perform basic arithmetic operations.",
+          "output": "54.0",
+          "inputParameters": {
+            "operation": "multiply",
+            "a": 9,
+            "b": 6
+          }
+        }
+      ],
+      "availableTools": [
+        "calculate"
+      ],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4cbfebe2e30e8567",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "a08e425276248419",
+      "startTime": "2026-10-21T17:47:59.218Z",
+      "endTime": "2026-10-21T17:48:00.287Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "name": "calculate",
+                "input": {
+                  "operation": "multiply",
+                  "a": 9,
+                  "b": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": [
+            {
+              "toolResult": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "status": "success",
+                "content": [
+                  {
+                    "text": "54.0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "output": "9 multiplied by 6 is 54.",
+      "integration": "Strands",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 116.0,
+      "outputTokenCount": 10.0
+    },
+    {
+      "uuid": "7bcfffb10dc2231b",
+      "name": "chat",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "1c0d14b3bdd9356a",
+      "startTime": "2026-10-21T17:47:57.706Z",
+      "endTime": "2026-10-21T17:47:59.213Z",
+      "input": [
+        {
+          "role": "user",
+          "content": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "toolUse": {
+                "toolUseId": "call_4kWf69Q02A4aY685tRQhZjhG",
+                "name": "calculate",
+                "input": {
+                  "operation": "multiply",
+                  "a": 9,
+                  "b": 6
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "integration": "Strands",
+      "toolsCalled": [
+        {
+          "name": "calculate",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "operation": "multiply",
+            "a": 9,
+            "b": 6
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 85.0,
+      "outputTokenCount": 21.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "681e0d077eb6198f",
+      "name": "calculate",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "1c0d14b3bdd9356a",
+      "startTime": "2026-10-21T17:47:59.215Z",
+      "endTime": "2026-10-21T17:47:59.217Z",
+      "input": {
+        "operation": "multiply",
+        "a": 9,
+        "b": 6
+      },
+      "output": "54.0",
+      "integration": "Strands",
+      "description": "Perform basic arithmetic operations."
+    }
+  ],
+  "startTime": "2026-10-21T17:47:57.704Z",
+  "endTime": "2026-10-21T17:48:00.298Z",
+  "name": "strands-async-tool-test",
+  "metadata": {
+    "test_type": "async_tool"
+  },
+  "tags": [
+    "strands",
+    "tool",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "async-tool-123",
+  "input": "You are a calculator assistant. Use the calculate tool for math operations. Be concise. What is 9 multiplied by 6?",
+  "output": "9 multiplied by 6 is 54.\n",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "calculate",
+      "type": "FUNCTION",
+      "description": "Perform basic arithmetic operations.",
+      "output": "54.0",
+      "inputParameters": {
+        "operation": "multiply",
+        "a": 9,
+        "b": 6
+      }
+    }
+  ]
+}

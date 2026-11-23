@@ -1,0 +1,64 @@
+{
+  "uuid": "6e7ae1ad45b0cdfbef5ba999c7277f9d",
+  "baseSpans": [],
+  "agentSpans": [
+    {
+      "uuid": "59b197bab74b5a0d",
+      "name": "simple_agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:17:28.116Z",
+      "endTime": "2026-10-21T17:17:30.297Z",
+      "input": "Say goodbye in exactly three words.",
+      "output": "Farewell, take care.",
+      "integration": "PydanticAI",
+      "availableTools": [],
+      "agentHandoffs": []
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "c119cc89d89a1336",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "59b197bab74b5a0d",
+      "startTime": "2026-10-21T17:17:28.117Z",
+      "endTime": "2026-10-21T17:17:30.296Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "Be concise, reply with one short sentence only."
+        },
+        {
+          "role": "user",
+          "content": "Say goodbye in exactly three words."
+        }
+      ],
+      "output": "Farewell, take care.",
+      "integration": "PydanticAI",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "inputTokenCount": 28.0,
+      "outputTokenCount": 7.0
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [],
+  "startTime": "2026-10-21T17:17:28.116Z",
+  "endTime": "2026-10-21T17:17:30.297Z",
+  "name": "pydanticai-async-simple-test",
+  "metadata": {
+    "test_type": "async_simple"
+  },
+  "tags": [
+    "pydanticai",
+    "simple",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "async-simple-123",
+  "input": "Say goodbye in exactly three words.",
+  "output": "Farewell, take care.",
+  "status": "SUCCESS"
+}

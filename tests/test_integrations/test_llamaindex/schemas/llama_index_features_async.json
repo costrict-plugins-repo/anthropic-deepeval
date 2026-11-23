@@ -1,0 +1,346 @@
+{
+  "uuid": "4dfc329e-1681-4bb8-b9ba-8dacb67d43e1",
+  "baseSpans": [
+    {
+      "uuid": "2d3968d3e0ca34cc",
+      "name": "BaseWorkflowAgent.parse_agent_output",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:06.770Z",
+      "endTime": "2026-10-21T17:14:06.772Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "798c6d48f3e5cd6c",
+      "name": "BaseWorkflowAgent.run_agent_step",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:05.551Z",
+      "endTime": "2026-10-21T17:14:06.768Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "a61579c640118e2d",
+      "name": "BaseWorkflowAgent.setup_agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:05.550Z",
+      "endTime": "2026-10-21T17:14:05.550Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "3f40241b240f3179",
+      "name": "BaseWorkflowAgent.aggregate_tool_results",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:05.548Z",
+      "endTime": "2026-10-21T17:14:05.549Z",
+      "input": {
+        "ev": {
+          "tool_name": "multiply",
+          "tool_kwargs": {
+            "a": 4,
+            "b": 6
+          },
+          "tool_output": "24"
+        }
+      },
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "00f7dbd03db90255",
+      "name": "BaseWorkflowAgent.call_tool",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:05.545Z",
+      "endTime": "2026-10-21T17:14:05.547Z",
+      "input": {
+        "ev": {
+          "tool_name": "multiply",
+          "tool_kwargs": {
+            "a": 4,
+            "b": 6
+          }
+        }
+      },
+      "output": {
+        "tool_name": "multiply",
+        "tool_kwargs": {
+          "a": 4,
+          "b": 6
+        },
+        "tool_output": "24"
+      },
+      "integration": "LlamaIndex",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "24",
+          "inputParameters": {
+            "a": 4,
+            "b": 6
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "59678a86b0d63f8a",
+      "name": "BaseWorkflowAgent.parse_agent_output",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:05.544Z",
+      "endTime": "2026-10-21T17:14:05.544Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "b792a13cf610db24",
+      "name": "BaseWorkflowAgent.run_agent_step",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:04.373Z",
+      "endTime": "2026-10-21T17:14:05.542Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "0fa6319098948f40",
+      "name": "BaseWorkflowAgent.setup_agent",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:04.372Z",
+      "endTime": "2026-10-21T17:14:04.372Z",
+      "integration": "LlamaIndex"
+    },
+    {
+      "uuid": "7255fe6d871fd6c2",
+      "name": "BaseWorkflowAgent.init_run",
+      "status": "SUCCESS",
+      "type": "base",
+      "parentUuid": "448f6951ecf203bc",
+      "startTime": "2026-10-21T17:14:04.370Z",
+      "endTime": "2026-10-21T17:14:04.371Z",
+      "input": {
+        "ev": {
+          "user_msg": "What is 4 * 6?"
+        }
+      },
+      "integration": "LlamaIndex"
+    }
+  ],
+  "agentSpans": [
+    {
+      "uuid": "448f6951ecf203bc",
+      "name": "Agent",
+      "status": "SUCCESS",
+      "type": "agent",
+      "startTime": "2026-10-21T17:14:04.369Z",
+      "endTime": "2026-10-21T17:14:06.773Z",
+      "input": {
+        "start_event": {
+          "user_msg": "What is 4 * 6?"
+        }
+      },
+      "output": "The result of \\( 4 \\times 6 \\) is 24.",
+      "integration": "LlamaIndex",
+      "context": [
+        "context here agent level async"
+      ],
+      "expectedOutput": "exp output agent level async",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "output": "24",
+          "inputParameters": {
+            "a": 4,
+            "b": 6
+          }
+        }
+      ],
+      "availableTools": [],
+      "agentHandoffs": [],
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.5,
+          "success": false,
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gpt-4.1-mini"
+        }
+      ]
+    }
+  ],
+  "llmSpans": [
+    {
+      "uuid": "4fad7b95a93a038b",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "798c6d48f3e5cd6c",
+      "startTime": "2026-10-21T17:14:05.553Z",
+      "endTime": "2026-10-21T17:14:06.766Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant that can perform calculations. You MUST use the tools provided."
+        },
+        {
+          "role": "user",
+          "content": "What is 4 * 6?"
+        },
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_uJSPAnPWzzpmnxmlv2COHeND",
+            "name": "multiply",
+            "arguments": {
+              "a": 4,
+              "b": 6
+            }
+          }
+        },
+        {
+          "role": "tool",
+          "content": {
+            "type": "tool_call_response",
+            "id": "call_uJSPAnPWzzpmnxmlv2COHeND",
+            "response": "24"
+          }
+        }
+      ],
+      "output": "The result of \\( 4 \\times 6 \\) is 24.",
+      "integration": "OpenAI",
+      "context": [
+        "context here llm level async"
+      ],
+      "expectedOutput": "exp output llm level async",
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.5,
+          "success": false,
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gpt-4.1-mini"
+        }
+      ]
+    },
+    {
+      "uuid": "ba5951a6c9768d17",
+      "name": "chat gpt-4o-mini",
+      "status": "SUCCESS",
+      "type": "llm",
+      "parentUuid": "b792a13cf610db24",
+      "startTime": "2026-10-21T17:14:04.381Z",
+      "endTime": "2026-10-21T17:14:05.541Z",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant that can perform calculations. You MUST use the tools provided."
+        },
+        {
+          "role": "user",
+          "content": "What is 4 * 6?"
+        }
+      ],
+      "output": [
+        {
+          "role": "assistant",
+          "content": {
+            "type": "tool_call",
+            "id": "call_uJSPAnPWzzpmnxmlv2COHeND",
+            "name": "multiply",
+            "arguments": {
+              "a": 4,
+              "b": 6
+            }
+          }
+        }
+      ],
+      "integration": "OpenAI",
+      "context": [
+        "context here llm level async"
+      ],
+      "expectedOutput": "exp output llm level async",
+      "toolsCalled": [
+        {
+          "name": "multiply",
+          "type": "FUNCTION",
+          "inputParameters": {
+            "a": 4,
+            "b": 6
+          }
+        }
+      ],
+      "model": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.5,
+          "success": false,
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gpt-4.1-mini"
+        }
+      ]
+    }
+  ],
+  "retrieverSpans": [],
+  "toolSpans": [
+    {
+      "uuid": "830b5b98232bc286",
+      "name": "multiply",
+      "status": "SUCCESS",
+      "type": "tool",
+      "parentUuid": "00f7dbd03db90255",
+      "startTime": "2026-10-21T17:14:05.546Z",
+      "endTime": "2026-10-21T17:14:05.546Z",
+      "input": {
+        "a": 4,
+        "b": 6
+      },
+      "output": "24",
+      "integration": "LlamaIndex"
+    }
+  ],
+  "startTime": "2026-10-21T17:14:04.367Z",
+  "endTime": "2026-10-21T17:14:06.773Z",
+  "name": "Calculation Check Async",
+  "tags": [
+    "production",
+    "async"
+  ],
+  "environment": "development",
+  "threadId": "thread_async_XYZ",
+  "input": {
+    "start_event": {
+      "user_msg": "What is 4 * 6?"
+    }
+  },
+  "output": "The result of \\( 4 \\times 6 \\) is 24.",
+  "status": "SUCCESS",
+  "toolsCalled": [
+    {
+      "name": "multiply",
+      "type": "FUNCTION",
+      "output": "24",
+      "inputParameters": {
+        "a": 4,
+        "b": 6
+      }
+    }
+  ]
+}
